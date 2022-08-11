@@ -14,6 +14,8 @@ from mrcnn.visualize import display_images
 import mrcnn.model as modellib
 from mrcnn.model import log
 from samples.clevr import clevr
+import argparse
+
 
 class InferenceConfig(clevr.ClevrConfig):
     # Set batch size to 1 since we'll be running inference on
@@ -223,15 +225,29 @@ def write_aleph_settings(b_file, features = ['shape','material','color','size'],
 
 
 if __name__ == "__main__":
+
+    print('Loading model...')
+    parser = argparse.ArgumentParser("ibm_aleph")
+    parser.add_argument("--model_path", "-MP", help="Path to pre-trained model", type=str, default='./trained_model/mask_rcnn_clevr_0030_allclasses.h5')
+    parser.add_argument("--image_path", "-IP", help="Path to CLEVR-HANS images.", type=str, default= './temp_images')
+    parser.add_argument("--colab_GPU", "-CGPU", help="State as true if running code on Google Colab (ensures use of colab GPU).", type=str, default= False)
+    args = parser.parse_args()
+
+
     ROOT_DIR = os.getcwd()
-    IMAGE_DIR = os.path.join(ROOT_DIR, "temp_images/")
 
     config = InferenceConfig()
-    model = load_model(ROOT_DIR, config)
+    model = load_model(ROOT_DIR, config, model_path = args.model_path)
     shape_categories, material_categories, color_categories,\
         size_categories, class_names = define_object_types()
-    
-    oblist, ilp_classes = inference(IMAGE_DIR, model, class_names)
+    print("Done. Model loaded successfully.")
+
+    if args.colab_GPU:
+        with tf.device('/device:GPU:0'):
+            oblist, ilp_classes = inference(args.image_path, model, class_names)
+    else:
+        oblist, ilp_classes = inference(args.image_path, model, class_names)
+
     b_file, f_file, n_file, bk_file = open_files()
     write_aleph_settings(b_file)
     attribute_dict = write_basic_preds(bk_file, color_categories, material_categories, size_categories, shape_categories)
