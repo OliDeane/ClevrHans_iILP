@@ -233,6 +233,7 @@ if __name__ == "__main__":
     parser.add_argument("--colab_GPU", "-CGPU", help="State as true if running code on Google Colab (ensures use of colab GPU).", type=str, default= False)
     args = parser.parse_args()
 
+    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' # supresses TF warnings
 
     ROOT_DIR = os.getcwd()
 
