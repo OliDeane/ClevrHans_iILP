@@ -226,7 +226,6 @@ def write_aleph_settings(b_file, features = ['shape','material','color','size'],
 
 if __name__ == "__main__":
 
-    print('Loading model...')
     parser = argparse.ArgumentParser("ibm_aleph")
     parser.add_argument("--model_path", "-MP", help="Path to pre-trained model", type=str, default='./trained_model/mask_rcnn_clevr_0030_allclasses.h5')
     parser.add_argument("--image_path", "-IP", help="Path to CLEVR-HANS images.", type=str, default= './temp_images')
@@ -237,6 +236,7 @@ if __name__ == "__main__":
 
     ROOT_DIR = os.getcwd()
 
+    print('Loading model...')
     config = InferenceConfig()
     model = load_model(ROOT_DIR, config, model_path = args.model_path)
     shape_categories, material_categories, color_categories,\
