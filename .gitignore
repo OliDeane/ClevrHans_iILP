@@ -1,2 +1,4 @@
 trained_model/
 *.h5
+aleph_input/
+temp_img2/

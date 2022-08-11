@@ -65,28 +65,6 @@ def define_object_types():
     return shape_categories, material_categories, color_categories,\
         size_categories, class_names
 
-def inference(IMAGE_DIR, model, class_names):
-
-    file_names = sorted(next(os.walk(IMAGE_DIR))[2])
-
-    if '.DS_Store' in file_names:
-        file_names.remove(".DS_Store")
-
-    oblist = []
-    ilp_classes = []
-    
-    print('Detecting objects...')
-
-    for filename in tqdm(file_names):
-        image = skimage.io.imread(os.path.join(IMAGE_DIR, filename))
-        image = image[:,:,:3]
-        results = model.detect([image], verbose=0)
-        r = results[0]
-        oblist.append([class_names[r['class_ids'][i]] for i in range(len(r['class_ids']))])
-        ilp_classes.append(f'c{filename[19]}')
-    
-    return oblist, ilp_classes
-
 def open_files():
 
     output_filename = 'hans_aleph'
@@ -110,6 +88,9 @@ def write_basic_preds(bk_file, color_categories, material_categories, size_categ
 
     for attribute in list(attribute_dict.keys()):
         bk_file.write(f":- discontiguous has_{attribute}/2.\n")
+    bk_file.write(f":- discontiguous contains/2.\n")
+    bk_file.write(f":- discontiguous right_of/3.\n")
+    bk_file.write(f":- discontiguous left_of/3.\n")
 
     bk_file.write("\n")
 
@@ -143,13 +124,12 @@ def write_object_preds(bk_file, attribute_dict):
     
     return full_oblist
 
-def write_img_facts(bk_file, full_oblist, oblist):
+def write_img_facts(bk_file, full_oblist, oblist, centroids):
 
     example_count = 0
-    for img_objects in oblist:
+    for img_objects, img_centroids in zip(oblist, centroids['X']):
         bk_file.write("\n")
         example_id = f"example_{example_count}"
-        example_count += 1
 
         for object in img_objects:
             shape, material, color, size = object.split()
@@ -158,6 +138,12 @@ def write_img_facts(bk_file, full_oblist, oblist):
             object_idx = full_oblist.index([shape, material, color, size])
             object_id = f'oid_{object_idx}'
             bk_file.write(f"contains({object_id}, {example_id}).\n")
+        
+        rel_preds = get_relation_preds(img_centroids, full_oblist, example_count, img_objects)
+        for pred in rel_preds:
+            bk_file.write(pred)
+        
+        example_count += 1
 
 def close_files(b_file, f_file, n_file, bk_file):
     b_file.close()
@@ -165,7 +151,7 @@ def close_files(b_file, f_file, n_file, bk_file):
     f_file.close()
     n_file.close()
 
-def write_img_object_preds(oblist, bk_file):
+def write_img_object_preds(oblist):
     '''Ignore for now.
     This write predicates for only the object that appear in the training set. NOT for all possible objects'''
     example_count = 0
@@ -185,6 +171,59 @@ def write_img_object_preds(oblist, bk_file):
             object_count += 1
         
         bk_file.write(f"contains({object_id}, {example_id}).\n")
+
+def inference(IMAGE_DIR, model, class_names):
+
+    file_names = sorted(next(os.walk(IMAGE_DIR))[2])
+
+    if '.DS_Store' in file_names:
+        file_names.remove(".DS_Store")
+
+    oblist = []
+    ilp_classes = []
+    centroids = {'X':[], 'Y':[]}
+
+    print('Detecting objects...')
+
+
+    for filename in tqdm(file_names):
+        image = skimage.io.imread(os.path.join(IMAGE_DIR, filename))
+        image = image[:,:,:3]
+        results = model.detect([image], verbose=0)
+        r = results[0]
+        oblist.append([class_names[r['class_ids'][i]] for i in range(len(r['class_ids']))])
+
+        # get centroids
+        rois = r['rois'].tolist()
+        centroids['X'].append([(roi[1] + roi[3])/2 for roi in rois])
+        centroids['Y'].append([(roi[0] + roi[2])/2 for roi in rois])
+
+        ilp_classes.append(f'c{filename[19]}')
+    
+    return oblist, ilp_classes, centroids
+
+def get_relation_preds(centroids, full_oblist, eg_num, img_objects):
+
+    rel_preds = []
+    for partner_idx in range(len(centroids)):
+        for reference_idx in range(len(centroids)):
+            if partner_idx==reference_idx:
+                continue
+            
+            # ref_id = full_oblist.index(class_names[r['class_ids'][reference_idx]].split())
+            # part_id = full_oblist.index(class_names[r['class_ids'][partner_idx]].split())
+
+            ref_id = full_oblist.index(img_objects[reference_idx].split())
+            part_id = full_oblist.index(img_objects[partner_idx].split())
+
+            if centroids[partner_idx] > centroids[reference_idx]:
+                relation = 'right_of'
+            elif centroids[partner_idx] < centroids[reference_idx]:
+                relation = 'left_of'
+            
+            rel_preds.append(f'{relation}(oid_{ref_id}, oid_{part_id}, example_{eg_num}).\n')
+    
+    return rel_preds
 
 def write_ground_truths(ilp_classes, f_file, n_file):
     for id in range(0,len(ilp_classes)):
@@ -206,6 +245,9 @@ def write_aleph_settings(b_file, features = ['shape','material','color','size'],
     for feature in features:
         b_file.write(f":- modeb(*, has_{feature}(+{id_column}, #{feature})).\n")
 
+    b_file.write(f":- modeb(*, left_of(+{id_column}, +{id_column}, +example)).\n")
+    b_file.write(f":- modeb(*, right_of(+{id_column}, +{id_column}, +example)).\n")
+
     b_file.write("\n")
 
     # determinations
@@ -213,6 +255,11 @@ def write_aleph_settings(b_file, features = ['shape','material','color','size'],
 
     for feature in features:
         b_file.write(f":- determination(true_class/1, has_{feature}/2).\n")
+    b_file.write(f":- determination(true_class/1, left_of/3).\n")
+    b_file.write(f":- determination(true_class/1, right_of/3).\n")
+
+    # write relations
+
 
     b_file.write("\n")
     
@@ -245,14 +292,15 @@ if __name__ == "__main__":
 
     if args.colab_GPU:
         with tf.device('/device:GPU:0'):
-            oblist, ilp_classes = inference(args.image_path, model, class_names)
+            oblist, ilp_classe, centroids = inference(args.image_path, model, class_names)
     else:
-        oblist, ilp_classes = inference(args.image_path, model, class_names)
+        oblist, ilp_classes, centroids = inference(args.image_path, model, class_names)
 
     b_file, f_file, n_file, bk_file = open_files()
     write_aleph_settings(b_file)
     attribute_dict = write_basic_preds(bk_file, color_categories, material_categories, size_categories, shape_categories)
     full_oblist = write_object_preds(bk_file, attribute_dict)
-    write_img_facts(bk_file, full_oblist, oblist)
+
+    write_img_facts(bk_file, full_oblist, oblist, centroids)
     write_ground_truths(ilp_classes, f_file, n_file)
     close_files(b_file, f_file, n_file, bk_file)
