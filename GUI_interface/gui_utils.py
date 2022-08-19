@@ -3,12 +3,13 @@ from PIL import ImageTk, Image
 import tkinter.scrolledtext as scrolledtext
 
 # Create an instance of tkinter window and define geometry
-win = Tk()
-win.title('ILP CLEVR-HANS')
-win.geometry("1000x400")
 
-image_filename = "demo_image.png"
-img = ImageTk.PhotoImage(Image.open(image_filename))
+def create_window(title = 'ILP CLEVR-HANS'):
+    '''Currently not functionable'''
+    win = Tk()
+    win.title(title)
+    win.geometry("1000x400")
+    return win
 
 def insert_image(win, img):
     frame1 = Frame(win, width=350, height=200)
@@ -18,7 +19,7 @@ def insert_image(win, img):
     clevr_image = Label(frame1, image = img)
     clevr_image.pack()
 
-def insert_pred_box(win):
+def insert_pred_box(win, prediction, explanation):
     # Theory frame
     frame2 = Frame(win, width=350, height=200)
     frame2.pack()
@@ -31,11 +32,9 @@ def insert_pred_box(win):
     Textbox.pack()
 
     # insert theory text
-    Fact = """This is a demo explanation.\nTesting capabilities.
-    \nThis is a demo explanation.\nTesting capabilities.\n
-    This is a demo explanation.\nTesting capabilities.\n
-    This is a demo explanation.\nTesting capabilities"""
-    Textbox.insert(END, Fact)
+    text_input = f'Prediction: {prediction} \n\nExplanation: {explanation} \n'
+
+    Textbox.insert(END, text_input)
 
 def insert_constraint_box(win):
     frame3 = Frame(win, width=350, height=200)
@@ -52,9 +51,3 @@ def insert_constraint_box(win):
     Fact = """Insert constraint here."""
     Textbox.insert(END, Fact)
 
-insert_image(win, img)
-insert_pred_box(win)
-insert_constraint_box(win)
-
-
-win.mainloop()
