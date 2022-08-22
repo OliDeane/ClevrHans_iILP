@@ -93,9 +93,8 @@ def add_constraint(dataset, constraint_predicate):
     bk_file.write(f"false :- \n\
         hypothesis(_,Body,_), bodyList(Body, List), !, member({constraint_predicate}, List).\n\n")
     
-
-
     bk_file.close()
+
 
 def ilp_induce(dataset, prolog):
     # generate initial ILP thoery and save to a file

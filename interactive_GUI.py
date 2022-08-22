@@ -27,14 +27,35 @@ def run_induce():
     insert_theory_box(win, theory=theory)
 
 # get user-defined image number
-def display_selected_image():
-    inputValue=Textbox.get("1.0","end-1c")
-    image_filename = f"GUI_interface/image_{inputValue}.png"
-    img = ImageTk.PhotoImage(Image.open(image_filename))
-    insert_image(win, img)
-    pred, exp = single_instance_inference(dataset, inputValue, prolog)
-    insert_pred_box(win, prediction=pred, explanation=exp)
+def select_img_and_run(win):
+    def display_selected_image():
+        inputValue=Textbox.get("1.0","end-1c")
+        image_filename = f"GUI_interface/image_{inputValue}.png"
+        loaded_img = Image.open(image_filename)
+        resized_image= loaded_img.resize((400,250), Image.ANTIALIAS)
 
+        img = ImageTk.PhotoImage(resized_image)
+        #Resize the Image using resize method
+
+        insert_image(win, img)
+        pred, exp = single_instance_inference(dataset, inputValue, prolog)
+        insert_pred_box(win, prediction=pred, explanation=exp)
+
+    # Select image frame
+    frame = Frame(win, width=350, height=50)
+    frame.pack()
+    frame.place(anchor=W, relx=0.60, rely=0.9)
+
+    # create a label widget to display text
+    exp_label = Label(frame, text = "Select Image")
+    exp_label.pack()
+    Textbox = scrolledtext.ScrolledText(frame, height = 2, width = 32)
+    Textbox.pack()
+
+    # Add button for selecting an image
+    imageButton = Button(frame,
+                        text = "Run Inference", command=display_selected_image)
+    imageButton.pack()
 
 
 # learn model on button press
@@ -42,23 +63,8 @@ induceButton = Button(win,text = "Induce", command=run_induce)
 induceButton.place(relx= .7, rely= .5, anchor= CENTER)
 induceButton.pack()
 
-# Select image frame
-frame = Frame(win, width=350, height=50)
-frame.pack()
-frame.place(anchor=W, relx=0.60, rely=0.5)
-
-# create a label widget to display text
-exp_label = Label(frame, text = "Select Image")
-exp_label.pack()
-Textbox = scrolledtext.ScrolledText(frame, height = 2, width = 32)
-Textbox.pack()
-
-# Add button for selected an image
-imageButton = Button(frame,
-                    text = "Run Inference", command=display_selected_image)
-imageButton.pack()
-
-# Display theory frame
+insert_placeholder_box(win)
+select_img_and_run(win)
 insert_theory_box(win, theory = 'Press INDUCE to generate a working theory.')
 insert_pred_box(win, prediction='', explanation='')
 insert_constraint_box(win, dataset)

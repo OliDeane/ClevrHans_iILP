@@ -13,9 +13,9 @@ def create_window(title = 'ILP CLEVR-HANS'):
     return win
 
 def insert_image(win, img):
-    frame1 = Frame(win, width=350, height=200)
+    frame1 = Frame(win, width=375, height=200)
     frame1.pack()
-    frame1.place(anchor=W, relx=0.5, rely=0.5)
+    frame1.place(anchor=W, relx=0.52, rely=0.45)
 
     clevr_image = Label(frame1, image = img)
     clevr_image.image = img # need to save reference to the image
@@ -116,3 +116,11 @@ def insert_theory_box(win, theory):
     Textbox.pack()
     # insert theory text
     Textbox.insert(END, theory)
+
+def insert_placeholder_box(win):
+    rect = Canvas(win, width=400, height=250)
+    rect.create_rectangle(10, 10, 400, 250)
+    rect.create_text(200,125, text='Select Image')
+    rect.pack()
+    rect.place(anchor=W, relx=0.52, rely=0.45)
+
