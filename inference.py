@@ -62,9 +62,10 @@ def translate_theory(dataset, filename = 'working_theory.pl'):
     theory = clean_theory(theory)
     theory = merge_lines(theory)
     save_ruleset_to_prolog(dataset, filename, theory)
+    return theory
 
 def single_instance_inference(dataset, example_number, prolog):
-    translate_theory(dataset = dataset)
+    # theory = translate_theory(dataset = dataset)
     prolog.consult("working_theory.pl")
     result = list(prolog.query(f"true_class(example_{example_number}, Explanation)"))
 
@@ -81,15 +82,16 @@ def single_instance_inference(dataset, example_number, prolog):
 
     return (pred, explanation)
 
-def add_constraint(dataset):
+def add_constraint(dataset, constraint_predicate):
+    """Currently just removes a predicate from a theory"""
     output_directory = 'aleph_input'
     bk_file = open(output_directory + '/' + dataset + '_aleph.bk', 'a')
 
     bk_file.write(":-consult('constraints.pl').\n")
     bk_file.write("bodyList(Body, FinalList) :-\n \
         clause2list(Body,[],Output, Clause), list_to_term(Clause, Term), insertAtEnd(Term,Output,FinalList).\n")
-    bk_file.write("false :- \n\
-        hypothesis(_,Body,_), bodyList(Body, List), !, member(has_color(_,_), List).\n\n")
+    bk_file.write(f"false :- \n\
+        hypothesis(_,Body,_), bodyList(Body, List), !, member({constraint_predicate}, List).\n\n")
     
 
 
