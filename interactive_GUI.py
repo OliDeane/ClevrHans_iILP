@@ -8,6 +8,7 @@ from PIL import ImageTk, Image
 from GUI_interface.gui_utils import *
 from inference import *
 import matplotlib.pyplot as plt
+
 prolog = Prolog()
 dataset = 'hans'
 
@@ -15,11 +16,6 @@ win = Tk()
 title = 'ILP CLEVR-HANS'
 win.title(title)
 win.geometry("1000x400")
-
-# inputValue = 'demo'
-# image_filename = f"GUI_interface/{inputValue}_image.png"
-# img = ImageTk.PhotoImage(Image.open(image_filename))
-# insert_image(win, img)
 
 def run_induce():
     ilp_induce(dataset, prolog)
@@ -39,7 +35,9 @@ def select_img_and_run(win):
 
         insert_image(win, img)
         pred, exp = single_instance_inference(dataset, inputValue, prolog)
-        insert_pred_box(win, prediction=pred, explanation=exp)
+        nl_exp = transform_clause(exp)
+        print(nl_exp)
+        insert_pred_box(win, prediction=pred, explanation=nl_exp)
 
     # Select image frame
     frame = Frame(win, width=350, height=50)
@@ -49,7 +47,7 @@ def select_img_and_run(win):
     # create a label widget to display text
     exp_label = Label(frame, text = "Select Image")
     exp_label.pack()
-    Textbox = scrolledtext.ScrolledText(frame, height = 2, width = 32)
+    Textbox = Text(frame, height = 1, width = 32)
     Textbox.pack()
 
     # Add button for selecting an image
@@ -63,11 +61,11 @@ induceButton = Button(win,text = "Induce", command=run_induce)
 induceButton.place(relx= .7, rely= .5, anchor= CENTER)
 induceButton.pack()
 
+insert_reset_button(win)
 insert_placeholder_box(win)
 select_img_and_run(win)
-insert_theory_box(win, theory = 'Press INDUCE to generate a working theory.')
+insert_theory_box(win, theory = 'Press INDUCE to generate a working theory...')
 insert_pred_box(win, prediction='', explanation='')
 insert_constraint_box(win, dataset)
-
 
 win.mainloop()

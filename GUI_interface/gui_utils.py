@@ -15,7 +15,7 @@ def create_window(title = 'ILP CLEVR-HANS'):
 def insert_image(win, img):
     frame1 = Frame(win, width=375, height=200)
     frame1.pack()
-    frame1.place(anchor=W, relx=0.52, rely=0.45)
+    frame1.place(anchor=W, relx=0.52, rely=0.47)
 
     clevr_image = Label(frame1, image = img)
     clevr_image.image = img # need to save reference to the image
@@ -38,11 +38,15 @@ def insert_pred_box(win, prediction, explanation):
 
     Textbox.insert(END, text_input)
 
+def transform_constraint(user_constraint):
+    return 'has_' + user_constraint + '(_,_)'
+
 def insert_constraint_box(win, dataset):
 
     def process_constraint():
         inputValue=Textbox.get("1.0","end-1c")
-        add_constraint(dataset, constraint_predicate=inputValue)
+        user_constraint = transform_constraint(inputValue)
+        add_constraint(dataset, constraint_predicate=user_constraint)
         Textbox.delete("1.0", END)
 
     frame3 = Frame(win, width=350, height=200)
@@ -76,32 +80,6 @@ def insert_constraint_box(win, dataset):
                         text = "Submit Constraint", command=process_constraint)
     printButton.pack()
 
-def insertion_test(win):
-
-    def printInput():
-        inp = inputtxt.get(1.0, "end-1c")
-        lbl.config(text = "Provided Input: "+inp)
-    
-    frame = Frame(win, width=350, height=200)
-
-    # TextBox Creation
-    inputtxt = Text(frame,
-                    height = 5,
-                    width = 20)
-    
-    inputtxt.pack()
-    
-    # Button Creation
-    printButton = Button(frame,
-                            text = "Print", 
-                            command = printInput)
-    printButton.pack()
-    
-    # Label Creation
-    lbl = Label(frame, text = "")
-    lbl.pack()
-    frame.mainloop()
-
 def insert_theory_box(win, theory):
     
     # Theory frame
@@ -122,5 +100,54 @@ def insert_placeholder_box(win):
     rect.create_rectangle(10, 10, 400, 250)
     rect.create_text(200,125, text='Select Image')
     rect.pack()
-    rect.place(anchor=W, relx=0.52, rely=0.45)
+    rect.place(anchor=W, relx=0.52, rely=0.47)
 
+def delete_existing_constraints(dataset='hans'):
+    lines = []
+    path = f'aleph_input/{dataset}_aleph.bk'
+    with open(path, 'r') as fp:
+        lines = fp.readlines()
+    
+    # write file
+    with open(path, 'w') as fp:
+        for line in lines:
+            if line[0:5] != 'false' and line[0:10] != 'hypothesis':
+                fp.write(line)
+
+# Add a reset button
+def insert_reset_button(win):
+    resetButton = Button(win,text = "Reset", command=delete_existing_constraints)
+    resetButton.place(relx= .1, rely= .5, anchor= E)
+    resetButton.pack()
+
+def transform_clause(og_clause):
+    '''Transforms clause to natural language'''
+
+    clause = list(set(og_clause))
+
+    # find ALL THE first contains predicate
+    contains_preds = [i for i in clause if 'contains' in i]
+    nl_clause = ''
+    for object_predicate in contains_preds:
+        # add an "image contains an object X" sentence
+        clause.remove(object_predicate)
+        var = object_predicate.rpartition('contains(')[2].rpartition(', ')[0]
+        nl_clause = nl_clause + f"Image contains an object {var}"
+
+        # search for the elements in the clause containing that variable
+        # for each element: add the attribute and the attribute value
+        attribute_preds = [i for i in clause if var in i]
+        for idx, predicate in enumerate(attribute_preds):
+            attribute = predicate.rpartition('('+var)[0].rpartition('has_')[2]
+            att_value = predicate.rpartition(var+', ')[2][:-1]
+
+            if len(attribute_preds) > 1 and idx == 0:
+                nl_clause = nl_clause + f" with {attribute} {att_value}"
+            elif len(attribute_preds) == 1 and idx ==0:
+                nl_clause = nl_clause + f" with {attribute} {att_value}. "
+            elif idx+1 == len(attribute_preds) and idx > 0:
+                nl_clause = nl_clause + f" and {attribute} {att_value}.\n"
+            else:
+                nl_clause = nl_clause + f" and {attribute} {att_value}"
+            
+    return nl_clause

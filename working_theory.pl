@@ -1,6 +1,6 @@
 :-consult("aleph_input/hans_aleph.bk").
 
 true_class(A,Ex) :-
-     contains(B,A), has_shape(B,cylinder), has_size(B,large), contains(C,A), contains(B,A), has_shape(B,cylinder), has_size(B,large), contains(C,A), has_shape(C,cube),
-    Ex = [contains(B,A), has_shape(B,cylinder), has_size(B,large), contains(C,A), contains(B,A), has_shape(B,cylinder), has_size(B,large), contains(C,A), has_shape(C,cube)].
+     contains(B,A), has_color(B,gray), has_size(B,large),
+    Ex = [contains(B,A), has_color(B,gray), has_size(B,large)].
 

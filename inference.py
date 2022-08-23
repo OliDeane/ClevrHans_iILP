@@ -86,15 +86,9 @@ def add_constraint(dataset, constraint_predicate):
     """Currently just removes a predicate from a theory"""
     output_directory = 'aleph_input'
     bk_file = open(output_directory + '/' + dataset + '_aleph.bk', 'a')
-
-    bk_file.write(":-consult('constraints.pl').\n")
-    bk_file.write("bodyList(Body, FinalList) :-\n \
-        clause2list(Body,[],Output, Clause), list_to_term(Clause, Term), insertAtEnd(Term,Output,FinalList).\n")
-    bk_file.write(f"false :- \n\
-        hypothesis(_,Body,_), bodyList(Body, List), !, member({constraint_predicate}, List).\n\n")
+    bk_file.write(f"false :- hypothesis(_,Body,_), bodyList(Body, List), !, member({constraint_predicate}, List).\n\n")
     
     bk_file.close()
-
 
 def ilp_induce(dataset, prolog):
     # generate initial ILP thoery and save to a file
