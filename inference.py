@@ -23,7 +23,7 @@ def merge_lines(clean_theory):
     else:
         full_theory = clean_theory
 
-    return full_theory
+    return list(set(full_theory))
 
 def add_variable(full_theory):
     new_theory = []

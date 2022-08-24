@@ -168,6 +168,11 @@ def write_img_facts(bk_file, full_oblist, oblist):
             object_idx = full_oblist.index([shape, material, color, size])
             object_id = f'oid_{object_idx}'
             bk_file.write(f"contains({object_id}, {example_id}).\n")
+    
+    bk_file.write("\n")
+    bk_file.write(":- consult('constraints.pl').\n")
+    bk_file.write("bodyList(Body, FinalList) :- \
+        clause2list(Body,[],Output, Clause), list_to_term(Clause, Term), insertAtEnd(Term,Output,FinalList).\n")
 
 def close_files(b_file, f_file, n_file, bk_file):
     b_file.close()
