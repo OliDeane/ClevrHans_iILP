@@ -1,2 +1,3 @@
 true_class(A) :-
-   contains(B,A), has_color(B,gray), has_size(B,large).
+   contains(B,A), has_shape(B,cylinder), contains(C,A), has_shape(C,cube), 
+   has_color(C,gray).

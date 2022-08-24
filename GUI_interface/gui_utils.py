@@ -56,7 +56,7 @@ def insert_constraint_box(win, dataset):
     # create a label widget to display text
     exp_label = Label(frame3, text = "Constraint")
     exp_label.pack()
-    Textbox = scrolledtext.ScrolledText(frame3, height = 5, width = 52)
+    Textbox = Text(frame3, height = 5, width = 54)
     Textbox.pack()
 
     # insert palceholder text

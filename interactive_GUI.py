@@ -15,7 +15,7 @@ dataset = 'hans'
 win = Tk()
 title = 'ILP CLEVR-HANS'
 win.title(title)
-win.geometry("1000x400")
+win.geometry("1000x500")
 
 def run_induce():
     ilp_induce(dataset, prolog)
@@ -26,7 +26,7 @@ def run_induce():
 def select_img_and_run(win):
     def display_selected_image():
         inputValue=Textbox.get("1.0","end-1c")
-        image_filename = f"GUI_interface/image_{inputValue}.png"
+        image_filename = f"GUI_interface/demo_images/image_{inputValue}.png"
         loaded_img = Image.open(image_filename)
         resized_image= loaded_img.resize((400,250), Image.ANTIALIAS)
 
