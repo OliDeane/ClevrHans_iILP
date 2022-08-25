@@ -111,16 +111,16 @@ def select_img_and_run(win):
         img = ImageTk.PhotoImage(resized_image)
         insert_image(win, img)
 
-
     # Select image frame
     frame = Frame(win, width=350, height=50)
     frame.pack()
-    frame.place(anchor=W, relx=0.60, rely=0.9)
+    frame.place(anchor=W, relx=0.60, rely=0.85)
 
     # create a label widget to display text
-    exp_label = Label(frame, text = "Select Image")
+    exp_label = Label(frame)
     exp_label.pack()
     Textbox = Text(frame, height = 1, width = 32)
+    Textbox.insert(END, "Insert Image Number")
     Textbox.pack()
 
     # Add button for selecting an image

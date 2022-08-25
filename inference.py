@@ -55,6 +55,12 @@ def save_ruleset_to_prolog(dataset, filename, full_theory):
 
     file.close()        
 
+def remove_duplicates(seq): 
+   # order preserving
+   noDupes = []
+   [noDupes.append(i) for i in seq if not noDupes.count(i)]
+   return ' '.join(noDupes)
+   
 def translate_theory(dataset, filename = 'working_theory.pl'):
 
     with open(f'{dataset}_theory.txt') as f:
@@ -62,6 +68,8 @@ def translate_theory(dataset, filename = 'working_theory.pl'):
     
     theory = clean_theory(theory)
     theory = merge_lines(theory)
+    theory = [remove_duplicates(rule.split(' ')) for rule in theory] # remove duplicates
+
     save_ruleset_to_prolog(dataset, filename, theory)
     return theory
 
@@ -182,4 +190,4 @@ def generate_mrcnn_output(image, boxes, masks, class_ids, class_names,
             ax.add_patch(p)
 
     ax.imshow(masked_image.astype(np.uint8))
-    fig.savefig(mrcnn_filename)
+    fig.savefig(mrcnn_filename, bbox_inches = 'tight', pad_inches = 0)
