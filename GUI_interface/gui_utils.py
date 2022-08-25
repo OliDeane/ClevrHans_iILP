@@ -28,7 +28,7 @@ def insert_pred_box(win, prediction, explanation):
     frame2.place(anchor=E, relx=0.40, rely=0.47)
 
     # create a label widget to display text
-    exp_label = Label(frame2, text = "Prediction and explanation")
+    exp_label = Label(frame2, text = "Prediction and Explanation")
     exp_label.pack()
     Textbox = scrolledtext.ScrolledText(frame2, height = 5, width = 52)
     Textbox.pack()
@@ -121,6 +121,7 @@ def insert_reset_button(win):
     resetButton.pack()
 
 def transform_clause(og_clause):
+
     '''Transforms clause to natural language'''
 
     clause = list(set(og_clause))
