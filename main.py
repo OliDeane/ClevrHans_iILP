@@ -65,9 +65,8 @@ def define_object_types():
     return shape_categories, material_categories, color_categories,\
         size_categories, class_names
 
-def open_files():
+def open_files(output_filename = 'hans_aleph'):
 
-    output_filename = 'hans_aleph'
     output_directory = os.getcwd()
 
     os.makedirs(ROOT_DIR, exist_ok=True)
@@ -254,7 +253,7 @@ def get_relation_preds(centroidsX, centroidsY, full_oblist, eg_num, img_objects)
 
 def write_ground_truths(ilp_classes, f_file, n_file):
     for id in range(0,len(ilp_classes)):
-        if ilp_classes[id] == 'c0':
+        if ilp_classes[id] == 'c2':
             f_file.write(f"true_class(example_{id}).\n")
         else:
             n_file.write(f"true_class(example_{id}).\n")
@@ -303,6 +302,8 @@ if __name__ == "__main__":
     parser.add_argument("--model_path", "-MP", help="Path to pre-trained model", type=str, default='./trained_model/mask_rcnn_clevr_0030_allclasses.h5')
     parser.add_argument("--image_path", "-IP", help="Path to CLEVR-HANS images.", type=str, default= './temp_images')
     parser.add_argument("--colab_GPU", "-CGPU", help="State as true if running code on Google Colab (ensures use of colab GPU).", type=str, default= False)
+    parser.add_argument("--output_filename", "-OF", help="Name of ALEPH input files.", type=str, default= 'hans_aleph')
+
     args = parser.parse_args()
 
     os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' # supresses TF warnings
@@ -318,12 +319,12 @@ if __name__ == "__main__":
 
     if args.colab_GPU:
         with tf.device('/device:GPU:0'):
-            oblist, ilp_classe, centroids = inference(args.image_path, model, class_names)
+            oblist, ilp_classes, centroids = inference(args.image_path, model, class_names)
     else:
         oblist, ilp_classes, centroids = inference(args.image_path, model, class_names)
 
-    b_file, f_file, n_file, bk_file = open_files()
-    write_aleph_settings(b_file)
+    b_file, f_file, n_file, bk_file = open_files(output_filename=args.output_filename)
+    write_aleph_settings(b_file, output_filename=args.output_filename)
     attribute_dict = write_basic_preds(bk_file, color_categories, material_categories, size_categories, shape_categories)
     full_oblist = write_object_preds(bk_file, attribute_dict)
 
