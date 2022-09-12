@@ -92,6 +92,11 @@ def write_basic_preds(bk_file, color_categories, material_categories, size_categ
     bk_file.write(f":- discontiguous right_of/3.\n")
     bk_file.write(f":- discontiguous left_of/3.\n")
 
+    bk_file.write(f":- discontiguous in_front/3.\n")
+    bk_file.write(f":- discontiguous behind/3.\n")
+    bk_file.write(f":- discontiguous inline_X/3.\n")
+    bk_file.write(f":- discontiguous inline_Y/3.\n")
+
     bk_file.write("\n")
 
     for category in list(attribute_dict.keys()):
@@ -137,7 +142,7 @@ def write_object_preds(bk_file, attribute_dict):
 def write_img_facts(bk_file, full_oblist, oblist, centroids):
 
     example_count = 0
-    for img_objects, img_centroids in zip(oblist, centroids['X']):
+    for img_objects, img_centroids_x, img_centroids_y in zip(oblist, centroids['X'], centroids['Y']):
         bk_file.write("\n")
         example_id = f"example_{example_count}"
 
@@ -149,7 +154,7 @@ def write_img_facts(bk_file, full_oblist, oblist, centroids):
             object_id = f'oid_{object_idx}'
             bk_file.write(f"contains({object_id}, {example_id}).\n")
         
-        rel_preds = get_relation_preds(img_centroids, full_oblist, example_count, img_objects)
+        rel_preds = get_relation_preds(img_centroids_x, img_centroids_y, full_oblist, example_count, img_objects)
         for pred in rel_preds:
             bk_file.write(pred)
         
@@ -212,11 +217,12 @@ def inference(IMAGE_DIR, model, class_names):
     
     return oblist, ilp_classes, centroids
 
-def get_relation_preds(centroids, full_oblist, eg_num, img_objects):
+def get_relation_preds(centroidsX, centroidsY, full_oblist, eg_num, img_objects):
 
     rel_preds = []
-    for partner_idx in range(len(centroids)):
-        for reference_idx in range(len(centroids)):
+    for partner_idx in range(len(centroidsX)):
+        for reference_idx in range(len(centroidsX)):
+
             if partner_idx==reference_idx:
                 continue
             
@@ -226,13 +232,24 @@ def get_relation_preds(centroids, full_oblist, eg_num, img_objects):
             ref_id = full_oblist.index(img_objects[reference_idx].split())
             part_id = full_oblist.index(img_objects[partner_idx].split())
 
-            if centroids[partner_idx] > centroids[reference_idx]:
-                relation = 'right_of'
-            elif centroids[partner_idx] < centroids[reference_idx]:
-                relation = 'left_of'
+            if centroidsX[partner_idx] > centroidsX[reference_idx]:
+                x_relation = 'right_of'
+            elif centroidsX[partner_idx] < centroidsX[reference_idx]:
+                x_relation = 'left_of'
+            elif centroidsX[partner_idx] == centroidsX[reference_idx]:
+                x_relation = 'inline_X'
             
-            rel_preds.append(f'{relation}(oid_{ref_id}, oid_{part_id}, example_{eg_num}).\n')
-    
+            if centroidsY[partner_idx] > centroidsY[reference_idx]:
+                y_relation = 'in_front'            
+            elif centroidsY[partner_idx] < centroidsY[reference_idx]:
+                y_relation = 'behind'
+            elif centroidsY[partner_idx] == centroidsY[reference_idx]:
+                y_relation = 'inline_Y'
+
+            
+            rel_preds.append(f'{x_relation}(oid_{ref_id}, oid_{part_id}, example_{eg_num}).\n')
+            rel_preds.append(f'{y_relation}(oid_{ref_id}, oid_{part_id}, example_{eg_num}).\n')
+
     return rel_preds
 
 def write_ground_truths(ilp_classes, f_file, n_file):
@@ -279,7 +296,6 @@ def write_aleph_settings(b_file, features = ['shape','material','color','size'],
     b_file.write(":- set(noise,10).\n")
     b_file.write(":- set(clauselength, 20).\n")
     b_file.write(f":- consult('{output_filename + '.bk'}').")
-
 
 if __name__ == "__main__":
 

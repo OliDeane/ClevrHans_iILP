@@ -1,0 +1,4229 @@
+:- discontiguous has_color/2.
+:- discontiguous has_material/2.
+:- discontiguous has_size/2.
+:- discontiguous has_shape/2.
+:- discontiguous contains/2.
+:- discontiguous right_of/3.
+:- discontiguous left_of/3.
+:- discontiguous in_front/3.
+:- discontiguous behind/3.
+:- discontiguous inline_X/3.
+:- discontiguous inline_Y/3.
+
+color(gray).
+color(blue).
+color(brown).
+color(yellow).
+color(red).
+color(green).
+color(purple).
+color(cyan).
+material(rubber).
+material(metal).
+size(small).
+size(large).
+shape(cube).
+shape(sphere).
+shape(cylinder).
+
+has_shape(oid_0, cube).
+has_material(oid_0, rubber).
+has_color(oid_0, gray).
+has_size(oid_0, small).
+
+has_shape(oid_1, cube).
+has_material(oid_1, rubber).
+has_color(oid_1, gray).
+has_size(oid_1, large).
+
+has_shape(oid_2, cube).
+has_material(oid_2, rubber).
+has_color(oid_2, blue).
+has_size(oid_2, small).
+
+has_shape(oid_3, cube).
+has_material(oid_3, rubber).
+has_color(oid_3, blue).
+has_size(oid_3, large).
+
+has_shape(oid_4, cube).
+has_material(oid_4, rubber).
+has_color(oid_4, brown).
+has_size(oid_4, small).
+
+has_shape(oid_5, cube).
+has_material(oid_5, rubber).
+has_color(oid_5, brown).
+has_size(oid_5, large).
+
+has_shape(oid_6, cube).
+has_material(oid_6, rubber).
+has_color(oid_6, yellow).
+has_size(oid_6, small).
+
+has_shape(oid_7, cube).
+has_material(oid_7, rubber).
+has_color(oid_7, yellow).
+has_size(oid_7, large).
+
+has_shape(oid_8, cube).
+has_material(oid_8, rubber).
+has_color(oid_8, red).
+has_size(oid_8, small).
+
+has_shape(oid_9, cube).
+has_material(oid_9, rubber).
+has_color(oid_9, red).
+has_size(oid_9, large).
+
+has_shape(oid_10, cube).
+has_material(oid_10, rubber).
+has_color(oid_10, green).
+has_size(oid_10, small).
+
+has_shape(oid_11, cube).
+has_material(oid_11, rubber).
+has_color(oid_11, green).
+has_size(oid_11, large).
+
+has_shape(oid_12, cube).
+has_material(oid_12, rubber).
+has_color(oid_12, purple).
+has_size(oid_12, small).
+
+has_shape(oid_13, cube).
+has_material(oid_13, rubber).
+has_color(oid_13, purple).
+has_size(oid_13, large).
+
+has_shape(oid_14, cube).
+has_material(oid_14, rubber).
+has_color(oid_14, cyan).
+has_size(oid_14, small).
+
+has_shape(oid_15, cube).
+has_material(oid_15, rubber).
+has_color(oid_15, cyan).
+has_size(oid_15, large).
+
+has_shape(oid_16, cube).
+has_material(oid_16, metal).
+has_color(oid_16, gray).
+has_size(oid_16, small).
+
+has_shape(oid_17, cube).
+has_material(oid_17, metal).
+has_color(oid_17, gray).
+has_size(oid_17, large).
+
+has_shape(oid_18, cube).
+has_material(oid_18, metal).
+has_color(oid_18, blue).
+has_size(oid_18, small).
+
+has_shape(oid_19, cube).
+has_material(oid_19, metal).
+has_color(oid_19, blue).
+has_size(oid_19, large).
+
+has_shape(oid_20, cube).
+has_material(oid_20, metal).
+has_color(oid_20, brown).
+has_size(oid_20, small).
+
+has_shape(oid_21, cube).
+has_material(oid_21, metal).
+has_color(oid_21, brown).
+has_size(oid_21, large).
+
+has_shape(oid_22, cube).
+has_material(oid_22, metal).
+has_color(oid_22, yellow).
+has_size(oid_22, small).
+
+has_shape(oid_23, cube).
+has_material(oid_23, metal).
+has_color(oid_23, yellow).
+has_size(oid_23, large).
+
+has_shape(oid_24, cube).
+has_material(oid_24, metal).
+has_color(oid_24, red).
+has_size(oid_24, small).
+
+has_shape(oid_25, cube).
+has_material(oid_25, metal).
+has_color(oid_25, red).
+has_size(oid_25, large).
+
+has_shape(oid_26, cube).
+has_material(oid_26, metal).
+has_color(oid_26, green).
+has_size(oid_26, small).
+
+has_shape(oid_27, cube).
+has_material(oid_27, metal).
+has_color(oid_27, green).
+has_size(oid_27, large).
+
+has_shape(oid_28, cube).
+has_material(oid_28, metal).
+has_color(oid_28, purple).
+has_size(oid_28, small).
+
+has_shape(oid_29, cube).
+has_material(oid_29, metal).
+has_color(oid_29, purple).
+has_size(oid_29, large).
+
+has_shape(oid_30, cube).
+has_material(oid_30, metal).
+has_color(oid_30, cyan).
+has_size(oid_30, small).
+
+has_shape(oid_31, cube).
+has_material(oid_31, metal).
+has_color(oid_31, cyan).
+has_size(oid_31, large).
+
+has_shape(oid_32, sphere).
+has_material(oid_32, rubber).
+has_color(oid_32, gray).
+has_size(oid_32, small).
+
+has_shape(oid_33, sphere).
+has_material(oid_33, rubber).
+has_color(oid_33, gray).
+has_size(oid_33, large).
+
+has_shape(oid_34, sphere).
+has_material(oid_34, rubber).
+has_color(oid_34, blue).
+has_size(oid_34, small).
+
+has_shape(oid_35, sphere).
+has_material(oid_35, rubber).
+has_color(oid_35, blue).
+has_size(oid_35, large).
+
+has_shape(oid_36, sphere).
+has_material(oid_36, rubber).
+has_color(oid_36, brown).
+has_size(oid_36, small).
+
+has_shape(oid_37, sphere).
+has_material(oid_37, rubber).
+has_color(oid_37, brown).
+has_size(oid_37, large).
+
+has_shape(oid_38, sphere).
+has_material(oid_38, rubber).
+has_color(oid_38, yellow).
+has_size(oid_38, small).
+
+has_shape(oid_39, sphere).
+has_material(oid_39, rubber).
+has_color(oid_39, yellow).
+has_size(oid_39, large).
+
+has_shape(oid_40, sphere).
+has_material(oid_40, rubber).
+has_color(oid_40, red).
+has_size(oid_40, small).
+
+has_shape(oid_41, sphere).
+has_material(oid_41, rubber).
+has_color(oid_41, red).
+has_size(oid_41, large).
+
+has_shape(oid_42, sphere).
+has_material(oid_42, rubber).
+has_color(oid_42, green).
+has_size(oid_42, small).
+
+has_shape(oid_43, sphere).
+has_material(oid_43, rubber).
+has_color(oid_43, green).
+has_size(oid_43, large).
+
+has_shape(oid_44, sphere).
+has_material(oid_44, rubber).
+has_color(oid_44, purple).
+has_size(oid_44, small).
+
+has_shape(oid_45, sphere).
+has_material(oid_45, rubber).
+has_color(oid_45, purple).
+has_size(oid_45, large).
+
+has_shape(oid_46, sphere).
+has_material(oid_46, rubber).
+has_color(oid_46, cyan).
+has_size(oid_46, small).
+
+has_shape(oid_47, sphere).
+has_material(oid_47, rubber).
+has_color(oid_47, cyan).
+has_size(oid_47, large).
+
+has_shape(oid_48, sphere).
+has_material(oid_48, metal).
+has_color(oid_48, gray).
+has_size(oid_48, small).
+
+has_shape(oid_49, sphere).
+has_material(oid_49, metal).
+has_color(oid_49, gray).
+has_size(oid_49, large).
+
+has_shape(oid_50, sphere).
+has_material(oid_50, metal).
+has_color(oid_50, blue).
+has_size(oid_50, small).
+
+has_shape(oid_51, sphere).
+has_material(oid_51, metal).
+has_color(oid_51, blue).
+has_size(oid_51, large).
+
+has_shape(oid_52, sphere).
+has_material(oid_52, metal).
+has_color(oid_52, brown).
+has_size(oid_52, small).
+
+has_shape(oid_53, sphere).
+has_material(oid_53, metal).
+has_color(oid_53, brown).
+has_size(oid_53, large).
+
+has_shape(oid_54, sphere).
+has_material(oid_54, metal).
+has_color(oid_54, yellow).
+has_size(oid_54, small).
+
+has_shape(oid_55, sphere).
+has_material(oid_55, metal).
+has_color(oid_55, yellow).
+has_size(oid_55, large).
+
+has_shape(oid_56, sphere).
+has_material(oid_56, metal).
+has_color(oid_56, red).
+has_size(oid_56, small).
+
+has_shape(oid_57, sphere).
+has_material(oid_57, metal).
+has_color(oid_57, red).
+has_size(oid_57, large).
+
+has_shape(oid_58, sphere).
+has_material(oid_58, metal).
+has_color(oid_58, green).
+has_size(oid_58, small).
+
+has_shape(oid_59, sphere).
+has_material(oid_59, metal).
+has_color(oid_59, green).
+has_size(oid_59, large).
+
+has_shape(oid_60, sphere).
+has_material(oid_60, metal).
+has_color(oid_60, purple).
+has_size(oid_60, small).
+
+has_shape(oid_61, sphere).
+has_material(oid_61, metal).
+has_color(oid_61, purple).
+has_size(oid_61, large).
+
+has_shape(oid_62, sphere).
+has_material(oid_62, metal).
+has_color(oid_62, cyan).
+has_size(oid_62, small).
+
+has_shape(oid_63, sphere).
+has_material(oid_63, metal).
+has_color(oid_63, cyan).
+has_size(oid_63, large).
+
+has_shape(oid_64, cylinder).
+has_material(oid_64, rubber).
+has_color(oid_64, gray).
+has_size(oid_64, small).
+
+has_shape(oid_65, cylinder).
+has_material(oid_65, rubber).
+has_color(oid_65, gray).
+has_size(oid_65, large).
+
+has_shape(oid_66, cylinder).
+has_material(oid_66, rubber).
+has_color(oid_66, blue).
+has_size(oid_66, small).
+
+has_shape(oid_67, cylinder).
+has_material(oid_67, rubber).
+has_color(oid_67, blue).
+has_size(oid_67, large).
+
+has_shape(oid_68, cylinder).
+has_material(oid_68, rubber).
+has_color(oid_68, brown).
+has_size(oid_68, small).
+
+has_shape(oid_69, cylinder).
+has_material(oid_69, rubber).
+has_color(oid_69, brown).
+has_size(oid_69, large).
+
+has_shape(oid_70, cylinder).
+has_material(oid_70, rubber).
+has_color(oid_70, yellow).
+has_size(oid_70, small).
+
+has_shape(oid_71, cylinder).
+has_material(oid_71, rubber).
+has_color(oid_71, yellow).
+has_size(oid_71, large).
+
+has_shape(oid_72, cylinder).
+has_material(oid_72, rubber).
+has_color(oid_72, red).
+has_size(oid_72, small).
+
+has_shape(oid_73, cylinder).
+has_material(oid_73, rubber).
+has_color(oid_73, red).
+has_size(oid_73, large).
+
+has_shape(oid_74, cylinder).
+has_material(oid_74, rubber).
+has_color(oid_74, green).
+has_size(oid_74, small).
+
+has_shape(oid_75, cylinder).
+has_material(oid_75, rubber).
+has_color(oid_75, green).
+has_size(oid_75, large).
+
+has_shape(oid_76, cylinder).
+has_material(oid_76, rubber).
+has_color(oid_76, purple).
+has_size(oid_76, small).
+
+has_shape(oid_77, cylinder).
+has_material(oid_77, rubber).
+has_color(oid_77, purple).
+has_size(oid_77, large).
+
+has_shape(oid_78, cylinder).
+has_material(oid_78, rubber).
+has_color(oid_78, cyan).
+has_size(oid_78, small).
+
+has_shape(oid_79, cylinder).
+has_material(oid_79, rubber).
+has_color(oid_79, cyan).
+has_size(oid_79, large).
+
+has_shape(oid_80, cylinder).
+has_material(oid_80, metal).
+has_color(oid_80, gray).
+has_size(oid_80, small).
+
+has_shape(oid_81, cylinder).
+has_material(oid_81, metal).
+has_color(oid_81, gray).
+has_size(oid_81, large).
+
+has_shape(oid_82, cylinder).
+has_material(oid_82, metal).
+has_color(oid_82, blue).
+has_size(oid_82, small).
+
+has_shape(oid_83, cylinder).
+has_material(oid_83, metal).
+has_color(oid_83, blue).
+has_size(oid_83, large).
+
+has_shape(oid_84, cylinder).
+has_material(oid_84, metal).
+has_color(oid_84, brown).
+has_size(oid_84, small).
+
+has_shape(oid_85, cylinder).
+has_material(oid_85, metal).
+has_color(oid_85, brown).
+has_size(oid_85, large).
+
+has_shape(oid_86, cylinder).
+has_material(oid_86, metal).
+has_color(oid_86, yellow).
+has_size(oid_86, small).
+
+has_shape(oid_87, cylinder).
+has_material(oid_87, metal).
+has_color(oid_87, yellow).
+has_size(oid_87, large).
+
+has_shape(oid_88, cylinder).
+has_material(oid_88, metal).
+has_color(oid_88, red).
+has_size(oid_88, small).
+
+has_shape(oid_89, cylinder).
+has_material(oid_89, metal).
+has_color(oid_89, red).
+has_size(oid_89, large).
+
+has_shape(oid_90, cylinder).
+has_material(oid_90, metal).
+has_color(oid_90, green).
+has_size(oid_90, small).
+
+has_shape(oid_91, cylinder).
+has_material(oid_91, metal).
+has_color(oid_91, green).
+has_size(oid_91, large).
+
+has_shape(oid_92, cylinder).
+has_material(oid_92, metal).
+has_color(oid_92, purple).
+has_size(oid_92, small).
+
+has_shape(oid_93, cylinder).
+has_material(oid_93, metal).
+has_color(oid_93, purple).
+has_size(oid_93, large).
+
+has_shape(oid_94, cylinder).
+has_material(oid_94, metal).
+has_color(oid_94, cyan).
+has_size(oid_94, small).
+
+has_shape(oid_95, cylinder).
+has_material(oid_95, metal).
+has_color(oid_95, cyan).
+has_size(oid_95, large).
+
+
+contains(oid_55, example_0).
+contains(oid_36, example_0).
+contains(oid_6, example_0).
+contains(oid_93, example_0).
+contains(oid_84, example_0).
+contains(oid_50, example_0).
+contains(oid_68, example_0).
+contains(oid_86, example_0).
+contains(oid_1, example_0).
+left_of(oid_36, oid_55, example_0).
+in_front(oid_36, oid_55, example_0).
+left_of(oid_6, oid_55, example_0).
+behind(oid_6, oid_55, example_0).
+left_of(oid_93, oid_55, example_0).
+behind(oid_93, oid_55, example_0).
+left_of(oid_84, oid_55, example_0).
+behind(oid_84, oid_55, example_0).
+left_of(oid_50, oid_55, example_0).
+in_front(oid_50, oid_55, example_0).
+left_of(oid_68, oid_55, example_0).
+behind(oid_68, oid_55, example_0).
+left_of(oid_86, oid_55, example_0).
+behind(oid_86, oid_55, example_0).
+left_of(oid_1, oid_55, example_0).
+behind(oid_1, oid_55, example_0).
+right_of(oid_55, oid_36, example_0).
+behind(oid_55, oid_36, example_0).
+right_of(oid_6, oid_36, example_0).
+behind(oid_6, oid_36, example_0).
+right_of(oid_93, oid_36, example_0).
+behind(oid_93, oid_36, example_0).
+left_of(oid_84, oid_36, example_0).
+behind(oid_84, oid_36, example_0).
+left_of(oid_50, oid_36, example_0).
+behind(oid_50, oid_36, example_0).
+right_of(oid_68, oid_36, example_0).
+behind(oid_68, oid_36, example_0).
+right_of(oid_86, oid_36, example_0).
+behind(oid_86, oid_36, example_0).
+left_of(oid_1, oid_36, example_0).
+behind(oid_1, oid_36, example_0).
+right_of(oid_55, oid_6, example_0).
+in_front(oid_55, oid_6, example_0).
+left_of(oid_36, oid_6, example_0).
+in_front(oid_36, oid_6, example_0).
+left_of(oid_93, oid_6, example_0).
+behind(oid_93, oid_6, example_0).
+left_of(oid_84, oid_6, example_0).
+behind(oid_84, oid_6, example_0).
+left_of(oid_50, oid_6, example_0).
+in_front(oid_50, oid_6, example_0).
+left_of(oid_68, oid_6, example_0).
+behind(oid_68, oid_6, example_0).
+right_of(oid_86, oid_6, example_0).
+behind(oid_86, oid_6, example_0).
+left_of(oid_1, oid_6, example_0).
+behind(oid_1, oid_6, example_0).
+right_of(oid_55, oid_93, example_0).
+in_front(oid_55, oid_93, example_0).
+left_of(oid_36, oid_93, example_0).
+in_front(oid_36, oid_93, example_0).
+right_of(oid_6, oid_93, example_0).
+in_front(oid_6, oid_93, example_0).
+left_of(oid_84, oid_93, example_0).
+in_front(oid_84, oid_93, example_0).
+left_of(oid_50, oid_93, example_0).
+in_front(oid_50, oid_93, example_0).
+right_of(oid_68, oid_93, example_0).
+in_front(oid_68, oid_93, example_0).
+right_of(oid_86, oid_93, example_0).
+in_front(oid_86, oid_93, example_0).
+left_of(oid_1, oid_93, example_0).
+in_front(oid_1, oid_93, example_0).
+right_of(oid_55, oid_84, example_0).
+in_front(oid_55, oid_84, example_0).
+right_of(oid_36, oid_84, example_0).
+in_front(oid_36, oid_84, example_0).
+right_of(oid_6, oid_84, example_0).
+in_front(oid_6, oid_84, example_0).
+right_of(oid_93, oid_84, example_0).
+behind(oid_93, oid_84, example_0).
+right_of(oid_50, oid_84, example_0).
+in_front(oid_50, oid_84, example_0).
+right_of(oid_68, oid_84, example_0).
+in_front(oid_68, oid_84, example_0).
+right_of(oid_86, oid_84, example_0).
+in_front(oid_86, oid_84, example_0).
+left_of(oid_1, oid_84, example_0).
+in_front(oid_1, oid_84, example_0).
+right_of(oid_55, oid_50, example_0).
+behind(oid_55, oid_50, example_0).
+right_of(oid_36, oid_50, example_0).
+in_front(oid_36, oid_50, example_0).
+right_of(oid_6, oid_50, example_0).
+behind(oid_6, oid_50, example_0).
+right_of(oid_93, oid_50, example_0).
+behind(oid_93, oid_50, example_0).
+left_of(oid_84, oid_50, example_0).
+behind(oid_84, oid_50, example_0).
+right_of(oid_68, oid_50, example_0).
+behind(oid_68, oid_50, example_0).
+right_of(oid_86, oid_50, example_0).
+behind(oid_86, oid_50, example_0).
+left_of(oid_1, oid_50, example_0).
+behind(oid_1, oid_50, example_0).
+right_of(oid_55, oid_68, example_0).
+in_front(oid_55, oid_68, example_0).
+left_of(oid_36, oid_68, example_0).
+in_front(oid_36, oid_68, example_0).
+right_of(oid_6, oid_68, example_0).
+in_front(oid_6, oid_68, example_0).
+left_of(oid_93, oid_68, example_0).
+behind(oid_93, oid_68, example_0).
+left_of(oid_84, oid_68, example_0).
+behind(oid_84, oid_68, example_0).
+left_of(oid_50, oid_68, example_0).
+in_front(oid_50, oid_68, example_0).
+right_of(oid_86, oid_68, example_0).
+behind(oid_86, oid_68, example_0).
+left_of(oid_1, oid_68, example_0).
+in_front(oid_1, oid_68, example_0).
+right_of(oid_55, oid_86, example_0).
+in_front(oid_55, oid_86, example_0).
+left_of(oid_36, oid_86, example_0).
+in_front(oid_36, oid_86, example_0).
+left_of(oid_6, oid_86, example_0).
+in_front(oid_6, oid_86, example_0).
+left_of(oid_93, oid_86, example_0).
+behind(oid_93, oid_86, example_0).
+left_of(oid_84, oid_86, example_0).
+behind(oid_84, oid_86, example_0).
+left_of(oid_50, oid_86, example_0).
+in_front(oid_50, oid_86, example_0).
+left_of(oid_68, oid_86, example_0).
+in_front(oid_68, oid_86, example_0).
+left_of(oid_1, oid_86, example_0).
+in_front(oid_1, oid_86, example_0).
+right_of(oid_55, oid_1, example_0).
+in_front(oid_55, oid_1, example_0).
+right_of(oid_36, oid_1, example_0).
+in_front(oid_36, oid_1, example_0).
+right_of(oid_6, oid_1, example_0).
+in_front(oid_6, oid_1, example_0).
+right_of(oid_93, oid_1, example_0).
+behind(oid_93, oid_1, example_0).
+right_of(oid_84, oid_1, example_0).
+behind(oid_84, oid_1, example_0).
+right_of(oid_50, oid_1, example_0).
+in_front(oid_50, oid_1, example_0).
+right_of(oid_68, oid_1, example_0).
+behind(oid_68, oid_1, example_0).
+right_of(oid_86, oid_1, example_0).
+behind(oid_86, oid_1, example_0).
+
+contains(oid_38, example_1).
+contains(oid_4, example_1).
+contains(oid_69, example_1).
+contains(oid_45, example_1).
+contains(oid_12, example_1).
+contains(oid_38, example_1).
+contains(oid_17, example_1).
+contains(oid_8, example_1).
+left_of(oid_4, oid_38, example_1).
+behind(oid_4, oid_38, example_1).
+left_of(oid_69, oid_38, example_1).
+in_front(oid_69, oid_38, example_1).
+left_of(oid_45, oid_38, example_1).
+behind(oid_45, oid_38, example_1).
+left_of(oid_12, oid_38, example_1).
+behind(oid_12, oid_38, example_1).
+left_of(oid_38, oid_38, example_1).
+in_front(oid_38, oid_38, example_1).
+left_of(oid_17, oid_38, example_1).
+behind(oid_17, oid_38, example_1).
+left_of(oid_8, oid_38, example_1).
+in_front(oid_8, oid_38, example_1).
+right_of(oid_38, oid_4, example_1).
+in_front(oid_38, oid_4, example_1).
+right_of(oid_69, oid_4, example_1).
+in_front(oid_69, oid_4, example_1).
+right_of(oid_45, oid_4, example_1).
+behind(oid_45, oid_4, example_1).
+left_of(oid_12, oid_4, example_1).
+behind(oid_12, oid_4, example_1).
+right_of(oid_38, oid_4, example_1).
+in_front(oid_38, oid_4, example_1).
+right_of(oid_17, oid_4, example_1).
+behind(oid_17, oid_4, example_1).
+right_of(oid_8, oid_4, example_1).
+in_front(oid_8, oid_4, example_1).
+right_of(oid_38, oid_69, example_1).
+behind(oid_38, oid_69, example_1).
+left_of(oid_4, oid_69, example_1).
+behind(oid_4, oid_69, example_1).
+left_of(oid_45, oid_69, example_1).
+behind(oid_45, oid_69, example_1).
+left_of(oid_12, oid_69, example_1).
+behind(oid_12, oid_69, example_1).
+left_of(oid_38, oid_69, example_1).
+in_front(oid_38, oid_69, example_1).
+left_of(oid_17, oid_69, example_1).
+behind(oid_17, oid_69, example_1).
+left_of(oid_8, oid_69, example_1).
+in_front(oid_8, oid_69, example_1).
+right_of(oid_38, oid_45, example_1).
+in_front(oid_38, oid_45, example_1).
+left_of(oid_4, oid_45, example_1).
+in_front(oid_4, oid_45, example_1).
+right_of(oid_69, oid_45, example_1).
+in_front(oid_69, oid_45, example_1).
+left_of(oid_12, oid_45, example_1).
+in_front(oid_12, oid_45, example_1).
+left_of(oid_38, oid_45, example_1).
+in_front(oid_38, oid_45, example_1).
+left_of(oid_17, oid_45, example_1).
+in_front(oid_17, oid_45, example_1).
+left_of(oid_8, oid_45, example_1).
+in_front(oid_8, oid_45, example_1).
+right_of(oid_38, oid_12, example_1).
+in_front(oid_38, oid_12, example_1).
+right_of(oid_4, oid_12, example_1).
+in_front(oid_4, oid_12, example_1).
+right_of(oid_69, oid_12, example_1).
+in_front(oid_69, oid_12, example_1).
+right_of(oid_45, oid_12, example_1).
+behind(oid_45, oid_12, example_1).
+right_of(oid_38, oid_12, example_1).
+in_front(oid_38, oid_12, example_1).
+right_of(oid_17, oid_12, example_1).
+behind(oid_17, oid_12, example_1).
+right_of(oid_8, oid_12, example_1).
+in_front(oid_8, oid_12, example_1).
+right_of(oid_38, oid_38, example_1).
+behind(oid_38, oid_38, example_1).
+left_of(oid_4, oid_38, example_1).
+behind(oid_4, oid_38, example_1).
+right_of(oid_69, oid_38, example_1).
+behind(oid_69, oid_38, example_1).
+right_of(oid_45, oid_38, example_1).
+behind(oid_45, oid_38, example_1).
+left_of(oid_12, oid_38, example_1).
+behind(oid_12, oid_38, example_1).
+right_of(oid_17, oid_38, example_1).
+behind(oid_17, oid_38, example_1).
+right_of(oid_8, oid_38, example_1).
+in_front(oid_8, oid_38, example_1).
+right_of(oid_38, oid_17, example_1).
+in_front(oid_38, oid_17, example_1).
+left_of(oid_4, oid_17, example_1).
+in_front(oid_4, oid_17, example_1).
+right_of(oid_69, oid_17, example_1).
+in_front(oid_69, oid_17, example_1).
+right_of(oid_45, oid_17, example_1).
+behind(oid_45, oid_17, example_1).
+left_of(oid_12, oid_17, example_1).
+in_front(oid_12, oid_17, example_1).
+left_of(oid_38, oid_17, example_1).
+in_front(oid_38, oid_17, example_1).
+left_of(oid_8, oid_17, example_1).
+in_front(oid_8, oid_17, example_1).
+right_of(oid_38, oid_8, example_1).
+behind(oid_38, oid_8, example_1).
+left_of(oid_4, oid_8, example_1).
+behind(oid_4, oid_8, example_1).
+right_of(oid_69, oid_8, example_1).
+behind(oid_69, oid_8, example_1).
+right_of(oid_45, oid_8, example_1).
+behind(oid_45, oid_8, example_1).
+left_of(oid_12, oid_8, example_1).
+behind(oid_12, oid_8, example_1).
+left_of(oid_38, oid_8, example_1).
+behind(oid_38, oid_8, example_1).
+right_of(oid_17, oid_8, example_1).
+behind(oid_17, oid_8, example_1).
+
+contains(oid_57, example_2).
+contains(oid_75, example_2).
+contains(oid_32, example_2).
+contains(oid_38, example_2).
+contains(oid_90, example_2).
+contains(oid_1, example_2).
+left_of(oid_75, oid_57, example_2).
+in_front(oid_75, oid_57, example_2).
+left_of(oid_32, oid_57, example_2).
+in_front(oid_32, oid_57, example_2).
+left_of(oid_38, oid_57, example_2).
+in_front(oid_38, oid_57, example_2).
+left_of(oid_90, oid_57, example_2).
+in_front(oid_90, oid_57, example_2).
+left_of(oid_1, oid_57, example_2).
+in_front(oid_1, oid_57, example_2).
+right_of(oid_57, oid_75, example_2).
+behind(oid_57, oid_75, example_2).
+right_of(oid_32, oid_75, example_2).
+in_front(oid_32, oid_75, example_2).
+left_of(oid_38, oid_75, example_2).
+in_front(oid_38, oid_75, example_2).
+left_of(oid_90, oid_75, example_2).
+in_front(oid_90, oid_75, example_2).
+right_of(oid_1, oid_75, example_2).
+in_front(oid_1, oid_75, example_2).
+right_of(oid_57, oid_32, example_2).
+behind(oid_57, oid_32, example_2).
+left_of(oid_75, oid_32, example_2).
+behind(oid_75, oid_32, example_2).
+left_of(oid_38, oid_32, example_2).
+behind(oid_38, oid_32, example_2).
+left_of(oid_90, oid_32, example_2).
+behind(oid_90, oid_32, example_2).
+left_of(oid_1, oid_32, example_2).
+in_front(oid_1, oid_32, example_2).
+right_of(oid_57, oid_38, example_2).
+behind(oid_57, oid_38, example_2).
+right_of(oid_75, oid_38, example_2).
+behind(oid_75, oid_38, example_2).
+right_of(oid_32, oid_38, example_2).
+in_front(oid_32, oid_38, example_2).
+left_of(oid_90, oid_38, example_2).
+behind(oid_90, oid_38, example_2).
+right_of(oid_1, oid_38, example_2).
+in_front(oid_1, oid_38, example_2).
+right_of(oid_57, oid_90, example_2).
+behind(oid_57, oid_90, example_2).
+right_of(oid_75, oid_90, example_2).
+behind(oid_75, oid_90, example_2).
+right_of(oid_32, oid_90, example_2).
+in_front(oid_32, oid_90, example_2).
+right_of(oid_38, oid_90, example_2).
+in_front(oid_38, oid_90, example_2).
+right_of(oid_1, oid_90, example_2).
+in_front(oid_1, oid_90, example_2).
+right_of(oid_57, oid_1, example_2).
+behind(oid_57, oid_1, example_2).
+left_of(oid_75, oid_1, example_2).
+behind(oid_75, oid_1, example_2).
+right_of(oid_32, oid_1, example_2).
+behind(oid_32, oid_1, example_2).
+left_of(oid_38, oid_1, example_2).
+behind(oid_38, oid_1, example_2).
+left_of(oid_90, oid_1, example_2).
+behind(oid_90, oid_1, example_2).
+
+contains(oid_14, example_3).
+contains(oid_51, example_3).
+contains(oid_91, example_3).
+contains(oid_1, example_3).
+contains(oid_78, example_3).
+contains(oid_49, example_3).
+contains(oid_40, example_3).
+contains(oid_34, example_3).
+contains(oid_14, example_3).
+right_of(oid_51, oid_14, example_3).
+inline_Y(oid_51, oid_14, example_3).
+left_of(oid_91, oid_14, example_3).
+behind(oid_91, oid_14, example_3).
+right_of(oid_1, oid_14, example_3).
+behind(oid_1, oid_14, example_3).
+right_of(oid_78, oid_14, example_3).
+behind(oid_78, oid_14, example_3).
+right_of(oid_49, oid_14, example_3).
+in_front(oid_49, oid_14, example_3).
+right_of(oid_40, oid_14, example_3).
+in_front(oid_40, oid_14, example_3).
+right_of(oid_34, oid_14, example_3).
+in_front(oid_34, oid_14, example_3).
+right_of(oid_14, oid_14, example_3).
+behind(oid_14, oid_14, example_3).
+left_of(oid_14, oid_51, example_3).
+inline_Y(oid_14, oid_51, example_3).
+left_of(oid_91, oid_51, example_3).
+behind(oid_91, oid_51, example_3).
+left_of(oid_1, oid_51, example_3).
+behind(oid_1, oid_51, example_3).
+left_of(oid_78, oid_51, example_3).
+behind(oid_78, oid_51, example_3).
+left_of(oid_49, oid_51, example_3).
+in_front(oid_49, oid_51, example_3).
+left_of(oid_40, oid_51, example_3).
+in_front(oid_40, oid_51, example_3).
+left_of(oid_34, oid_51, example_3).
+in_front(oid_34, oid_51, example_3).
+left_of(oid_14, oid_51, example_3).
+behind(oid_14, oid_51, example_3).
+right_of(oid_14, oid_91, example_3).
+in_front(oid_14, oid_91, example_3).
+right_of(oid_51, oid_91, example_3).
+in_front(oid_51, oid_91, example_3).
+right_of(oid_1, oid_91, example_3).
+behind(oid_1, oid_91, example_3).
+right_of(oid_78, oid_91, example_3).
+behind(oid_78, oid_91, example_3).
+right_of(oid_49, oid_91, example_3).
+in_front(oid_49, oid_91, example_3).
+right_of(oid_40, oid_91, example_3).
+in_front(oid_40, oid_91, example_3).
+right_of(oid_34, oid_91, example_3).
+in_front(oid_34, oid_91, example_3).
+right_of(oid_14, oid_91, example_3).
+behind(oid_14, oid_91, example_3).
+left_of(oid_14, oid_1, example_3).
+in_front(oid_14, oid_1, example_3).
+right_of(oid_51, oid_1, example_3).
+in_front(oid_51, oid_1, example_3).
+left_of(oid_91, oid_1, example_3).
+in_front(oid_91, oid_1, example_3).
+left_of(oid_78, oid_1, example_3).
+behind(oid_78, oid_1, example_3).
+left_of(oid_49, oid_1, example_3).
+in_front(oid_49, oid_1, example_3).
+left_of(oid_40, oid_1, example_3).
+in_front(oid_40, oid_1, example_3).
+left_of(oid_34, oid_1, example_3).
+in_front(oid_34, oid_1, example_3).
+left_of(oid_14, oid_1, example_3).
+behind(oid_14, oid_1, example_3).
+left_of(oid_14, oid_78, example_3).
+in_front(oid_14, oid_78, example_3).
+right_of(oid_51, oid_78, example_3).
+in_front(oid_51, oid_78, example_3).
+left_of(oid_91, oid_78, example_3).
+in_front(oid_91, oid_78, example_3).
+right_of(oid_1, oid_78, example_3).
+in_front(oid_1, oid_78, example_3).
+right_of(oid_49, oid_78, example_3).
+in_front(oid_49, oid_78, example_3).
+left_of(oid_40, oid_78, example_3).
+in_front(oid_40, oid_78, example_3).
+left_of(oid_34, oid_78, example_3).
+in_front(oid_34, oid_78, example_3).
+right_of(oid_14, oid_78, example_3).
+in_front(oid_14, oid_78, example_3).
+left_of(oid_14, oid_49, example_3).
+behind(oid_14, oid_49, example_3).
+right_of(oid_51, oid_49, example_3).
+behind(oid_51, oid_49, example_3).
+left_of(oid_91, oid_49, example_3).
+behind(oid_91, oid_49, example_3).
+right_of(oid_1, oid_49, example_3).
+behind(oid_1, oid_49, example_3).
+left_of(oid_78, oid_49, example_3).
+behind(oid_78, oid_49, example_3).
+left_of(oid_40, oid_49, example_3).
+in_front(oid_40, oid_49, example_3).
+left_of(oid_34, oid_49, example_3).
+behind(oid_34, oid_49, example_3).
+right_of(oid_14, oid_49, example_3).
+behind(oid_14, oid_49, example_3).
+left_of(oid_14, oid_40, example_3).
+behind(oid_14, oid_40, example_3).
+right_of(oid_51, oid_40, example_3).
+behind(oid_51, oid_40, example_3).
+left_of(oid_91, oid_40, example_3).
+behind(oid_91, oid_40, example_3).
+right_of(oid_1, oid_40, example_3).
+behind(oid_1, oid_40, example_3).
+right_of(oid_78, oid_40, example_3).
+behind(oid_78, oid_40, example_3).
+right_of(oid_49, oid_40, example_3).
+behind(oid_49, oid_40, example_3).
+left_of(oid_34, oid_40, example_3).
+behind(oid_34, oid_40, example_3).
+right_of(oid_14, oid_40, example_3).
+behind(oid_14, oid_40, example_3).
+left_of(oid_14, oid_34, example_3).
+behind(oid_14, oid_34, example_3).
+right_of(oid_51, oid_34, example_3).
+behind(oid_51, oid_34, example_3).
+left_of(oid_91, oid_34, example_3).
+behind(oid_91, oid_34, example_3).
+right_of(oid_1, oid_34, example_3).
+behind(oid_1, oid_34, example_3).
+right_of(oid_78, oid_34, example_3).
+behind(oid_78, oid_34, example_3).
+right_of(oid_49, oid_34, example_3).
+in_front(oid_49, oid_34, example_3).
+right_of(oid_40, oid_34, example_3).
+in_front(oid_40, oid_34, example_3).
+right_of(oid_14, oid_34, example_3).
+behind(oid_14, oid_34, example_3).
+left_of(oid_14, oid_14, example_3).
+in_front(oid_14, oid_14, example_3).
+right_of(oid_51, oid_14, example_3).
+in_front(oid_51, oid_14, example_3).
+left_of(oid_91, oid_14, example_3).
+in_front(oid_91, oid_14, example_3).
+right_of(oid_1, oid_14, example_3).
+in_front(oid_1, oid_14, example_3).
+left_of(oid_78, oid_14, example_3).
+behind(oid_78, oid_14, example_3).
+left_of(oid_49, oid_14, example_3).
+in_front(oid_49, oid_14, example_3).
+left_of(oid_40, oid_14, example_3).
+in_front(oid_40, oid_14, example_3).
+left_of(oid_34, oid_14, example_3).
+in_front(oid_34, oid_14, example_3).
+
+contains(oid_46, example_4).
+contains(oid_35, example_4).
+contains(oid_57, example_4).
+contains(oid_64, example_4).
+contains(oid_1, example_4).
+contains(oid_95, example_4).
+right_of(oid_35, oid_46, example_4).
+in_front(oid_35, oid_46, example_4).
+right_of(oid_57, oid_46, example_4).
+in_front(oid_57, oid_46, example_4).
+right_of(oid_64, oid_46, example_4).
+in_front(oid_64, oid_46, example_4).
+left_of(oid_1, oid_46, example_4).
+in_front(oid_1, oid_46, example_4).
+right_of(oid_95, oid_46, example_4).
+in_front(oid_95, oid_46, example_4).
+left_of(oid_46, oid_35, example_4).
+behind(oid_46, oid_35, example_4).
+right_of(oid_57, oid_35, example_4).
+behind(oid_57, oid_35, example_4).
+right_of(oid_64, oid_35, example_4).
+behind(oid_64, oid_35, example_4).
+left_of(oid_1, oid_35, example_4).
+behind(oid_1, oid_35, example_4).
+right_of(oid_95, oid_35, example_4).
+behind(oid_95, oid_35, example_4).
+left_of(oid_46, oid_57, example_4).
+behind(oid_46, oid_57, example_4).
+left_of(oid_35, oid_57, example_4).
+in_front(oid_35, oid_57, example_4).
+right_of(oid_64, oid_57, example_4).
+behind(oid_64, oid_57, example_4).
+left_of(oid_1, oid_57, example_4).
+in_front(oid_1, oid_57, example_4).
+right_of(oid_95, oid_57, example_4).
+behind(oid_95, oid_57, example_4).
+left_of(oid_46, oid_64, example_4).
+behind(oid_46, oid_64, example_4).
+left_of(oid_35, oid_64, example_4).
+in_front(oid_35, oid_64, example_4).
+left_of(oid_57, oid_64, example_4).
+in_front(oid_57, oid_64, example_4).
+left_of(oid_1, oid_64, example_4).
+in_front(oid_1, oid_64, example_4).
+left_of(oid_95, oid_64, example_4).
+behind(oid_95, oid_64, example_4).
+right_of(oid_46, oid_1, example_4).
+behind(oid_46, oid_1, example_4).
+right_of(oid_35, oid_1, example_4).
+in_front(oid_35, oid_1, example_4).
+right_of(oid_57, oid_1, example_4).
+behind(oid_57, oid_1, example_4).
+right_of(oid_64, oid_1, example_4).
+behind(oid_64, oid_1, example_4).
+right_of(oid_95, oid_1, example_4).
+behind(oid_95, oid_1, example_4).
+left_of(oid_46, oid_95, example_4).
+behind(oid_46, oid_95, example_4).
+left_of(oid_35, oid_95, example_4).
+in_front(oid_35, oid_95, example_4).
+left_of(oid_57, oid_95, example_4).
+in_front(oid_57, oid_95, example_4).
+right_of(oid_64, oid_95, example_4).
+in_front(oid_64, oid_95, example_4).
+left_of(oid_1, oid_95, example_4).
+in_front(oid_1, oid_95, example_4).
+
+contains(oid_65, example_5).
+contains(oid_38, example_5).
+contains(oid_17, example_5).
+left_of(oid_38, oid_65, example_5).
+behind(oid_38, oid_65, example_5).
+right_of(oid_17, oid_65, example_5).
+behind(oid_17, oid_65, example_5).
+right_of(oid_65, oid_38, example_5).
+in_front(oid_65, oid_38, example_5).
+right_of(oid_17, oid_38, example_5).
+in_front(oid_17, oid_38, example_5).
+left_of(oid_65, oid_17, example_5).
+in_front(oid_65, oid_17, example_5).
+left_of(oid_38, oid_17, example_5).
+behind(oid_38, oid_17, example_5).
+
+contains(oid_17, example_6).
+contains(oid_84, example_6).
+contains(oid_90, example_6).
+contains(oid_69, example_6).
+contains(oid_44, example_6).
+contains(oid_72, example_6).
+contains(oid_50, example_6).
+right_of(oid_84, oid_17, example_6).
+behind(oid_84, oid_17, example_6).
+right_of(oid_90, oid_17, example_6).
+in_front(oid_90, oid_17, example_6).
+right_of(oid_69, oid_17, example_6).
+behind(oid_69, oid_17, example_6).
+right_of(oid_44, oid_17, example_6).
+behind(oid_44, oid_17, example_6).
+right_of(oid_72, oid_17, example_6).
+behind(oid_72, oid_17, example_6).
+right_of(oid_50, oid_17, example_6).
+behind(oid_50, oid_17, example_6).
+left_of(oid_17, oid_84, example_6).
+in_front(oid_17, oid_84, example_6).
+left_of(oid_90, oid_84, example_6).
+in_front(oid_90, oid_84, example_6).
+left_of(oid_69, oid_84, example_6).
+behind(oid_69, oid_84, example_6).
+left_of(oid_44, oid_84, example_6).
+behind(oid_44, oid_84, example_6).
+left_of(oid_72, oid_84, example_6).
+in_front(oid_72, oid_84, example_6).
+left_of(oid_50, oid_84, example_6).
+in_front(oid_50, oid_84, example_6).
+left_of(oid_17, oid_90, example_6).
+behind(oid_17, oid_90, example_6).
+right_of(oid_84, oid_90, example_6).
+behind(oid_84, oid_90, example_6).
+right_of(oid_69, oid_90, example_6).
+behind(oid_69, oid_90, example_6).
+left_of(oid_44, oid_90, example_6).
+behind(oid_44, oid_90, example_6).
+right_of(oid_72, oid_90, example_6).
+behind(oid_72, oid_90, example_6).
+left_of(oid_50, oid_90, example_6).
+behind(oid_50, oid_90, example_6).
+left_of(oid_17, oid_69, example_6).
+in_front(oid_17, oid_69, example_6).
+right_of(oid_84, oid_69, example_6).
+in_front(oid_84, oid_69, example_6).
+left_of(oid_90, oid_69, example_6).
+in_front(oid_90, oid_69, example_6).
+left_of(oid_44, oid_69, example_6).
+behind(oid_44, oid_69, example_6).
+right_of(oid_72, oid_69, example_6).
+in_front(oid_72, oid_69, example_6).
+left_of(oid_50, oid_69, example_6).
+in_front(oid_50, oid_69, example_6).
+left_of(oid_17, oid_44, example_6).
+in_front(oid_17, oid_44, example_6).
+right_of(oid_84, oid_44, example_6).
+in_front(oid_84, oid_44, example_6).
+right_of(oid_90, oid_44, example_6).
+in_front(oid_90, oid_44, example_6).
+right_of(oid_69, oid_44, example_6).
+in_front(oid_69, oid_44, example_6).
+right_of(oid_72, oid_44, example_6).
+in_front(oid_72, oid_44, example_6).
+left_of(oid_50, oid_44, example_6).
+in_front(oid_50, oid_44, example_6).
+left_of(oid_17, oid_72, example_6).
+in_front(oid_17, oid_72, example_6).
+right_of(oid_84, oid_72, example_6).
+behind(oid_84, oid_72, example_6).
+left_of(oid_90, oid_72, example_6).
+in_front(oid_90, oid_72, example_6).
+left_of(oid_69, oid_72, example_6).
+behind(oid_69, oid_72, example_6).
+left_of(oid_44, oid_72, example_6).
+behind(oid_44, oid_72, example_6).
+left_of(oid_50, oid_72, example_6).
+in_front(oid_50, oid_72, example_6).
+left_of(oid_17, oid_50, example_6).
+in_front(oid_17, oid_50, example_6).
+right_of(oid_84, oid_50, example_6).
+behind(oid_84, oid_50, example_6).
+right_of(oid_90, oid_50, example_6).
+in_front(oid_90, oid_50, example_6).
+right_of(oid_69, oid_50, example_6).
+behind(oid_69, oid_50, example_6).
+right_of(oid_44, oid_50, example_6).
+behind(oid_44, oid_50, example_6).
+right_of(oid_72, oid_50, example_6).
+behind(oid_72, oid_50, example_6).
+
+contains(oid_17, example_7).
+contains(oid_81, example_7).
+contains(oid_50, example_7).
+contains(oid_58, example_7).
+right_of(oid_81, oid_17, example_7).
+behind(oid_81, oid_17, example_7).
+right_of(oid_50, oid_17, example_7).
+behind(oid_50, oid_17, example_7).
+right_of(oid_58, oid_17, example_7).
+in_front(oid_58, oid_17, example_7).
+left_of(oid_17, oid_81, example_7).
+in_front(oid_17, oid_81, example_7).
+left_of(oid_50, oid_81, example_7).
+behind(oid_50, oid_81, example_7).
+left_of(oid_58, oid_81, example_7).
+in_front(oid_58, oid_81, example_7).
+left_of(oid_17, oid_50, example_7).
+in_front(oid_17, oid_50, example_7).
+right_of(oid_81, oid_50, example_7).
+in_front(oid_81, oid_50, example_7).
+right_of(oid_58, oid_50, example_7).
+in_front(oid_58, oid_50, example_7).
+left_of(oid_17, oid_58, example_7).
+behind(oid_17, oid_58, example_7).
+right_of(oid_81, oid_58, example_7).
+behind(oid_81, oid_58, example_7).
+left_of(oid_50, oid_58, example_7).
+behind(oid_50, oid_58, example_7).
+
+contains(oid_12, example_8).
+contains(oid_17, example_8).
+contains(oid_51, example_8).
+contains(oid_81, example_8).
+contains(oid_17, example_8).
+right_of(oid_17, oid_12, example_8).
+in_front(oid_17, oid_12, example_8).
+left_of(oid_51, oid_12, example_8).
+in_front(oid_51, oid_12, example_8).
+right_of(oid_81, oid_12, example_8).
+behind(oid_81, oid_12, example_8).
+right_of(oid_17, oid_12, example_8).
+behind(oid_17, oid_12, example_8).
+left_of(oid_12, oid_17, example_8).
+behind(oid_12, oid_17, example_8).
+left_of(oid_51, oid_17, example_8).
+behind(oid_51, oid_17, example_8).
+left_of(oid_81, oid_17, example_8).
+behind(oid_81, oid_17, example_8).
+left_of(oid_17, oid_17, example_8).
+behind(oid_17, oid_17, example_8).
+right_of(oid_12, oid_51, example_8).
+behind(oid_12, oid_51, example_8).
+right_of(oid_17, oid_51, example_8).
+in_front(oid_17, oid_51, example_8).
+right_of(oid_81, oid_51, example_8).
+behind(oid_81, oid_51, example_8).
+right_of(oid_17, oid_51, example_8).
+behind(oid_17, oid_51, example_8).
+left_of(oid_12, oid_81, example_8).
+in_front(oid_12, oid_81, example_8).
+right_of(oid_17, oid_81, example_8).
+in_front(oid_17, oid_81, example_8).
+left_of(oid_51, oid_81, example_8).
+in_front(oid_51, oid_81, example_8).
+right_of(oid_17, oid_81, example_8).
+behind(oid_17, oid_81, example_8).
+left_of(oid_12, oid_17, example_8).
+in_front(oid_12, oid_17, example_8).
+right_of(oid_17, oid_17, example_8).
+in_front(oid_17, oid_17, example_8).
+left_of(oid_51, oid_17, example_8).
+in_front(oid_51, oid_17, example_8).
+left_of(oid_81, oid_17, example_8).
+in_front(oid_81, oid_17, example_8).
+
+contains(oid_1, example_9).
+contains(oid_71, example_9).
+contains(oid_32, example_9).
+contains(oid_76, example_9).
+contains(oid_61, example_9).
+right_of(oid_71, oid_1, example_9).
+in_front(oid_71, oid_1, example_9).
+right_of(oid_32, oid_1, example_9).
+behind(oid_32, oid_1, example_9).
+right_of(oid_76, oid_1, example_9).
+behind(oid_76, oid_1, example_9).
+right_of(oid_61, oid_1, example_9).
+behind(oid_61, oid_1, example_9).
+left_of(oid_1, oid_71, example_9).
+behind(oid_1, oid_71, example_9).
+right_of(oid_32, oid_71, example_9).
+behind(oid_32, oid_71, example_9).
+left_of(oid_76, oid_71, example_9).
+behind(oid_76, oid_71, example_9).
+right_of(oid_61, oid_71, example_9).
+behind(oid_61, oid_71, example_9).
+left_of(oid_1, oid_32, example_9).
+in_front(oid_1, oid_32, example_9).
+left_of(oid_71, oid_32, example_9).
+in_front(oid_71, oid_32, example_9).
+left_of(oid_76, oid_32, example_9).
+behind(oid_76, oid_32, example_9).
+left_of(oid_61, oid_32, example_9).
+behind(oid_61, oid_32, example_9).
+left_of(oid_1, oid_76, example_9).
+in_front(oid_1, oid_76, example_9).
+right_of(oid_71, oid_76, example_9).
+in_front(oid_71, oid_76, example_9).
+right_of(oid_32, oid_76, example_9).
+in_front(oid_32, oid_76, example_9).
+right_of(oid_61, oid_76, example_9).
+in_front(oid_61, oid_76, example_9).
+left_of(oid_1, oid_61, example_9).
+in_front(oid_1, oid_61, example_9).
+left_of(oid_71, oid_61, example_9).
+in_front(oid_71, oid_61, example_9).
+right_of(oid_32, oid_61, example_9).
+in_front(oid_32, oid_61, example_9).
+left_of(oid_76, oid_61, example_9).
+behind(oid_76, oid_61, example_9).
+
+contains(oid_1, example_10).
+contains(oid_83, example_10).
+contains(oid_58, example_10).
+contains(oid_37, example_10).
+left_of(oid_83, oid_1, example_10).
+behind(oid_83, oid_1, example_10).
+left_of(oid_58, oid_1, example_10).
+in_front(oid_58, oid_1, example_10).
+right_of(oid_37, oid_1, example_10).
+in_front(oid_37, oid_1, example_10).
+right_of(oid_1, oid_83, example_10).
+in_front(oid_1, oid_83, example_10).
+left_of(oid_58, oid_83, example_10).
+in_front(oid_58, oid_83, example_10).
+right_of(oid_37, oid_83, example_10).
+in_front(oid_37, oid_83, example_10).
+right_of(oid_1, oid_58, example_10).
+behind(oid_1, oid_58, example_10).
+right_of(oid_83, oid_58, example_10).
+behind(oid_83, oid_58, example_10).
+right_of(oid_37, oid_58, example_10).
+in_front(oid_37, oid_58, example_10).
+left_of(oid_1, oid_37, example_10).
+behind(oid_1, oid_37, example_10).
+left_of(oid_83, oid_37, example_10).
+behind(oid_83, oid_37, example_10).
+left_of(oid_58, oid_37, example_10).
+behind(oid_58, oid_37, example_10).
+
+contains(oid_65, example_11).
+contains(oid_78, example_11).
+contains(oid_80, example_11).
+contains(oid_46, example_11).
+contains(oid_1, example_11).
+contains(oid_60, example_11).
+left_of(oid_78, oid_65, example_11).
+behind(oid_78, oid_65, example_11).
+right_of(oid_80, oid_65, example_11).
+in_front(oid_80, oid_65, example_11).
+left_of(oid_46, oid_65, example_11).
+behind(oid_46, oid_65, example_11).
+right_of(oid_1, oid_65, example_11).
+behind(oid_1, oid_65, example_11).
+left_of(oid_60, oid_65, example_11).
+in_front(oid_60, oid_65, example_11).
+right_of(oid_65, oid_78, example_11).
+in_front(oid_65, oid_78, example_11).
+right_of(oid_80, oid_78, example_11).
+in_front(oid_80, oid_78, example_11).
+left_of(oid_46, oid_78, example_11).
+in_front(oid_46, oid_78, example_11).
+right_of(oid_1, oid_78, example_11).
+in_front(oid_1, oid_78, example_11).
+right_of(oid_60, oid_78, example_11).
+in_front(oid_60, oid_78, example_11).
+left_of(oid_65, oid_80, example_11).
+behind(oid_65, oid_80, example_11).
+left_of(oid_78, oid_80, example_11).
+behind(oid_78, oid_80, example_11).
+left_of(oid_46, oid_80, example_11).
+behind(oid_46, oid_80, example_11).
+right_of(oid_1, oid_80, example_11).
+behind(oid_1, oid_80, example_11).
+left_of(oid_60, oid_80, example_11).
+in_front(oid_60, oid_80, example_11).
+right_of(oid_65, oid_46, example_11).
+in_front(oid_65, oid_46, example_11).
+right_of(oid_78, oid_46, example_11).
+behind(oid_78, oid_46, example_11).
+right_of(oid_80, oid_46, example_11).
+in_front(oid_80, oid_46, example_11).
+right_of(oid_1, oid_46, example_11).
+behind(oid_1, oid_46, example_11).
+right_of(oid_60, oid_46, example_11).
+in_front(oid_60, oid_46, example_11).
+left_of(oid_65, oid_1, example_11).
+in_front(oid_65, oid_1, example_11).
+left_of(oid_78, oid_1, example_11).
+behind(oid_78, oid_1, example_11).
+left_of(oid_80, oid_1, example_11).
+in_front(oid_80, oid_1, example_11).
+left_of(oid_46, oid_1, example_11).
+in_front(oid_46, oid_1, example_11).
+left_of(oid_60, oid_1, example_11).
+in_front(oid_60, oid_1, example_11).
+right_of(oid_65, oid_60, example_11).
+behind(oid_65, oid_60, example_11).
+left_of(oid_78, oid_60, example_11).
+behind(oid_78, oid_60, example_11).
+right_of(oid_80, oid_60, example_11).
+behind(oid_80, oid_60, example_11).
+left_of(oid_46, oid_60, example_11).
+behind(oid_46, oid_60, example_11).
+right_of(oid_1, oid_60, example_11).
+behind(oid_1, oid_60, example_11).
+
+contains(oid_72, example_12).
+contains(oid_69, example_12).
+contains(oid_51, example_12).
+contains(oid_35, example_12).
+contains(oid_82, example_12).
+right_of(oid_69, oid_72, example_12).
+behind(oid_69, oid_72, example_12).
+right_of(oid_51, oid_72, example_12).
+behind(oid_51, oid_72, example_12).
+right_of(oid_35, oid_72, example_12).
+in_front(oid_35, oid_72, example_12).
+right_of(oid_82, oid_72, example_12).
+in_front(oid_82, oid_72, example_12).
+left_of(oid_72, oid_69, example_12).
+in_front(oid_72, oid_69, example_12).
+left_of(oid_51, oid_69, example_12).
+behind(oid_51, oid_69, example_12).
+left_of(oid_35, oid_69, example_12).
+in_front(oid_35, oid_69, example_12).
+left_of(oid_82, oid_69, example_12).
+in_front(oid_82, oid_69, example_12).
+left_of(oid_72, oid_51, example_12).
+in_front(oid_72, oid_51, example_12).
+right_of(oid_69, oid_51, example_12).
+in_front(oid_69, oid_51, example_12).
+right_of(oid_35, oid_51, example_12).
+in_front(oid_35, oid_51, example_12).
+left_of(oid_82, oid_51, example_12).
+in_front(oid_82, oid_51, example_12).
+left_of(oid_72, oid_35, example_12).
+behind(oid_72, oid_35, example_12).
+right_of(oid_69, oid_35, example_12).
+behind(oid_69, oid_35, example_12).
+left_of(oid_51, oid_35, example_12).
+behind(oid_51, oid_35, example_12).
+left_of(oid_82, oid_35, example_12).
+in_front(oid_82, oid_35, example_12).
+left_of(oid_72, oid_82, example_12).
+behind(oid_72, oid_82, example_12).
+right_of(oid_69, oid_82, example_12).
+behind(oid_69, oid_82, example_12).
+right_of(oid_51, oid_82, example_12).
+behind(oid_51, oid_82, example_12).
+right_of(oid_35, oid_82, example_12).
+behind(oid_35, oid_82, example_12).
+
+contains(oid_14, example_13).
+contains(oid_39, example_13).
+contains(oid_53, example_13).
+contains(oid_43, example_13).
+contains(oid_17, example_13).
+contains(oid_33, example_13).
+contains(oid_35, example_13).
+contains(oid_10, example_13).
+contains(oid_95, example_13).
+right_of(oid_39, oid_14, example_13).
+in_front(oid_39, oid_14, example_13).
+left_of(oid_53, oid_14, example_13).
+behind(oid_53, oid_14, example_13).
+left_of(oid_43, oid_14, example_13).
+behind(oid_43, oid_14, example_13).
+left_of(oid_17, oid_14, example_13).
+in_front(oid_17, oid_14, example_13).
+left_of(oid_33, oid_14, example_13).
+in_front(oid_33, oid_14, example_13).
+left_of(oid_35, oid_14, example_13).
+in_front(oid_35, oid_14, example_13).
+left_of(oid_10, oid_14, example_13).
+behind(oid_10, oid_14, example_13).
+left_of(oid_95, oid_14, example_13).
+in_front(oid_95, oid_14, example_13).
+left_of(oid_14, oid_39, example_13).
+behind(oid_14, oid_39, example_13).
+left_of(oid_53, oid_39, example_13).
+behind(oid_53, oid_39, example_13).
+left_of(oid_43, oid_39, example_13).
+behind(oid_43, oid_39, example_13).
+left_of(oid_17, oid_39, example_13).
+in_front(oid_17, oid_39, example_13).
+left_of(oid_33, oid_39, example_13).
+in_front(oid_33, oid_39, example_13).
+left_of(oid_35, oid_39, example_13).
+in_front(oid_35, oid_39, example_13).
+left_of(oid_10, oid_39, example_13).
+behind(oid_10, oid_39, example_13).
+left_of(oid_95, oid_39, example_13).
+in_front(oid_95, oid_39, example_13).
+right_of(oid_14, oid_53, example_13).
+in_front(oid_14, oid_53, example_13).
+right_of(oid_39, oid_53, example_13).
+in_front(oid_39, oid_53, example_13).
+right_of(oid_43, oid_53, example_13).
+behind(oid_43, oid_53, example_13).
+left_of(oid_17, oid_53, example_13).
+in_front(oid_17, oid_53, example_13).
+right_of(oid_33, oid_53, example_13).
+in_front(oid_33, oid_53, example_13).
+right_of(oid_35, oid_53, example_13).
+in_front(oid_35, oid_53, example_13).
+left_of(oid_10, oid_53, example_13).
+in_front(oid_10, oid_53, example_13).
+right_of(oid_95, oid_53, example_13).
+in_front(oid_95, oid_53, example_13).
+right_of(oid_14, oid_43, example_13).
+in_front(oid_14, oid_43, example_13).
+right_of(oid_39, oid_43, example_13).
+in_front(oid_39, oid_43, example_13).
+left_of(oid_53, oid_43, example_13).
+in_front(oid_53, oid_43, example_13).
+left_of(oid_17, oid_43, example_13).
+in_front(oid_17, oid_43, example_13).
+left_of(oid_33, oid_43, example_13).
+in_front(oid_33, oid_43, example_13).
+right_of(oid_35, oid_43, example_13).
+in_front(oid_35, oid_43, example_13).
+left_of(oid_10, oid_43, example_13).
+in_front(oid_10, oid_43, example_13).
+right_of(oid_95, oid_43, example_13).
+in_front(oid_95, oid_43, example_13).
+right_of(oid_14, oid_17, example_13).
+behind(oid_14, oid_17, example_13).
+right_of(oid_39, oid_17, example_13).
+behind(oid_39, oid_17, example_13).
+right_of(oid_53, oid_17, example_13).
+behind(oid_53, oid_17, example_13).
+right_of(oid_43, oid_17, example_13).
+behind(oid_43, oid_17, example_13).
+right_of(oid_33, oid_17, example_13).
+in_front(oid_33, oid_17, example_13).
+right_of(oid_35, oid_17, example_13).
+in_front(oid_35, oid_17, example_13).
+left_of(oid_10, oid_17, example_13).
+behind(oid_10, oid_17, example_13).
+right_of(oid_95, oid_17, example_13).
+in_front(oid_95, oid_17, example_13).
+right_of(oid_14, oid_33, example_13).
+behind(oid_14, oid_33, example_13).
+right_of(oid_39, oid_33, example_13).
+behind(oid_39, oid_33, example_13).
+left_of(oid_53, oid_33, example_13).
+behind(oid_53, oid_33, example_13).
+right_of(oid_43, oid_33, example_13).
+behind(oid_43, oid_33, example_13).
+left_of(oid_17, oid_33, example_13).
+behind(oid_17, oid_33, example_13).
+right_of(oid_35, oid_33, example_13).
+behind(oid_35, oid_33, example_13).
+left_of(oid_10, oid_33, example_13).
+behind(oid_10, oid_33, example_13).
+right_of(oid_95, oid_33, example_13).
+in_front(oid_95, oid_33, example_13).
+right_of(oid_14, oid_35, example_13).
+behind(oid_14, oid_35, example_13).
+right_of(oid_39, oid_35, example_13).
+behind(oid_39, oid_35, example_13).
+left_of(oid_53, oid_35, example_13).
+behind(oid_53, oid_35, example_13).
+left_of(oid_43, oid_35, example_13).
+behind(oid_43, oid_35, example_13).
+left_of(oid_17, oid_35, example_13).
+behind(oid_17, oid_35, example_13).
+left_of(oid_33, oid_35, example_13).
+in_front(oid_33, oid_35, example_13).
+left_of(oid_10, oid_35, example_13).
+behind(oid_10, oid_35, example_13).
+left_of(oid_95, oid_35, example_13).
+in_front(oid_95, oid_35, example_13).
+right_of(oid_14, oid_10, example_13).
+in_front(oid_14, oid_10, example_13).
+right_of(oid_39, oid_10, example_13).
+in_front(oid_39, oid_10, example_13).
+right_of(oid_53, oid_10, example_13).
+behind(oid_53, oid_10, example_13).
+right_of(oid_43, oid_10, example_13).
+behind(oid_43, oid_10, example_13).
+right_of(oid_17, oid_10, example_13).
+in_front(oid_17, oid_10, example_13).
+right_of(oid_33, oid_10, example_13).
+in_front(oid_33, oid_10, example_13).
+right_of(oid_35, oid_10, example_13).
+in_front(oid_35, oid_10, example_13).
+right_of(oid_95, oid_10, example_13).
+in_front(oid_95, oid_10, example_13).
+right_of(oid_14, oid_95, example_13).
+behind(oid_14, oid_95, example_13).
+right_of(oid_39, oid_95, example_13).
+behind(oid_39, oid_95, example_13).
+left_of(oid_53, oid_95, example_13).
+behind(oid_53, oid_95, example_13).
+left_of(oid_43, oid_95, example_13).
+behind(oid_43, oid_95, example_13).
+left_of(oid_17, oid_95, example_13).
+behind(oid_17, oid_95, example_13).
+left_of(oid_33, oid_95, example_13).
+behind(oid_33, oid_95, example_13).
+right_of(oid_35, oid_95, example_13).
+behind(oid_35, oid_95, example_13).
+left_of(oid_10, oid_95, example_13).
+behind(oid_10, oid_95, example_13).
+
+contains(oid_1, example_14).
+contains(oid_50, example_14).
+contains(oid_66, example_14).
+contains(oid_77, example_14).
+contains(oid_10, example_14).
+contains(oid_94, example_14).
+contains(oid_46, example_14).
+contains(oid_33, example_14).
+right_of(oid_50, oid_1, example_14).
+behind(oid_50, oid_1, example_14).
+right_of(oid_66, oid_1, example_14).
+in_front(oid_66, oid_1, example_14).
+right_of(oid_77, oid_1, example_14).
+in_front(oid_77, oid_1, example_14).
+right_of(oid_10, oid_1, example_14).
+in_front(oid_10, oid_1, example_14).
+right_of(oid_94, oid_1, example_14).
+in_front(oid_94, oid_1, example_14).
+right_of(oid_46, oid_1, example_14).
+behind(oid_46, oid_1, example_14).
+right_of(oid_33, oid_1, example_14).
+behind(oid_33, oid_1, example_14).
+left_of(oid_1, oid_50, example_14).
+in_front(oid_1, oid_50, example_14).
+right_of(oid_66, oid_50, example_14).
+in_front(oid_66, oid_50, example_14).
+right_of(oid_77, oid_50, example_14).
+in_front(oid_77, oid_50, example_14).
+right_of(oid_10, oid_50, example_14).
+in_front(oid_10, oid_50, example_14).
+right_of(oid_94, oid_50, example_14).
+in_front(oid_94, oid_50, example_14).
+right_of(oid_46, oid_50, example_14).
+behind(oid_46, oid_50, example_14).
+right_of(oid_33, oid_50, example_14).
+behind(oid_33, oid_50, example_14).
+left_of(oid_1, oid_66, example_14).
+behind(oid_1, oid_66, example_14).
+left_of(oid_50, oid_66, example_14).
+behind(oid_50, oid_66, example_14).
+right_of(oid_77, oid_66, example_14).
+in_front(oid_77, oid_66, example_14).
+right_of(oid_10, oid_66, example_14).
+behind(oid_10, oid_66, example_14).
+right_of(oid_94, oid_66, example_14).
+behind(oid_94, oid_66, example_14).
+right_of(oid_46, oid_66, example_14).
+behind(oid_46, oid_66, example_14).
+right_of(oid_33, oid_66, example_14).
+behind(oid_33, oid_66, example_14).
+left_of(oid_1, oid_77, example_14).
+behind(oid_1, oid_77, example_14).
+left_of(oid_50, oid_77, example_14).
+behind(oid_50, oid_77, example_14).
+left_of(oid_66, oid_77, example_14).
+behind(oid_66, oid_77, example_14).
+left_of(oid_10, oid_77, example_14).
+behind(oid_10, oid_77, example_14).
+left_of(oid_94, oid_77, example_14).
+behind(oid_94, oid_77, example_14).
+left_of(oid_46, oid_77, example_14).
+behind(oid_46, oid_77, example_14).
+left_of(oid_33, oid_77, example_14).
+behind(oid_33, oid_77, example_14).
+left_of(oid_1, oid_10, example_14).
+behind(oid_1, oid_10, example_14).
+left_of(oid_50, oid_10, example_14).
+behind(oid_50, oid_10, example_14).
+left_of(oid_66, oid_10, example_14).
+in_front(oid_66, oid_10, example_14).
+right_of(oid_77, oid_10, example_14).
+in_front(oid_77, oid_10, example_14).
+left_of(oid_94, oid_10, example_14).
+behind(oid_94, oid_10, example_14).
+right_of(oid_46, oid_10, example_14).
+behind(oid_46, oid_10, example_14).
+right_of(oid_33, oid_10, example_14).
+behind(oid_33, oid_10, example_14).
+left_of(oid_1, oid_94, example_14).
+behind(oid_1, oid_94, example_14).
+left_of(oid_50, oid_94, example_14).
+behind(oid_50, oid_94, example_14).
+left_of(oid_66, oid_94, example_14).
+in_front(oid_66, oid_94, example_14).
+right_of(oid_77, oid_94, example_14).
+in_front(oid_77, oid_94, example_14).
+right_of(oid_10, oid_94, example_14).
+in_front(oid_10, oid_94, example_14).
+right_of(oid_46, oid_94, example_14).
+behind(oid_46, oid_94, example_14).
+right_of(oid_33, oid_94, example_14).
+behind(oid_33, oid_94, example_14).
+left_of(oid_1, oid_46, example_14).
+in_front(oid_1, oid_46, example_14).
+left_of(oid_50, oid_46, example_14).
+in_front(oid_50, oid_46, example_14).
+left_of(oid_66, oid_46, example_14).
+in_front(oid_66, oid_46, example_14).
+right_of(oid_77, oid_46, example_14).
+in_front(oid_77, oid_46, example_14).
+left_of(oid_10, oid_46, example_14).
+in_front(oid_10, oid_46, example_14).
+left_of(oid_94, oid_46, example_14).
+in_front(oid_94, oid_46, example_14).
+right_of(oid_33, oid_46, example_14).
+in_front(oid_33, oid_46, example_14).
+left_of(oid_1, oid_33, example_14).
+in_front(oid_1, oid_33, example_14).
+left_of(oid_50, oid_33, example_14).
+in_front(oid_50, oid_33, example_14).
+left_of(oid_66, oid_33, example_14).
+in_front(oid_66, oid_33, example_14).
+right_of(oid_77, oid_33, example_14).
+in_front(oid_77, oid_33, example_14).
+left_of(oid_10, oid_33, example_14).
+in_front(oid_10, oid_33, example_14).
+left_of(oid_94, oid_33, example_14).
+in_front(oid_94, oid_33, example_14).
+left_of(oid_46, oid_33, example_14).
+behind(oid_46, oid_33, example_14).
+
+contains(oid_12, example_15).
+contains(oid_93, example_15).
+contains(oid_55, example_15).
+contains(oid_86, example_15).
+contains(oid_59, example_15).
+contains(oid_35, example_15).
+contains(oid_1, example_15).
+left_of(oid_93, oid_12, example_15).
+behind(oid_93, oid_12, example_15).
+left_of(oid_55, oid_12, example_15).
+in_front(oid_55, oid_12, example_15).
+right_of(oid_86, oid_12, example_15).
+behind(oid_86, oid_12, example_15).
+left_of(oid_59, oid_12, example_15).
+behind(oid_59, oid_12, example_15).
+left_of(oid_35, oid_12, example_15).
+behind(oid_35, oid_12, example_15).
+left_of(oid_1, oid_12, example_15).
+in_front(oid_1, oid_12, example_15).
+right_of(oid_12, oid_93, example_15).
+in_front(oid_12, oid_93, example_15).
+left_of(oid_55, oid_93, example_15).
+in_front(oid_55, oid_93, example_15).
+right_of(oid_86, oid_93, example_15).
+behind(oid_86, oid_93, example_15).
+right_of(oid_59, oid_93, example_15).
+behind(oid_59, oid_93, example_15).
+left_of(oid_35, oid_93, example_15).
+in_front(oid_35, oid_93, example_15).
+right_of(oid_1, oid_93, example_15).
+in_front(oid_1, oid_93, example_15).
+right_of(oid_12, oid_55, example_15).
+behind(oid_12, oid_55, example_15).
+right_of(oid_93, oid_55, example_15).
+behind(oid_93, oid_55, example_15).
+right_of(oid_86, oid_55, example_15).
+behind(oid_86, oid_55, example_15).
+right_of(oid_59, oid_55, example_15).
+behind(oid_59, oid_55, example_15).
+left_of(oid_35, oid_55, example_15).
+behind(oid_35, oid_55, example_15).
+right_of(oid_1, oid_55, example_15).
+in_front(oid_1, oid_55, example_15).
+left_of(oid_12, oid_86, example_15).
+in_front(oid_12, oid_86, example_15).
+left_of(oid_93, oid_86, example_15).
+in_front(oid_93, oid_86, example_15).
+left_of(oid_55, oid_86, example_15).
+in_front(oid_55, oid_86, example_15).
+left_of(oid_59, oid_86, example_15).
+behind(oid_59, oid_86, example_15).
+left_of(oid_35, oid_86, example_15).
+in_front(oid_35, oid_86, example_15).
+left_of(oid_1, oid_86, example_15).
+in_front(oid_1, oid_86, example_15).
+right_of(oid_12, oid_59, example_15).
+in_front(oid_12, oid_59, example_15).
+left_of(oid_93, oid_59, example_15).
+in_front(oid_93, oid_59, example_15).
+left_of(oid_55, oid_59, example_15).
+in_front(oid_55, oid_59, example_15).
+right_of(oid_86, oid_59, example_15).
+in_front(oid_86, oid_59, example_15).
+left_of(oid_35, oid_59, example_15).
+in_front(oid_35, oid_59, example_15).
+left_of(oid_1, oid_59, example_15).
+in_front(oid_1, oid_59, example_15).
+right_of(oid_12, oid_35, example_15).
+in_front(oid_12, oid_35, example_15).
+right_of(oid_93, oid_35, example_15).
+behind(oid_93, oid_35, example_15).
+right_of(oid_55, oid_35, example_15).
+in_front(oid_55, oid_35, example_15).
+right_of(oid_86, oid_35, example_15).
+behind(oid_86, oid_35, example_15).
+right_of(oid_59, oid_35, example_15).
+behind(oid_59, oid_35, example_15).
+right_of(oid_1, oid_35, example_15).
+in_front(oid_1, oid_35, example_15).
+right_of(oid_12, oid_1, example_15).
+behind(oid_12, oid_1, example_15).
+left_of(oid_93, oid_1, example_15).
+behind(oid_93, oid_1, example_15).
+left_of(oid_55, oid_1, example_15).
+behind(oid_55, oid_1, example_15).
+right_of(oid_86, oid_1, example_15).
+behind(oid_86, oid_1, example_15).
+right_of(oid_59, oid_1, example_15).
+behind(oid_59, oid_1, example_15).
+left_of(oid_35, oid_1, example_15).
+behind(oid_35, oid_1, example_15).
+
+contains(oid_60, example_16).
+contains(oid_26, example_16).
+left_of(oid_26, oid_60, example_16).
+in_front(oid_26, oid_60, example_16).
+right_of(oid_60, oid_26, example_16).
+behind(oid_60, oid_26, example_16).
+
+contains(oid_6, example_17).
+contains(oid_27, example_17).
+contains(oid_18, example_17).
+contains(oid_84, example_17).
+contains(oid_70, example_17).
+contains(oid_52, example_17).
+contains(oid_25, example_17).
+contains(oid_3, example_17).
+contains(oid_92, example_17).
+right_of(oid_27, oid_6, example_17).
+in_front(oid_27, oid_6, example_17).
+right_of(oid_18, oid_6, example_17).
+in_front(oid_18, oid_6, example_17).
+right_of(oid_84, oid_6, example_17).
+in_front(oid_84, oid_6, example_17).
+left_of(oid_70, oid_6, example_17).
+in_front(oid_70, oid_6, example_17).
+right_of(oid_52, oid_6, example_17).
+in_front(oid_52, oid_6, example_17).
+right_of(oid_25, oid_6, example_17).
+in_front(oid_25, oid_6, example_17).
+right_of(oid_3, oid_6, example_17).
+behind(oid_3, oid_6, example_17).
+right_of(oid_92, oid_6, example_17).
+in_front(oid_92, oid_6, example_17).
+left_of(oid_6, oid_27, example_17).
+behind(oid_6, oid_27, example_17).
+left_of(oid_18, oid_27, example_17).
+in_front(oid_18, oid_27, example_17).
+left_of(oid_84, oid_27, example_17).
+in_front(oid_84, oid_27, example_17).
+left_of(oid_70, oid_27, example_17).
+behind(oid_70, oid_27, example_17).
+left_of(oid_52, oid_27, example_17).
+in_front(oid_52, oid_27, example_17).
+left_of(oid_25, oid_27, example_17).
+in_front(oid_25, oid_27, example_17).
+left_of(oid_3, oid_27, example_17).
+behind(oid_3, oid_27, example_17).
+left_of(oid_92, oid_27, example_17).
+behind(oid_92, oid_27, example_17).
+left_of(oid_6, oid_18, example_17).
+behind(oid_6, oid_18, example_17).
+right_of(oid_27, oid_18, example_17).
+behind(oid_27, oid_18, example_17).
+right_of(oid_84, oid_18, example_17).
+in_front(oid_84, oid_18, example_17).
+left_of(oid_70, oid_18, example_17).
+behind(oid_70, oid_18, example_17).
+left_of(oid_52, oid_18, example_17).
+in_front(oid_52, oid_18, example_17).
+right_of(oid_25, oid_18, example_17).
+in_front(oid_25, oid_18, example_17).
+right_of(oid_3, oid_18, example_17).
+behind(oid_3, oid_18, example_17).
+right_of(oid_92, oid_18, example_17).
+behind(oid_92, oid_18, example_17).
+left_of(oid_6, oid_84, example_17).
+behind(oid_6, oid_84, example_17).
+right_of(oid_27, oid_84, example_17).
+behind(oid_27, oid_84, example_17).
+left_of(oid_18, oid_84, example_17).
+behind(oid_18, oid_84, example_17).
+left_of(oid_70, oid_84, example_17).
+behind(oid_70, oid_84, example_17).
+left_of(oid_52, oid_84, example_17).
+behind(oid_52, oid_84, example_17).
+right_of(oid_25, oid_84, example_17).
+behind(oid_25, oid_84, example_17).
+right_of(oid_3, oid_84, example_17).
+behind(oid_3, oid_84, example_17).
+right_of(oid_92, oid_84, example_17).
+behind(oid_92, oid_84, example_17).
+right_of(oid_6, oid_70, example_17).
+behind(oid_6, oid_70, example_17).
+right_of(oid_27, oid_70, example_17).
+in_front(oid_27, oid_70, example_17).
+right_of(oid_18, oid_70, example_17).
+in_front(oid_18, oid_70, example_17).
+right_of(oid_84, oid_70, example_17).
+in_front(oid_84, oid_70, example_17).
+right_of(oid_52, oid_70, example_17).
+in_front(oid_52, oid_70, example_17).
+right_of(oid_25, oid_70, example_17).
+in_front(oid_25, oid_70, example_17).
+right_of(oid_3, oid_70, example_17).
+behind(oid_3, oid_70, example_17).
+right_of(oid_92, oid_70, example_17).
+behind(oid_92, oid_70, example_17).
+left_of(oid_6, oid_52, example_17).
+behind(oid_6, oid_52, example_17).
+right_of(oid_27, oid_52, example_17).
+behind(oid_27, oid_52, example_17).
+right_of(oid_18, oid_52, example_17).
+behind(oid_18, oid_52, example_17).
+right_of(oid_84, oid_52, example_17).
+in_front(oid_84, oid_52, example_17).
+left_of(oid_70, oid_52, example_17).
+behind(oid_70, oid_52, example_17).
+right_of(oid_25, oid_52, example_17).
+in_front(oid_25, oid_52, example_17).
+right_of(oid_3, oid_52, example_17).
+behind(oid_3, oid_52, example_17).
+right_of(oid_92, oid_52, example_17).
+behind(oid_92, oid_52, example_17).
+left_of(oid_6, oid_25, example_17).
+behind(oid_6, oid_25, example_17).
+right_of(oid_27, oid_25, example_17).
+behind(oid_27, oid_25, example_17).
+left_of(oid_18, oid_25, example_17).
+behind(oid_18, oid_25, example_17).
+left_of(oid_84, oid_25, example_17).
+in_front(oid_84, oid_25, example_17).
+left_of(oid_70, oid_25, example_17).
+behind(oid_70, oid_25, example_17).
+left_of(oid_52, oid_25, example_17).
+behind(oid_52, oid_25, example_17).
+left_of(oid_3, oid_25, example_17).
+behind(oid_3, oid_25, example_17).
+right_of(oid_92, oid_25, example_17).
+behind(oid_92, oid_25, example_17).
+left_of(oid_6, oid_3, example_17).
+in_front(oid_6, oid_3, example_17).
+right_of(oid_27, oid_3, example_17).
+in_front(oid_27, oid_3, example_17).
+left_of(oid_18, oid_3, example_17).
+in_front(oid_18, oid_3, example_17).
+left_of(oid_84, oid_3, example_17).
+in_front(oid_84, oid_3, example_17).
+left_of(oid_70, oid_3, example_17).
+in_front(oid_70, oid_3, example_17).
+left_of(oid_52, oid_3, example_17).
+in_front(oid_52, oid_3, example_17).
+right_of(oid_25, oid_3, example_17).
+in_front(oid_25, oid_3, example_17).
+right_of(oid_92, oid_3, example_17).
+in_front(oid_92, oid_3, example_17).
+left_of(oid_6, oid_92, example_17).
+behind(oid_6, oid_92, example_17).
+right_of(oid_27, oid_92, example_17).
+in_front(oid_27, oid_92, example_17).
+left_of(oid_18, oid_92, example_17).
+in_front(oid_18, oid_92, example_17).
+left_of(oid_84, oid_92, example_17).
+in_front(oid_84, oid_92, example_17).
+left_of(oid_70, oid_92, example_17).
+in_front(oid_70, oid_92, example_17).
+left_of(oid_52, oid_92, example_17).
+in_front(oid_52, oid_92, example_17).
+left_of(oid_25, oid_92, example_17).
+in_front(oid_25, oid_92, example_17).
+left_of(oid_3, oid_92, example_17).
+behind(oid_3, oid_92, example_17).
+
+contains(oid_47, example_18).
+contains(oid_81, example_18).
+contains(oid_68, example_18).
+contains(oid_12, example_18).
+contains(oid_60, example_18).
+contains(oid_20, example_18).
+contains(oid_91, example_18).
+right_of(oid_81, oid_47, example_18).
+behind(oid_81, oid_47, example_18).
+right_of(oid_68, oid_47, example_18).
+behind(oid_68, oid_47, example_18).
+right_of(oid_12, oid_47, example_18).
+behind(oid_12, oid_47, example_18).
+right_of(oid_60, oid_47, example_18).
+behind(oid_60, oid_47, example_18).
+right_of(oid_20, oid_47, example_18).
+behind(oid_20, oid_47, example_18).
+right_of(oid_91, oid_47, example_18).
+behind(oid_91, oid_47, example_18).
+left_of(oid_47, oid_81, example_18).
+in_front(oid_47, oid_81, example_18).
+left_of(oid_68, oid_81, example_18).
+in_front(oid_68, oid_81, example_18).
+left_of(oid_12, oid_81, example_18).
+in_front(oid_12, oid_81, example_18).
+left_of(oid_60, oid_81, example_18).
+in_front(oid_60, oid_81, example_18).
+left_of(oid_20, oid_81, example_18).
+behind(oid_20, oid_81, example_18).
+left_of(oid_91, oid_81, example_18).
+in_front(oid_91, oid_81, example_18).
+left_of(oid_47, oid_68, example_18).
+in_front(oid_47, oid_68, example_18).
+right_of(oid_81, oid_68, example_18).
+behind(oid_81, oid_68, example_18).
+right_of(oid_12, oid_68, example_18).
+in_front(oid_12, oid_68, example_18).
+right_of(oid_60, oid_68, example_18).
+in_front(oid_60, oid_68, example_18).
+right_of(oid_20, oid_68, example_18).
+behind(oid_20, oid_68, example_18).
+right_of(oid_91, oid_68, example_18).
+in_front(oid_91, oid_68, example_18).
+left_of(oid_47, oid_12, example_18).
+in_front(oid_47, oid_12, example_18).
+right_of(oid_81, oid_12, example_18).
+behind(oid_81, oid_12, example_18).
+left_of(oid_68, oid_12, example_18).
+behind(oid_68, oid_12, example_18).
+left_of(oid_60, oid_12, example_18).
+behind(oid_60, oid_12, example_18).
+right_of(oid_20, oid_12, example_18).
+behind(oid_20, oid_12, example_18).
+right_of(oid_91, oid_12, example_18).
+behind(oid_91, oid_12, example_18).
+left_of(oid_47, oid_60, example_18).
+in_front(oid_47, oid_60, example_18).
+right_of(oid_81, oid_60, example_18).
+behind(oid_81, oid_60, example_18).
+left_of(oid_68, oid_60, example_18).
+behind(oid_68, oid_60, example_18).
+right_of(oid_12, oid_60, example_18).
+in_front(oid_12, oid_60, example_18).
+right_of(oid_20, oid_60, example_18).
+behind(oid_20, oid_60, example_18).
+right_of(oid_91, oid_60, example_18).
+in_front(oid_91, oid_60, example_18).
+left_of(oid_47, oid_20, example_18).
+in_front(oid_47, oid_20, example_18).
+right_of(oid_81, oid_20, example_18).
+in_front(oid_81, oid_20, example_18).
+left_of(oid_68, oid_20, example_18).
+in_front(oid_68, oid_20, example_18).
+left_of(oid_12, oid_20, example_18).
+in_front(oid_12, oid_20, example_18).
+left_of(oid_60, oid_20, example_18).
+in_front(oid_60, oid_20, example_18).
+right_of(oid_91, oid_20, example_18).
+in_front(oid_91, oid_20, example_18).
+left_of(oid_47, oid_91, example_18).
+in_front(oid_47, oid_91, example_18).
+right_of(oid_81, oid_91, example_18).
+behind(oid_81, oid_91, example_18).
+left_of(oid_68, oid_91, example_18).
+behind(oid_68, oid_91, example_18).
+left_of(oid_12, oid_91, example_18).
+in_front(oid_12, oid_91, example_18).
+left_of(oid_60, oid_91, example_18).
+behind(oid_60, oid_91, example_18).
+left_of(oid_20, oid_91, example_18).
+behind(oid_20, oid_91, example_18).
+
+contains(oid_69, example_19).
+contains(oid_84, example_19).
+contains(oid_62, example_19).
+contains(oid_66, example_19).
+contains(oid_37, example_19).
+contains(oid_30, example_19).
+contains(oid_89, example_19).
+contains(oid_37, example_19).
+right_of(oid_84, oid_69, example_19).
+in_front(oid_84, oid_69, example_19).
+right_of(oid_62, oid_69, example_19).
+in_front(oid_62, oid_69, example_19).
+right_of(oid_66, oid_69, example_19).
+behind(oid_66, oid_69, example_19).
+right_of(oid_37, oid_69, example_19).
+behind(oid_37, oid_69, example_19).
+right_of(oid_30, oid_69, example_19).
+in_front(oid_30, oid_69, example_19).
+right_of(oid_89, oid_69, example_19).
+behind(oid_89, oid_69, example_19).
+right_of(oid_37, oid_69, example_19).
+in_front(oid_37, oid_69, example_19).
+left_of(oid_69, oid_84, example_19).
+behind(oid_69, oid_84, example_19).
+left_of(oid_62, oid_84, example_19).
+in_front(oid_62, oid_84, example_19).
+left_of(oid_66, oid_84, example_19).
+behind(oid_66, oid_84, example_19).
+right_of(oid_37, oid_84, example_19).
+behind(oid_37, oid_84, example_19).
+right_of(oid_30, oid_84, example_19).
+behind(oid_30, oid_84, example_19).
+left_of(oid_89, oid_84, example_19).
+behind(oid_89, oid_84, example_19).
+right_of(oid_37, oid_84, example_19).
+in_front(oid_37, oid_84, example_19).
+left_of(oid_69, oid_62, example_19).
+behind(oid_69, oid_62, example_19).
+right_of(oid_84, oid_62, example_19).
+behind(oid_84, oid_62, example_19).
+right_of(oid_66, oid_62, example_19).
+behind(oid_66, oid_62, example_19).
+right_of(oid_37, oid_62, example_19).
+behind(oid_37, oid_62, example_19).
+right_of(oid_30, oid_62, example_19).
+behind(oid_30, oid_62, example_19).
+right_of(oid_89, oid_62, example_19).
+behind(oid_89, oid_62, example_19).
+right_of(oid_37, oid_62, example_19).
+in_front(oid_37, oid_62, example_19).
+left_of(oid_69, oid_66, example_19).
+in_front(oid_69, oid_66, example_19).
+right_of(oid_84, oid_66, example_19).
+in_front(oid_84, oid_66, example_19).
+left_of(oid_62, oid_66, example_19).
+in_front(oid_62, oid_66, example_19).
+right_of(oid_37, oid_66, example_19).
+behind(oid_37, oid_66, example_19).
+right_of(oid_30, oid_66, example_19).
+in_front(oid_30, oid_66, example_19).
+right_of(oid_89, oid_66, example_19).
+behind(oid_89, oid_66, example_19).
+right_of(oid_37, oid_66, example_19).
+in_front(oid_37, oid_66, example_19).
+left_of(oid_69, oid_37, example_19).
+in_front(oid_69, oid_37, example_19).
+left_of(oid_84, oid_37, example_19).
+in_front(oid_84, oid_37, example_19).
+left_of(oid_62, oid_37, example_19).
+in_front(oid_62, oid_37, example_19).
+left_of(oid_66, oid_37, example_19).
+in_front(oid_66, oid_37, example_19).
+right_of(oid_30, oid_37, example_19).
+in_front(oid_30, oid_37, example_19).
+left_of(oid_89, oid_37, example_19).
+behind(oid_89, oid_37, example_19).
+left_of(oid_37, oid_37, example_19).
+in_front(oid_37, oid_37, example_19).
+left_of(oid_69, oid_30, example_19).
+behind(oid_69, oid_30, example_19).
+left_of(oid_84, oid_30, example_19).
+in_front(oid_84, oid_30, example_19).
+left_of(oid_62, oid_30, example_19).
+in_front(oid_62, oid_30, example_19).
+left_of(oid_66, oid_30, example_19).
+behind(oid_66, oid_30, example_19).
+left_of(oid_37, oid_30, example_19).
+behind(oid_37, oid_30, example_19).
+left_of(oid_89, oid_30, example_19).
+behind(oid_89, oid_30, example_19).
+left_of(oid_37, oid_30, example_19).
+in_front(oid_37, oid_30, example_19).
+left_of(oid_69, oid_89, example_19).
+in_front(oid_69, oid_89, example_19).
+right_of(oid_84, oid_89, example_19).
+in_front(oid_84, oid_89, example_19).
+left_of(oid_62, oid_89, example_19).
+in_front(oid_62, oid_89, example_19).
+left_of(oid_66, oid_89, example_19).
+in_front(oid_66, oid_89, example_19).
+right_of(oid_37, oid_89, example_19).
+in_front(oid_37, oid_89, example_19).
+right_of(oid_30, oid_89, example_19).
+in_front(oid_30, oid_89, example_19).
+right_of(oid_37, oid_89, example_19).
+in_front(oid_37, oid_89, example_19).
+left_of(oid_69, oid_37, example_19).
+behind(oid_69, oid_37, example_19).
+left_of(oid_84, oid_37, example_19).
+behind(oid_84, oid_37, example_19).
+left_of(oid_62, oid_37, example_19).
+behind(oid_62, oid_37, example_19).
+left_of(oid_66, oid_37, example_19).
+behind(oid_66, oid_37, example_19).
+right_of(oid_37, oid_37, example_19).
+behind(oid_37, oid_37, example_19).
+right_of(oid_30, oid_37, example_19).
+behind(oid_30, oid_37, example_19).
+left_of(oid_89, oid_37, example_19).
+behind(oid_89, oid_37, example_19).
+
+contains(oid_63, example_20).
+contains(oid_78, example_20).
+contains(oid_17, example_20).
+contains(oid_20, example_20).
+contains(oid_13, example_20).
+contains(oid_33, example_20).
+contains(oid_50, example_20).
+contains(oid_47, example_20).
+contains(oid_82, example_20).
+contains(oid_49, example_20).
+left_of(oid_78, oid_63, example_20).
+in_front(oid_78, oid_63, example_20).
+right_of(oid_17, oid_63, example_20).
+in_front(oid_17, oid_63, example_20).
+right_of(oid_20, oid_63, example_20).
+behind(oid_20, oid_63, example_20).
+left_of(oid_13, oid_63, example_20).
+behind(oid_13, oid_63, example_20).
+right_of(oid_33, oid_63, example_20).
+behind(oid_33, oid_63, example_20).
+left_of(oid_50, oid_63, example_20).
+in_front(oid_50, oid_63, example_20).
+right_of(oid_47, oid_63, example_20).
+in_front(oid_47, oid_63, example_20).
+left_of(oid_82, oid_63, example_20).
+in_front(oid_82, oid_63, example_20).
+left_of(oid_49, oid_63, example_20).
+in_front(oid_49, oid_63, example_20).
+right_of(oid_63, oid_78, example_20).
+behind(oid_63, oid_78, example_20).
+right_of(oid_17, oid_78, example_20).
+behind(oid_17, oid_78, example_20).
+right_of(oid_20, oid_78, example_20).
+behind(oid_20, oid_78, example_20).
+left_of(oid_13, oid_78, example_20).
+behind(oid_13, oid_78, example_20).
+right_of(oid_33, oid_78, example_20).
+behind(oid_33, oid_78, example_20).
+left_of(oid_50, oid_78, example_20).
+behind(oid_50, oid_78, example_20).
+right_of(oid_47, oid_78, example_20).
+behind(oid_47, oid_78, example_20).
+left_of(oid_82, oid_78, example_20).
+behind(oid_82, oid_78, example_20).
+left_of(oid_49, oid_78, example_20).
+behind(oid_49, oid_78, example_20).
+left_of(oid_63, oid_17, example_20).
+behind(oid_63, oid_17, example_20).
+left_of(oid_78, oid_17, example_20).
+in_front(oid_78, oid_17, example_20).
+right_of(oid_20, oid_17, example_20).
+behind(oid_20, oid_17, example_20).
+left_of(oid_13, oid_17, example_20).
+behind(oid_13, oid_17, example_20).
+left_of(oid_33, oid_17, example_20).
+behind(oid_33, oid_17, example_20).
+left_of(oid_50, oid_17, example_20).
+behind(oid_50, oid_17, example_20).
+left_of(oid_47, oid_17, example_20).
+in_front(oid_47, oid_17, example_20).
+left_of(oid_82, oid_17, example_20).
+behind(oid_82, oid_17, example_20).
+left_of(oid_49, oid_17, example_20).
+in_front(oid_49, oid_17, example_20).
+left_of(oid_63, oid_20, example_20).
+in_front(oid_63, oid_20, example_20).
+left_of(oid_78, oid_20, example_20).
+in_front(oid_78, oid_20, example_20).
+left_of(oid_17, oid_20, example_20).
+in_front(oid_17, oid_20, example_20).
+left_of(oid_13, oid_20, example_20).
+behind(oid_13, oid_20, example_20).
+left_of(oid_33, oid_20, example_20).
+behind(oid_33, oid_20, example_20).
+left_of(oid_50, oid_20, example_20).
+in_front(oid_50, oid_20, example_20).
+left_of(oid_47, oid_20, example_20).
+in_front(oid_47, oid_20, example_20).
+left_of(oid_82, oid_20, example_20).
+in_front(oid_82, oid_20, example_20).
+left_of(oid_49, oid_20, example_20).
+in_front(oid_49, oid_20, example_20).
+right_of(oid_63, oid_13, example_20).
+in_front(oid_63, oid_13, example_20).
+right_of(oid_78, oid_13, example_20).
+in_front(oid_78, oid_13, example_20).
+right_of(oid_17, oid_13, example_20).
+in_front(oid_17, oid_13, example_20).
+right_of(oid_20, oid_13, example_20).
+in_front(oid_20, oid_13, example_20).
+right_of(oid_33, oid_13, example_20).
+behind(oid_33, oid_13, example_20).
+left_of(oid_50, oid_13, example_20).
+in_front(oid_50, oid_13, example_20).
+right_of(oid_47, oid_13, example_20).
+in_front(oid_47, oid_13, example_20).
+right_of(oid_82, oid_13, example_20).
+in_front(oid_82, oid_13, example_20).
+right_of(oid_49, oid_13, example_20).
+in_front(oid_49, oid_13, example_20).
+left_of(oid_63, oid_33, example_20).
+in_front(oid_63, oid_33, example_20).
+left_of(oid_78, oid_33, example_20).
+in_front(oid_78, oid_33, example_20).
+right_of(oid_17, oid_33, example_20).
+in_front(oid_17, oid_33, example_20).
+right_of(oid_20, oid_33, example_20).
+in_front(oid_20, oid_33, example_20).
+left_of(oid_13, oid_33, example_20).
+in_front(oid_13, oid_33, example_20).
+left_of(oid_50, oid_33, example_20).
+in_front(oid_50, oid_33, example_20).
+left_of(oid_47, oid_33, example_20).
+in_front(oid_47, oid_33, example_20).
+left_of(oid_82, oid_33, example_20).
+in_front(oid_82, oid_33, example_20).
+left_of(oid_49, oid_33, example_20).
+in_front(oid_49, oid_33, example_20).
+right_of(oid_63, oid_50, example_20).
+behind(oid_63, oid_50, example_20).
+right_of(oid_78, oid_50, example_20).
+in_front(oid_78, oid_50, example_20).
+right_of(oid_17, oid_50, example_20).
+in_front(oid_17, oid_50, example_20).
+right_of(oid_20, oid_50, example_20).
+behind(oid_20, oid_50, example_20).
+right_of(oid_13, oid_50, example_20).
+behind(oid_13, oid_50, example_20).
+right_of(oid_33, oid_50, example_20).
+behind(oid_33, oid_50, example_20).
+right_of(oid_47, oid_50, example_20).
+in_front(oid_47, oid_50, example_20).
+right_of(oid_82, oid_50, example_20).
+in_front(oid_82, oid_50, example_20).
+right_of(oid_49, oid_50, example_20).
+in_front(oid_49, oid_50, example_20).
+left_of(oid_63, oid_47, example_20).
+behind(oid_63, oid_47, example_20).
+left_of(oid_78, oid_47, example_20).
+in_front(oid_78, oid_47, example_20).
+right_of(oid_17, oid_47, example_20).
+behind(oid_17, oid_47, example_20).
+right_of(oid_20, oid_47, example_20).
+behind(oid_20, oid_47, example_20).
+left_of(oid_13, oid_47, example_20).
+behind(oid_13, oid_47, example_20).
+right_of(oid_33, oid_47, example_20).
+behind(oid_33, oid_47, example_20).
+left_of(oid_50, oid_47, example_20).
+behind(oid_50, oid_47, example_20).
+left_of(oid_82, oid_47, example_20).
+behind(oid_82, oid_47, example_20).
+left_of(oid_49, oid_47, example_20).
+behind(oid_49, oid_47, example_20).
+right_of(oid_63, oid_82, example_20).
+behind(oid_63, oid_82, example_20).
+right_of(oid_78, oid_82, example_20).
+in_front(oid_78, oid_82, example_20).
+right_of(oid_17, oid_82, example_20).
+in_front(oid_17, oid_82, example_20).
+right_of(oid_20, oid_82, example_20).
+behind(oid_20, oid_82, example_20).
+left_of(oid_13, oid_82, example_20).
+behind(oid_13, oid_82, example_20).
+right_of(oid_33, oid_82, example_20).
+behind(oid_33, oid_82, example_20).
+left_of(oid_50, oid_82, example_20).
+behind(oid_50, oid_82, example_20).
+right_of(oid_47, oid_82, example_20).
+in_front(oid_47, oid_82, example_20).
+left_of(oid_49, oid_82, example_20).
+in_front(oid_49, oid_82, example_20).
+right_of(oid_63, oid_49, example_20).
+behind(oid_63, oid_49, example_20).
+right_of(oid_78, oid_49, example_20).
+in_front(oid_78, oid_49, example_20).
+right_of(oid_17, oid_49, example_20).
+behind(oid_17, oid_49, example_20).
+right_of(oid_20, oid_49, example_20).
+behind(oid_20, oid_49, example_20).
+left_of(oid_13, oid_49, example_20).
+behind(oid_13, oid_49, example_20).
+right_of(oid_33, oid_49, example_20).
+behind(oid_33, oid_49, example_20).
+left_of(oid_50, oid_49, example_20).
+behind(oid_50, oid_49, example_20).
+right_of(oid_47, oid_49, example_20).
+in_front(oid_47, oid_49, example_20).
+right_of(oid_82, oid_49, example_20).
+behind(oid_82, oid_49, example_20).
+
+contains(oid_9, example_21).
+contains(oid_80, example_21).
+contains(oid_70, example_21).
+contains(oid_56, example_21).
+contains(oid_18, example_21).
+right_of(oid_80, oid_9, example_21).
+behind(oid_80, oid_9, example_21).
+left_of(oid_70, oid_9, example_21).
+behind(oid_70, oid_9, example_21).
+right_of(oid_56, oid_9, example_21).
+in_front(oid_56, oid_9, example_21).
+right_of(oid_18, oid_9, example_21).
+in_front(oid_18, oid_9, example_21).
+left_of(oid_9, oid_80, example_21).
+in_front(oid_9, oid_80, example_21).
+left_of(oid_70, oid_80, example_21).
+behind(oid_70, oid_80, example_21).
+left_of(oid_56, oid_80, example_21).
+in_front(oid_56, oid_80, example_21).
+left_of(oid_18, oid_80, example_21).
+in_front(oid_18, oid_80, example_21).
+right_of(oid_9, oid_70, example_21).
+in_front(oid_9, oid_70, example_21).
+right_of(oid_80, oid_70, example_21).
+in_front(oid_80, oid_70, example_21).
+right_of(oid_56, oid_70, example_21).
+in_front(oid_56, oid_70, example_21).
+right_of(oid_18, oid_70, example_21).
+in_front(oid_18, oid_70, example_21).
+left_of(oid_9, oid_56, example_21).
+behind(oid_9, oid_56, example_21).
+right_of(oid_80, oid_56, example_21).
+behind(oid_80, oid_56, example_21).
+left_of(oid_70, oid_56, example_21).
+behind(oid_70, oid_56, example_21).
+right_of(oid_18, oid_56, example_21).
+in_front(oid_18, oid_56, example_21).
+left_of(oid_9, oid_18, example_21).
+behind(oid_9, oid_18, example_21).
+right_of(oid_80, oid_18, example_21).
+behind(oid_80, oid_18, example_21).
+left_of(oid_70, oid_18, example_21).
+behind(oid_70, oid_18, example_21).
+left_of(oid_56, oid_18, example_21).
+behind(oid_56, oid_18, example_21).
+
+contains(oid_55, example_22).
+contains(oid_91, example_22).
+contains(oid_67, example_22).
+contains(oid_30, example_22).
+contains(oid_50, example_22).
+contains(oid_55, example_22).
+contains(oid_92, example_22).
+left_of(oid_91, oid_55, example_22).
+behind(oid_91, oid_55, example_22).
+left_of(oid_67, oid_55, example_22).
+behind(oid_67, oid_55, example_22).
+left_of(oid_30, oid_55, example_22).
+behind(oid_30, oid_55, example_22).
+left_of(oid_50, oid_55, example_22).
+behind(oid_50, oid_55, example_22).
+left_of(oid_55, oid_55, example_22).
+in_front(oid_55, oid_55, example_22).
+left_of(oid_92, oid_55, example_22).
+behind(oid_92, oid_55, example_22).
+right_of(oid_55, oid_91, example_22).
+in_front(oid_55, oid_91, example_22).
+right_of(oid_67, oid_91, example_22).
+behind(oid_67, oid_91, example_22).
+right_of(oid_30, oid_91, example_22).
+in_front(oid_30, oid_91, example_22).
+right_of(oid_50, oid_91, example_22).
+in_front(oid_50, oid_91, example_22).
+right_of(oid_55, oid_91, example_22).
+in_front(oid_55, oid_91, example_22).
+left_of(oid_92, oid_91, example_22).
+behind(oid_92, oid_91, example_22).
+right_of(oid_55, oid_67, example_22).
+in_front(oid_55, oid_67, example_22).
+left_of(oid_91, oid_67, example_22).
+in_front(oid_91, oid_67, example_22).
+right_of(oid_30, oid_67, example_22).
+in_front(oid_30, oid_67, example_22).
+right_of(oid_50, oid_67, example_22).
+in_front(oid_50, oid_67, example_22).
+right_of(oid_55, oid_67, example_22).
+in_front(oid_55, oid_67, example_22).
+left_of(oid_92, oid_67, example_22).
+in_front(oid_92, oid_67, example_22).
+right_of(oid_55, oid_30, example_22).
+in_front(oid_55, oid_30, example_22).
+left_of(oid_91, oid_30, example_22).
+behind(oid_91, oid_30, example_22).
+left_of(oid_67, oid_30, example_22).
+behind(oid_67, oid_30, example_22).
+right_of(oid_50, oid_30, example_22).
+behind(oid_50, oid_30, example_22).
+right_of(oid_55, oid_30, example_22).
+in_front(oid_55, oid_30, example_22).
+left_of(oid_92, oid_30, example_22).
+behind(oid_92, oid_30, example_22).
+right_of(oid_55, oid_50, example_22).
+in_front(oid_55, oid_50, example_22).
+left_of(oid_91, oid_50, example_22).
+behind(oid_91, oid_50, example_22).
+left_of(oid_67, oid_50, example_22).
+behind(oid_67, oid_50, example_22).
+left_of(oid_30, oid_50, example_22).
+in_front(oid_30, oid_50, example_22).
+left_of(oid_55, oid_50, example_22).
+in_front(oid_55, oid_50, example_22).
+left_of(oid_92, oid_50, example_22).
+behind(oid_92, oid_50, example_22).
+right_of(oid_55, oid_55, example_22).
+behind(oid_55, oid_55, example_22).
+left_of(oid_91, oid_55, example_22).
+behind(oid_91, oid_55, example_22).
+left_of(oid_67, oid_55, example_22).
+behind(oid_67, oid_55, example_22).
+left_of(oid_30, oid_55, example_22).
+behind(oid_30, oid_55, example_22).
+right_of(oid_50, oid_55, example_22).
+behind(oid_50, oid_55, example_22).
+left_of(oid_92, oid_55, example_22).
+behind(oid_92, oid_55, example_22).
+right_of(oid_55, oid_92, example_22).
+in_front(oid_55, oid_92, example_22).
+right_of(oid_91, oid_92, example_22).
+in_front(oid_91, oid_92, example_22).
+right_of(oid_67, oid_92, example_22).
+behind(oid_67, oid_92, example_22).
+right_of(oid_30, oid_92, example_22).
+in_front(oid_30, oid_92, example_22).
+right_of(oid_50, oid_92, example_22).
+in_front(oid_50, oid_92, example_22).
+right_of(oid_55, oid_92, example_22).
+in_front(oid_55, oid_92, example_22).
+
+contains(oid_31, example_23).
+contains(oid_2, example_23).
+contains(oid_4, example_23).
+contains(oid_20, example_23).
+contains(oid_11, example_23).
+contains(oid_62, example_23).
+right_of(oid_2, oid_31, example_23).
+in_front(oid_2, oid_31, example_23).
+right_of(oid_4, oid_31, example_23).
+in_front(oid_4, oid_31, example_23).
+right_of(oid_20, oid_31, example_23).
+in_front(oid_20, oid_31, example_23).
+left_of(oid_11, oid_31, example_23).
+in_front(oid_11, oid_31, example_23).
+right_of(oid_62, oid_31, example_23).
+behind(oid_62, oid_31, example_23).
+left_of(oid_31, oid_2, example_23).
+behind(oid_31, oid_2, example_23).
+right_of(oid_4, oid_2, example_23).
+behind(oid_4, oid_2, example_23).
+right_of(oid_20, oid_2, example_23).
+behind(oid_20, oid_2, example_23).
+left_of(oid_11, oid_2, example_23).
+behind(oid_11, oid_2, example_23).
+left_of(oid_62, oid_2, example_23).
+behind(oid_62, oid_2, example_23).
+left_of(oid_31, oid_4, example_23).
+behind(oid_31, oid_4, example_23).
+left_of(oid_2, oid_4, example_23).
+in_front(oid_2, oid_4, example_23).
+left_of(oid_20, oid_4, example_23).
+behind(oid_20, oid_4, example_23).
+left_of(oid_11, oid_4, example_23).
+behind(oid_11, oid_4, example_23).
+left_of(oid_62, oid_4, example_23).
+behind(oid_62, oid_4, example_23).
+left_of(oid_31, oid_20, example_23).
+behind(oid_31, oid_20, example_23).
+left_of(oid_2, oid_20, example_23).
+in_front(oid_2, oid_20, example_23).
+right_of(oid_4, oid_20, example_23).
+in_front(oid_4, oid_20, example_23).
+left_of(oid_11, oid_20, example_23).
+in_front(oid_11, oid_20, example_23).
+left_of(oid_62, oid_20, example_23).
+behind(oid_62, oid_20, example_23).
+right_of(oid_31, oid_11, example_23).
+behind(oid_31, oid_11, example_23).
+right_of(oid_2, oid_11, example_23).
+in_front(oid_2, oid_11, example_23).
+right_of(oid_4, oid_11, example_23).
+in_front(oid_4, oid_11, example_23).
+right_of(oid_20, oid_11, example_23).
+behind(oid_20, oid_11, example_23).
+right_of(oid_62, oid_11, example_23).
+behind(oid_62, oid_11, example_23).
+left_of(oid_31, oid_62, example_23).
+in_front(oid_31, oid_62, example_23).
+right_of(oid_2, oid_62, example_23).
+in_front(oid_2, oid_62, example_23).
+right_of(oid_4, oid_62, example_23).
+in_front(oid_4, oid_62, example_23).
+right_of(oid_20, oid_62, example_23).
+in_front(oid_20, oid_62, example_23).
+left_of(oid_11, oid_62, example_23).
+in_front(oid_11, oid_62, example_23).
+
+contains(oid_13, example_24).
+contains(oid_5, example_24).
+contains(oid_12, example_24).
+contains(oid_68, example_24).
+contains(oid_63, example_24).
+contains(oid_26, example_24).
+contains(oid_48, example_24).
+contains(oid_45, example_24).
+right_of(oid_5, oid_13, example_24).
+behind(oid_5, oid_13, example_24).
+right_of(oid_12, oid_13, example_24).
+in_front(oid_12, oid_13, example_24).
+right_of(oid_68, oid_13, example_24).
+in_front(oid_68, oid_13, example_24).
+right_of(oid_63, oid_13, example_24).
+in_front(oid_63, oid_13, example_24).
+left_of(oid_26, oid_13, example_24).
+in_front(oid_26, oid_13, example_24).
+right_of(oid_48, oid_13, example_24).
+in_front(oid_48, oid_13, example_24).
+right_of(oid_45, oid_13, example_24).
+behind(oid_45, oid_13, example_24).
+left_of(oid_13, oid_5, example_24).
+in_front(oid_13, oid_5, example_24).
+right_of(oid_12, oid_5, example_24).
+in_front(oid_12, oid_5, example_24).
+left_of(oid_68, oid_5, example_24).
+in_front(oid_68, oid_5, example_24).
+left_of(oid_63, oid_5, example_24).
+in_front(oid_63, oid_5, example_24).
+left_of(oid_26, oid_5, example_24).
+in_front(oid_26, oid_5, example_24).
+right_of(oid_48, oid_5, example_24).
+in_front(oid_48, oid_5, example_24).
+left_of(oid_45, oid_5, example_24).
+behind(oid_45, oid_5, example_24).
+left_of(oid_13, oid_12, example_24).
+behind(oid_13, oid_12, example_24).
+left_of(oid_5, oid_12, example_24).
+behind(oid_5, oid_12, example_24).
+left_of(oid_68, oid_12, example_24).
+in_front(oid_68, oid_12, example_24).
+left_of(oid_63, oid_12, example_24).
+in_front(oid_63, oid_12, example_24).
+left_of(oid_26, oid_12, example_24).
+behind(oid_26, oid_12, example_24).
+inline_X(oid_48, oid_12, example_24).
+behind(oid_48, oid_12, example_24).
+left_of(oid_45, oid_12, example_24).
+behind(oid_45, oid_12, example_24).
+left_of(oid_13, oid_68, example_24).
+behind(oid_13, oid_68, example_24).
+right_of(oid_5, oid_68, example_24).
+behind(oid_5, oid_68, example_24).
+right_of(oid_12, oid_68, example_24).
+behind(oid_12, oid_68, example_24).
+right_of(oid_63, oid_68, example_24).
+in_front(oid_63, oid_68, example_24).
+left_of(oid_26, oid_68, example_24).
+behind(oid_26, oid_68, example_24).
+right_of(oid_48, oid_68, example_24).
+behind(oid_48, oid_68, example_24).
+left_of(oid_45, oid_68, example_24).
+behind(oid_45, oid_68, example_24).
+left_of(oid_13, oid_63, example_24).
+behind(oid_13, oid_63, example_24).
+right_of(oid_5, oid_63, example_24).
+behind(oid_5, oid_63, example_24).
+right_of(oid_12, oid_63, example_24).
+behind(oid_12, oid_63, example_24).
+left_of(oid_68, oid_63, example_24).
+behind(oid_68, oid_63, example_24).
+left_of(oid_26, oid_63, example_24).
+behind(oid_26, oid_63, example_24).
+right_of(oid_48, oid_63, example_24).
+behind(oid_48, oid_63, example_24).
+left_of(oid_45, oid_63, example_24).
+behind(oid_45, oid_63, example_24).
+right_of(oid_13, oid_26, example_24).
+behind(oid_13, oid_26, example_24).
+right_of(oid_5, oid_26, example_24).
+behind(oid_5, oid_26, example_24).
+right_of(oid_12, oid_26, example_24).
+in_front(oid_12, oid_26, example_24).
+right_of(oid_68, oid_26, example_24).
+in_front(oid_68, oid_26, example_24).
+right_of(oid_63, oid_26, example_24).
+in_front(oid_63, oid_26, example_24).
+right_of(oid_48, oid_26, example_24).
+behind(oid_48, oid_26, example_24).
+right_of(oid_45, oid_26, example_24).
+behind(oid_45, oid_26, example_24).
+left_of(oid_13, oid_48, example_24).
+behind(oid_13, oid_48, example_24).
+left_of(oid_5, oid_48, example_24).
+behind(oid_5, oid_48, example_24).
+inline_X(oid_12, oid_48, example_24).
+in_front(oid_12, oid_48, example_24).
+left_of(oid_68, oid_48, example_24).
+in_front(oid_68, oid_48, example_24).
+left_of(oid_63, oid_48, example_24).
+in_front(oid_63, oid_48, example_24).
+left_of(oid_26, oid_48, example_24).
+in_front(oid_26, oid_48, example_24).
+left_of(oid_45, oid_48, example_24).
+behind(oid_45, oid_48, example_24).
+left_of(oid_13, oid_45, example_24).
+in_front(oid_13, oid_45, example_24).
+right_of(oid_5, oid_45, example_24).
+in_front(oid_5, oid_45, example_24).
+right_of(oid_12, oid_45, example_24).
+in_front(oid_12, oid_45, example_24).
+right_of(oid_68, oid_45, example_24).
+in_front(oid_68, oid_45, example_24).
+right_of(oid_63, oid_45, example_24).
+in_front(oid_63, oid_45, example_24).
+left_of(oid_26, oid_45, example_24).
+in_front(oid_26, oid_45, example_24).
+right_of(oid_48, oid_45, example_24).
+in_front(oid_48, oid_45, example_24).
+
+contains(oid_78, example_25).
+contains(oid_52, example_25).
+contains(oid_83, example_25).
+contains(oid_22, example_25).
+right_of(oid_52, oid_78, example_25).
+behind(oid_52, oid_78, example_25).
+left_of(oid_83, oid_78, example_25).
+behind(oid_83, oid_78, example_25).
+right_of(oid_22, oid_78, example_25).
+behind(oid_22, oid_78, example_25).
+left_of(oid_78, oid_52, example_25).
+in_front(oid_78, oid_52, example_25).
+left_of(oid_83, oid_52, example_25).
+behind(oid_83, oid_52, example_25).
+right_of(oid_22, oid_52, example_25).
+behind(oid_22, oid_52, example_25).
+right_of(oid_78, oid_83, example_25).
+in_front(oid_78, oid_83, example_25).
+right_of(oid_52, oid_83, example_25).
+in_front(oid_52, oid_83, example_25).
+right_of(oid_22, oid_83, example_25).
+in_front(oid_22, oid_83, example_25).
+left_of(oid_78, oid_22, example_25).
+in_front(oid_78, oid_22, example_25).
+left_of(oid_52, oid_22, example_25).
+in_front(oid_52, oid_22, example_25).
+left_of(oid_83, oid_22, example_25).
+behind(oid_83, oid_22, example_25).
+
+contains(oid_3, example_26).
+contains(oid_0, example_26).
+contains(oid_15, example_26).
+contains(oid_23, example_26).
+contains(oid_18, example_26).
+contains(oid_48, example_26).
+right_of(oid_0, oid_3, example_26).
+behind(oid_0, oid_3, example_26).
+left_of(oid_15, oid_3, example_26).
+behind(oid_15, oid_3, example_26).
+left_of(oid_23, oid_3, example_26).
+in_front(oid_23, oid_3, example_26).
+right_of(oid_18, oid_3, example_26).
+in_front(oid_18, oid_3, example_26).
+right_of(oid_48, oid_3, example_26).
+behind(oid_48, oid_3, example_26).
+left_of(oid_3, oid_0, example_26).
+in_front(oid_3, oid_0, example_26).
+left_of(oid_15, oid_0, example_26).
+behind(oid_15, oid_0, example_26).
+left_of(oid_23, oid_0, example_26).
+in_front(oid_23, oid_0, example_26).
+left_of(oid_18, oid_0, example_26).
+in_front(oid_18, oid_0, example_26).
+left_of(oid_48, oid_0, example_26).
+behind(oid_48, oid_0, example_26).
+right_of(oid_3, oid_15, example_26).
+in_front(oid_3, oid_15, example_26).
+right_of(oid_0, oid_15, example_26).
+in_front(oid_0, oid_15, example_26).
+right_of(oid_23, oid_15, example_26).
+in_front(oid_23, oid_15, example_26).
+right_of(oid_18, oid_15, example_26).
+in_front(oid_18, oid_15, example_26).
+right_of(oid_48, oid_15, example_26).
+behind(oid_48, oid_15, example_26).
+right_of(oid_3, oid_23, example_26).
+behind(oid_3, oid_23, example_26).
+right_of(oid_0, oid_23, example_26).
+behind(oid_0, oid_23, example_26).
+left_of(oid_15, oid_23, example_26).
+behind(oid_15, oid_23, example_26).
+right_of(oid_18, oid_23, example_26).
+behind(oid_18, oid_23, example_26).
+right_of(oid_48, oid_23, example_26).
+behind(oid_48, oid_23, example_26).
+left_of(oid_3, oid_18, example_26).
+behind(oid_3, oid_18, example_26).
+right_of(oid_0, oid_18, example_26).
+behind(oid_0, oid_18, example_26).
+left_of(oid_15, oid_18, example_26).
+behind(oid_15, oid_18, example_26).
+left_of(oid_23, oid_18, example_26).
+in_front(oid_23, oid_18, example_26).
+left_of(oid_48, oid_18, example_26).
+behind(oid_48, oid_18, example_26).
+left_of(oid_3, oid_48, example_26).
+in_front(oid_3, oid_48, example_26).
+right_of(oid_0, oid_48, example_26).
+in_front(oid_0, oid_48, example_26).
+left_of(oid_15, oid_48, example_26).
+in_front(oid_15, oid_48, example_26).
+left_of(oid_23, oid_48, example_26).
+in_front(oid_23, oid_48, example_26).
+right_of(oid_18, oid_48, example_26).
+in_front(oid_18, oid_48, example_26).
+
+contains(oid_18, example_27).
+contains(oid_91, example_27).
+contains(oid_74, example_27).
+contains(oid_56, example_27).
+contains(oid_8, example_27).
+contains(oid_92, example_27).
+left_of(oid_91, oid_18, example_27).
+in_front(oid_91, oid_18, example_27).
+left_of(oid_74, oid_18, example_27).
+behind(oid_74, oid_18, example_27).
+left_of(oid_56, oid_18, example_27).
+behind(oid_56, oid_18, example_27).
+left_of(oid_8, oid_18, example_27).
+in_front(oid_8, oid_18, example_27).
+left_of(oid_92, oid_18, example_27).
+behind(oid_92, oid_18, example_27).
+right_of(oid_18, oid_91, example_27).
+behind(oid_18, oid_91, example_27).
+right_of(oid_74, oid_91, example_27).
+behind(oid_74, oid_91, example_27).
+right_of(oid_56, oid_91, example_27).
+behind(oid_56, oid_91, example_27).
+right_of(oid_8, oid_91, example_27).
+behind(oid_8, oid_91, example_27).
+left_of(oid_92, oid_91, example_27).
+behind(oid_92, oid_91, example_27).
+right_of(oid_18, oid_74, example_27).
+in_front(oid_18, oid_74, example_27).
+left_of(oid_91, oid_74, example_27).
+in_front(oid_91, oid_74, example_27).
+right_of(oid_56, oid_74, example_27).
+behind(oid_56, oid_74, example_27).
+left_of(oid_8, oid_74, example_27).
+in_front(oid_8, oid_74, example_27).
+left_of(oid_92, oid_74, example_27).
+in_front(oid_92, oid_74, example_27).
+right_of(oid_18, oid_56, example_27).
+in_front(oid_18, oid_56, example_27).
+left_of(oid_91, oid_56, example_27).
+in_front(oid_91, oid_56, example_27).
+left_of(oid_74, oid_56, example_27).
+in_front(oid_74, oid_56, example_27).
+left_of(oid_8, oid_56, example_27).
+in_front(oid_8, oid_56, example_27).
+left_of(oid_92, oid_56, example_27).
+in_front(oid_92, oid_56, example_27).
+right_of(oid_18, oid_8, example_27).
+behind(oid_18, oid_8, example_27).
+left_of(oid_91, oid_8, example_27).
+in_front(oid_91, oid_8, example_27).
+right_of(oid_74, oid_8, example_27).
+behind(oid_74, oid_8, example_27).
+right_of(oid_56, oid_8, example_27).
+behind(oid_56, oid_8, example_27).
+left_of(oid_92, oid_8, example_27).
+behind(oid_92, oid_8, example_27).
+right_of(oid_18, oid_92, example_27).
+in_front(oid_18, oid_92, example_27).
+right_of(oid_91, oid_92, example_27).
+in_front(oid_91, oid_92, example_27).
+right_of(oid_74, oid_92, example_27).
+behind(oid_74, oid_92, example_27).
+right_of(oid_56, oid_92, example_27).
+behind(oid_56, oid_92, example_27).
+right_of(oid_8, oid_92, example_27).
+in_front(oid_8, oid_92, example_27).
+
+contains(oid_25, example_28).
+contains(oid_54, example_28).
+right_of(oid_54, oid_25, example_28).
+behind(oid_54, oid_25, example_28).
+left_of(oid_25, oid_54, example_28).
+in_front(oid_25, oid_54, example_28).
+
+contains(oid_79, example_29).
+contains(oid_45, example_29).
+left_of(oid_45, oid_79, example_29).
+in_front(oid_45, oid_79, example_29).
+right_of(oid_79, oid_45, example_29).
+behind(oid_79, oid_45, example_29).
+
+contains(oid_63, example_30).
+contains(oid_12, example_30).
+contains(oid_68, example_30).
+contains(oid_76, example_30).
+contains(oid_60, example_30).
+right_of(oid_12, oid_63, example_30).
+behind(oid_12, oid_63, example_30).
+left_of(oid_68, oid_63, example_30).
+behind(oid_68, oid_63, example_30).
+left_of(oid_76, oid_63, example_30).
+in_front(oid_76, oid_63, example_30).
+right_of(oid_60, oid_63, example_30).
+behind(oid_60, oid_63, example_30).
+left_of(oid_63, oid_12, example_30).
+in_front(oid_63, oid_12, example_30).
+left_of(oid_68, oid_12, example_30).
+behind(oid_68, oid_12, example_30).
+left_of(oid_76, oid_12, example_30).
+in_front(oid_76, oid_12, example_30).
+left_of(oid_60, oid_12, example_30).
+behind(oid_60, oid_12, example_30).
+right_of(oid_63, oid_68, example_30).
+in_front(oid_63, oid_68, example_30).
+right_of(oid_12, oid_68, example_30).
+in_front(oid_12, oid_68, example_30).
+left_of(oid_76, oid_68, example_30).
+in_front(oid_76, oid_68, example_30).
+right_of(oid_60, oid_68, example_30).
+in_front(oid_60, oid_68, example_30).
+right_of(oid_63, oid_76, example_30).
+behind(oid_63, oid_76, example_30).
+right_of(oid_12, oid_76, example_30).
+behind(oid_12, oid_76, example_30).
+right_of(oid_68, oid_76, example_30).
+behind(oid_68, oid_76, example_30).
+right_of(oid_60, oid_76, example_30).
+behind(oid_60, oid_76, example_30).
+left_of(oid_63, oid_60, example_30).
+in_front(oid_63, oid_60, example_30).
+right_of(oid_12, oid_60, example_30).
+in_front(oid_12, oid_60, example_30).
+left_of(oid_68, oid_60, example_30).
+behind(oid_68, oid_60, example_30).
+left_of(oid_76, oid_60, example_30).
+in_front(oid_76, oid_60, example_30).
+
+contains(oid_39, example_31).
+contains(oid_87, example_31).
+contains(oid_81, example_31).
+contains(oid_91, example_31).
+contains(oid_64, example_31).
+contains(oid_48, example_31).
+contains(oid_8, example_31).
+right_of(oid_87, oid_39, example_31).
+in_front(oid_87, oid_39, example_31).
+right_of(oid_81, oid_39, example_31).
+behind(oid_81, oid_39, example_31).
+right_of(oid_91, oid_39, example_31).
+in_front(oid_91, oid_39, example_31).
+left_of(oid_64, oid_39, example_31).
+in_front(oid_64, oid_39, example_31).
+right_of(oid_48, oid_39, example_31).
+in_front(oid_48, oid_39, example_31).
+right_of(oid_8, oid_39, example_31).
+in_front(oid_8, oid_39, example_31).
+left_of(oid_39, oid_87, example_31).
+behind(oid_39, oid_87, example_31).
+left_of(oid_81, oid_87, example_31).
+behind(oid_81, oid_87, example_31).
+left_of(oid_91, oid_87, example_31).
+behind(oid_91, oid_87, example_31).
+left_of(oid_64, oid_87, example_31).
+behind(oid_64, oid_87, example_31).
+right_of(oid_48, oid_87, example_31).
+behind(oid_48, oid_87, example_31).
+left_of(oid_8, oid_87, example_31).
+in_front(oid_8, oid_87, example_31).
+left_of(oid_39, oid_81, example_31).
+in_front(oid_39, oid_81, example_31).
+right_of(oid_87, oid_81, example_31).
+in_front(oid_87, oid_81, example_31).
+left_of(oid_91, oid_81, example_31).
+in_front(oid_91, oid_81, example_31).
+left_of(oid_64, oid_81, example_31).
+in_front(oid_64, oid_81, example_31).
+right_of(oid_48, oid_81, example_31).
+in_front(oid_48, oid_81, example_31).
+left_of(oid_8, oid_81, example_31).
+in_front(oid_8, oid_81, example_31).
+left_of(oid_39, oid_91, example_31).
+behind(oid_39, oid_91, example_31).
+right_of(oid_87, oid_91, example_31).
+in_front(oid_87, oid_91, example_31).
+right_of(oid_81, oid_91, example_31).
+behind(oid_81, oid_91, example_31).
+left_of(oid_64, oid_91, example_31).
+behind(oid_64, oid_91, example_31).
+right_of(oid_48, oid_91, example_31).
+in_front(oid_48, oid_91, example_31).
+left_of(oid_8, oid_91, example_31).
+in_front(oid_8, oid_91, example_31).
+right_of(oid_39, oid_64, example_31).
+behind(oid_39, oid_64, example_31).
+right_of(oid_87, oid_64, example_31).
+in_front(oid_87, oid_64, example_31).
+right_of(oid_81, oid_64, example_31).
+behind(oid_81, oid_64, example_31).
+right_of(oid_91, oid_64, example_31).
+in_front(oid_91, oid_64, example_31).
+right_of(oid_48, oid_64, example_31).
+in_front(oid_48, oid_64, example_31).
+right_of(oid_8, oid_64, example_31).
+in_front(oid_8, oid_64, example_31).
+left_of(oid_39, oid_48, example_31).
+behind(oid_39, oid_48, example_31).
+left_of(oid_87, oid_48, example_31).
+in_front(oid_87, oid_48, example_31).
+left_of(oid_81, oid_48, example_31).
+behind(oid_81, oid_48, example_31).
+left_of(oid_91, oid_48, example_31).
+behind(oid_91, oid_48, example_31).
+left_of(oid_64, oid_48, example_31).
+behind(oid_64, oid_48, example_31).
+left_of(oid_8, oid_48, example_31).
+in_front(oid_8, oid_48, example_31).
+left_of(oid_39, oid_8, example_31).
+behind(oid_39, oid_8, example_31).
+right_of(oid_87, oid_8, example_31).
+behind(oid_87, oid_8, example_31).
+right_of(oid_81, oid_8, example_31).
+behind(oid_81, oid_8, example_31).
+right_of(oid_91, oid_8, example_31).
+behind(oid_91, oid_8, example_31).
+left_of(oid_64, oid_8, example_31).
+behind(oid_64, oid_8, example_31).
+right_of(oid_48, oid_8, example_31).
+behind(oid_48, oid_8, example_31).
+
+contains(oid_54, example_32).
+contains(oid_61, example_32).
+contains(oid_67, example_32).
+contains(oid_85, example_32).
+contains(oid_51, example_32).
+contains(oid_44, example_32).
+left_of(oid_61, oid_54, example_32).
+in_front(oid_61, oid_54, example_32).
+left_of(oid_67, oid_54, example_32).
+in_front(oid_67, oid_54, example_32).
+right_of(oid_85, oid_54, example_32).
+in_front(oid_85, oid_54, example_32).
+left_of(oid_51, oid_54, example_32).
+in_front(oid_51, oid_54, example_32).
+left_of(oid_44, oid_54, example_32).
+in_front(oid_44, oid_54, example_32).
+right_of(oid_54, oid_61, example_32).
+behind(oid_54, oid_61, example_32).
+left_of(oid_67, oid_61, example_32).
+behind(oid_67, oid_61, example_32).
+right_of(oid_85, oid_61, example_32).
+behind(oid_85, oid_61, example_32).
+left_of(oid_51, oid_61, example_32).
+in_front(oid_51, oid_61, example_32).
+left_of(oid_44, oid_61, example_32).
+behind(oid_44, oid_61, example_32).
+right_of(oid_54, oid_67, example_32).
+behind(oid_54, oid_67, example_32).
+right_of(oid_61, oid_67, example_32).
+in_front(oid_61, oid_67, example_32).
+right_of(oid_85, oid_67, example_32).
+behind(oid_85, oid_67, example_32).
+right_of(oid_51, oid_67, example_32).
+in_front(oid_51, oid_67, example_32).
+right_of(oid_44, oid_67, example_32).
+behind(oid_44, oid_67, example_32).
+left_of(oid_54, oid_85, example_32).
+behind(oid_54, oid_85, example_32).
+left_of(oid_61, oid_85, example_32).
+in_front(oid_61, oid_85, example_32).
+left_of(oid_67, oid_85, example_32).
+in_front(oid_67, oid_85, example_32).
+left_of(oid_51, oid_85, example_32).
+in_front(oid_51, oid_85, example_32).
+left_of(oid_44, oid_85, example_32).
+in_front(oid_44, oid_85, example_32).
+right_of(oid_54, oid_51, example_32).
+behind(oid_54, oid_51, example_32).
+right_of(oid_61, oid_51, example_32).
+behind(oid_61, oid_51, example_32).
+left_of(oid_67, oid_51, example_32).
+behind(oid_67, oid_51, example_32).
+right_of(oid_85, oid_51, example_32).
+behind(oid_85, oid_51, example_32).
+left_of(oid_44, oid_51, example_32).
+behind(oid_44, oid_51, example_32).
+right_of(oid_54, oid_44, example_32).
+behind(oid_54, oid_44, example_32).
+right_of(oid_61, oid_44, example_32).
+in_front(oid_61, oid_44, example_32).
+left_of(oid_67, oid_44, example_32).
+in_front(oid_67, oid_44, example_32).
+right_of(oid_85, oid_44, example_32).
+behind(oid_85, oid_44, example_32).
+right_of(oid_51, oid_44, example_32).
+in_front(oid_51, oid_44, example_32).
+
+contains(oid_25, example_33).
+contains(oid_54, example_33).
+contains(oid_1, example_33).
+contains(oid_35, example_33).
+contains(oid_32, example_33).
+contains(oid_44, example_33).
+contains(oid_41, example_33).
+left_of(oid_54, oid_25, example_33).
+behind(oid_54, oid_25, example_33).
+left_of(oid_1, oid_25, example_33).
+behind(oid_1, oid_25, example_33).
+left_of(oid_35, oid_25, example_33).
+in_front(oid_35, oid_25, example_33).
+left_of(oid_32, oid_25, example_33).
+behind(oid_32, oid_25, example_33).
+left_of(oid_44, oid_25, example_33).
+behind(oid_44, oid_25, example_33).
+left_of(oid_41, oid_25, example_33).
+in_front(oid_41, oid_25, example_33).
+right_of(oid_25, oid_54, example_33).
+in_front(oid_25, oid_54, example_33).
+right_of(oid_1, oid_54, example_33).
+behind(oid_1, oid_54, example_33).
+right_of(oid_35, oid_54, example_33).
+in_front(oid_35, oid_54, example_33).
+left_of(oid_32, oid_54, example_33).
+in_front(oid_32, oid_54, example_33).
+right_of(oid_44, oid_54, example_33).
+behind(oid_44, oid_54, example_33).
+right_of(oid_41, oid_54, example_33).
+in_front(oid_41, oid_54, example_33).
+right_of(oid_25, oid_1, example_33).
+in_front(oid_25, oid_1, example_33).
+left_of(oid_54, oid_1, example_33).
+in_front(oid_54, oid_1, example_33).
+left_of(oid_35, oid_1, example_33).
+in_front(oid_35, oid_1, example_33).
+left_of(oid_32, oid_1, example_33).
+in_front(oid_32, oid_1, example_33).
+left_of(oid_44, oid_1, example_33).
+behind(oid_44, oid_1, example_33).
+left_of(oid_41, oid_1, example_33).
+in_front(oid_41, oid_1, example_33).
+right_of(oid_25, oid_35, example_33).
+behind(oid_25, oid_35, example_33).
+left_of(oid_54, oid_35, example_33).
+behind(oid_54, oid_35, example_33).
+right_of(oid_1, oid_35, example_33).
+behind(oid_1, oid_35, example_33).
+left_of(oid_32, oid_35, example_33).
+behind(oid_32, oid_35, example_33).
+left_of(oid_44, oid_35, example_33).
+behind(oid_44, oid_35, example_33).
+left_of(oid_41, oid_35, example_33).
+in_front(oid_41, oid_35, example_33).
+right_of(oid_25, oid_32, example_33).
+in_front(oid_25, oid_32, example_33).
+right_of(oid_54, oid_32, example_33).
+behind(oid_54, oid_32, example_33).
+right_of(oid_1, oid_32, example_33).
+behind(oid_1, oid_32, example_33).
+right_of(oid_35, oid_32, example_33).
+in_front(oid_35, oid_32, example_33).
+right_of(oid_44, oid_32, example_33).
+behind(oid_44, oid_32, example_33).
+right_of(oid_41, oid_32, example_33).
+in_front(oid_41, oid_32, example_33).
+right_of(oid_25, oid_44, example_33).
+in_front(oid_25, oid_44, example_33).
+left_of(oid_54, oid_44, example_33).
+in_front(oid_54, oid_44, example_33).
+right_of(oid_1, oid_44, example_33).
+in_front(oid_1, oid_44, example_33).
+right_of(oid_35, oid_44, example_33).
+in_front(oid_35, oid_44, example_33).
+left_of(oid_32, oid_44, example_33).
+in_front(oid_32, oid_44, example_33).
+right_of(oid_41, oid_44, example_33).
+in_front(oid_41, oid_44, example_33).
+right_of(oid_25, oid_41, example_33).
+behind(oid_25, oid_41, example_33).
+left_of(oid_54, oid_41, example_33).
+behind(oid_54, oid_41, example_33).
+right_of(oid_1, oid_41, example_33).
+behind(oid_1, oid_41, example_33).
+right_of(oid_35, oid_41, example_33).
+behind(oid_35, oid_41, example_33).
+left_of(oid_32, oid_41, example_33).
+behind(oid_32, oid_41, example_33).
+left_of(oid_44, oid_41, example_33).
+behind(oid_44, oid_41, example_33).
+
+contains(oid_53, example_34).
+contains(oid_79, example_34).
+contains(oid_54, example_34).
+contains(oid_79, example_34).
+contains(oid_51, example_34).
+contains(oid_85, example_34).
+contains(oid_60, example_34).
+contains(oid_48, example_34).
+contains(oid_90, example_34).
+left_of(oid_79, oid_53, example_34).
+in_front(oid_79, oid_53, example_34).
+left_of(oid_54, oid_53, example_34).
+in_front(oid_54, oid_53, example_34).
+left_of(oid_79, oid_53, example_34).
+in_front(oid_79, oid_53, example_34).
+left_of(oid_51, oid_53, example_34).
+in_front(oid_51, oid_53, example_34).
+right_of(oid_85, oid_53, example_34).
+in_front(oid_85, oid_53, example_34).
+left_of(oid_60, oid_53, example_34).
+behind(oid_60, oid_53, example_34).
+left_of(oid_48, oid_53, example_34).
+in_front(oid_48, oid_53, example_34).
+left_of(oid_90, oid_53, example_34).
+in_front(oid_90, oid_53, example_34).
+right_of(oid_53, oid_79, example_34).
+behind(oid_53, oid_79, example_34).
+right_of(oid_54, oid_79, example_34).
+in_front(oid_54, oid_79, example_34).
+right_of(oid_79, oid_79, example_34).
+in_front(oid_79, oid_79, example_34).
+right_of(oid_51, oid_79, example_34).
+behind(oid_51, oid_79, example_34).
+right_of(oid_85, oid_79, example_34).
+in_front(oid_85, oid_79, example_34).
+right_of(oid_60, oid_79, example_34).
+behind(oid_60, oid_79, example_34).
+right_of(oid_48, oid_79, example_34).
+in_front(oid_48, oid_79, example_34).
+right_of(oid_90, oid_79, example_34).
+in_front(oid_90, oid_79, example_34).
+right_of(oid_53, oid_54, example_34).
+behind(oid_53, oid_54, example_34).
+left_of(oid_79, oid_54, example_34).
+behind(oid_79, oid_54, example_34).
+right_of(oid_79, oid_54, example_34).
+in_front(oid_79, oid_54, example_34).
+right_of(oid_51, oid_54, example_34).
+behind(oid_51, oid_54, example_34).
+right_of(oid_85, oid_54, example_34).
+in_front(oid_85, oid_54, example_34).
+right_of(oid_60, oid_54, example_34).
+behind(oid_60, oid_54, example_34).
+right_of(oid_48, oid_54, example_34).
+in_front(oid_48, oid_54, example_34).
+right_of(oid_90, oid_54, example_34).
+in_front(oid_90, oid_54, example_34).
+right_of(oid_53, oid_79, example_34).
+behind(oid_53, oid_79, example_34).
+left_of(oid_79, oid_79, example_34).
+behind(oid_79, oid_79, example_34).
+left_of(oid_54, oid_79, example_34).
+behind(oid_54, oid_79, example_34).
+left_of(oid_51, oid_79, example_34).
+behind(oid_51, oid_79, example_34).
+right_of(oid_85, oid_79, example_34).
+behind(oid_85, oid_79, example_34).
+right_of(oid_60, oid_79, example_34).
+behind(oid_60, oid_79, example_34).
+right_of(oid_48, oid_79, example_34).
+behind(oid_48, oid_79, example_34).
+right_of(oid_90, oid_79, example_34).
+behind(oid_90, oid_79, example_34).
+right_of(oid_53, oid_51, example_34).
+behind(oid_53, oid_51, example_34).
+left_of(oid_79, oid_51, example_34).
+in_front(oid_79, oid_51, example_34).
+left_of(oid_54, oid_51, example_34).
+in_front(oid_54, oid_51, example_34).
+right_of(oid_79, oid_51, example_34).
+in_front(oid_79, oid_51, example_34).
+right_of(oid_85, oid_51, example_34).
+in_front(oid_85, oid_51, example_34).
+right_of(oid_60, oid_51, example_34).
+behind(oid_60, oid_51, example_34).
+right_of(oid_48, oid_51, example_34).
+in_front(oid_48, oid_51, example_34).
+right_of(oid_90, oid_51, example_34).
+in_front(oid_90, oid_51, example_34).
+left_of(oid_53, oid_85, example_34).
+behind(oid_53, oid_85, example_34).
+left_of(oid_79, oid_85, example_34).
+behind(oid_79, oid_85, example_34).
+left_of(oid_54, oid_85, example_34).
+behind(oid_54, oid_85, example_34).
+left_of(oid_79, oid_85, example_34).
+in_front(oid_79, oid_85, example_34).
+left_of(oid_51, oid_85, example_34).
+behind(oid_51, oid_85, example_34).
+left_of(oid_60, oid_85, example_34).
+behind(oid_60, oid_85, example_34).
+left_of(oid_48, oid_85, example_34).
+behind(oid_48, oid_85, example_34).
+left_of(oid_90, oid_85, example_34).
+in_front(oid_90, oid_85, example_34).
+right_of(oid_53, oid_60, example_34).
+in_front(oid_53, oid_60, example_34).
+left_of(oid_79, oid_60, example_34).
+in_front(oid_79, oid_60, example_34).
+left_of(oid_54, oid_60, example_34).
+in_front(oid_54, oid_60, example_34).
+left_of(oid_79, oid_60, example_34).
+in_front(oid_79, oid_60, example_34).
+left_of(oid_51, oid_60, example_34).
+in_front(oid_51, oid_60, example_34).
+right_of(oid_85, oid_60, example_34).
+in_front(oid_85, oid_60, example_34).
+left_of(oid_48, oid_60, example_34).
+in_front(oid_48, oid_60, example_34).
+right_of(oid_90, oid_60, example_34).
+in_front(oid_90, oid_60, example_34).
+right_of(oid_53, oid_48, example_34).
+behind(oid_53, oid_48, example_34).
+left_of(oid_79, oid_48, example_34).
+behind(oid_79, oid_48, example_34).
+left_of(oid_54, oid_48, example_34).
+behind(oid_54, oid_48, example_34).
+left_of(oid_79, oid_48, example_34).
+in_front(oid_79, oid_48, example_34).
+left_of(oid_51, oid_48, example_34).
+behind(oid_51, oid_48, example_34).
+right_of(oid_85, oid_48, example_34).
+in_front(oid_85, oid_48, example_34).
+right_of(oid_60, oid_48, example_34).
+behind(oid_60, oid_48, example_34).
+right_of(oid_90, oid_48, example_34).
+in_front(oid_90, oid_48, example_34).
+right_of(oid_53, oid_90, example_34).
+behind(oid_53, oid_90, example_34).
+left_of(oid_79, oid_90, example_34).
+behind(oid_79, oid_90, example_34).
+left_of(oid_54, oid_90, example_34).
+behind(oid_54, oid_90, example_34).
+left_of(oid_79, oid_90, example_34).
+in_front(oid_79, oid_90, example_34).
+left_of(oid_51, oid_90, example_34).
+behind(oid_51, oid_90, example_34).
+right_of(oid_85, oid_90, example_34).
+behind(oid_85, oid_90, example_34).
+left_of(oid_60, oid_90, example_34).
+behind(oid_60, oid_90, example_34).
+left_of(oid_48, oid_90, example_34).
+behind(oid_48, oid_90, example_34).
+
+contains(oid_38, example_35).
+contains(oid_31, example_35).
+contains(oid_51, example_35).
+contains(oid_23, example_35).
+contains(oid_94, example_35).
+contains(oid_44, example_35).
+contains(oid_62, example_35).
+contains(oid_86, example_35).
+left_of(oid_31, oid_38, example_35).
+in_front(oid_31, oid_38, example_35).
+right_of(oid_51, oid_38, example_35).
+behind(oid_51, oid_38, example_35).
+left_of(oid_23, oid_38, example_35).
+behind(oid_23, oid_38, example_35).
+left_of(oid_94, oid_38, example_35).
+behind(oid_94, oid_38, example_35).
+left_of(oid_44, oid_38, example_35).
+behind(oid_44, oid_38, example_35).
+left_of(oid_62, oid_38, example_35).
+behind(oid_62, oid_38, example_35).
+left_of(oid_86, oid_38, example_35).
+behind(oid_86, oid_38, example_35).
+right_of(oid_38, oid_31, example_35).
+behind(oid_38, oid_31, example_35).
+right_of(oid_51, oid_31, example_35).
+behind(oid_51, oid_31, example_35).
+left_of(oid_23, oid_31, example_35).
+behind(oid_23, oid_31, example_35).
+right_of(oid_94, oid_31, example_35).
+behind(oid_94, oid_31, example_35).
+right_of(oid_44, oid_31, example_35).
+behind(oid_44, oid_31, example_35).
+right_of(oid_62, oid_31, example_35).
+behind(oid_62, oid_31, example_35).
+right_of(oid_86, oid_31, example_35).
+behind(oid_86, oid_31, example_35).
+left_of(oid_38, oid_51, example_35).
+in_front(oid_38, oid_51, example_35).
+left_of(oid_31, oid_51, example_35).
+in_front(oid_31, oid_51, example_35).
+left_of(oid_23, oid_51, example_35).
+behind(oid_23, oid_51, example_35).
+left_of(oid_94, oid_51, example_35).
+behind(oid_94, oid_51, example_35).
+left_of(oid_44, oid_51, example_35).
+behind(oid_44, oid_51, example_35).
+left_of(oid_62, oid_51, example_35).
+behind(oid_62, oid_51, example_35).
+left_of(oid_86, oid_51, example_35).
+behind(oid_86, oid_51, example_35).
+right_of(oid_38, oid_23, example_35).
+in_front(oid_38, oid_23, example_35).
+right_of(oid_31, oid_23, example_35).
+in_front(oid_31, oid_23, example_35).
+right_of(oid_51, oid_23, example_35).
+in_front(oid_51, oid_23, example_35).
+right_of(oid_94, oid_23, example_35).
+behind(oid_94, oid_23, example_35).
+right_of(oid_44, oid_23, example_35).
+behind(oid_44, oid_23, example_35).
+right_of(oid_62, oid_23, example_35).
+behind(oid_62, oid_23, example_35).
+right_of(oid_86, oid_23, example_35).
+behind(oid_86, oid_23, example_35).
+right_of(oid_38, oid_94, example_35).
+in_front(oid_38, oid_94, example_35).
+left_of(oid_31, oid_94, example_35).
+in_front(oid_31, oid_94, example_35).
+right_of(oid_51, oid_94, example_35).
+in_front(oid_51, oid_94, example_35).
+left_of(oid_23, oid_94, example_35).
+in_front(oid_23, oid_94, example_35).
+left_of(oid_44, oid_94, example_35).
+in_front(oid_44, oid_94, example_35).
+left_of(oid_62, oid_94, example_35).
+behind(oid_62, oid_94, example_35).
+left_of(oid_86, oid_94, example_35).
+behind(oid_86, oid_94, example_35).
+right_of(oid_38, oid_44, example_35).
+in_front(oid_38, oid_44, example_35).
+left_of(oid_31, oid_44, example_35).
+in_front(oid_31, oid_44, example_35).
+right_of(oid_51, oid_44, example_35).
+in_front(oid_51, oid_44, example_35).
+left_of(oid_23, oid_44, example_35).
+in_front(oid_23, oid_44, example_35).
+right_of(oid_94, oid_44, example_35).
+behind(oid_94, oid_44, example_35).
+right_of(oid_62, oid_44, example_35).
+behind(oid_62, oid_44, example_35).
+right_of(oid_86, oid_44, example_35).
+behind(oid_86, oid_44, example_35).
+right_of(oid_38, oid_62, example_35).
+in_front(oid_38, oid_62, example_35).
+left_of(oid_31, oid_62, example_35).
+in_front(oid_31, oid_62, example_35).
+right_of(oid_51, oid_62, example_35).
+in_front(oid_51, oid_62, example_35).
+left_of(oid_23, oid_62, example_35).
+in_front(oid_23, oid_62, example_35).
+right_of(oid_94, oid_62, example_35).
+in_front(oid_94, oid_62, example_35).
+left_of(oid_44, oid_62, example_35).
+in_front(oid_44, oid_62, example_35).
+right_of(oid_86, oid_62, example_35).
+behind(oid_86, oid_62, example_35).
+right_of(oid_38, oid_86, example_35).
+in_front(oid_38, oid_86, example_35).
+left_of(oid_31, oid_86, example_35).
+in_front(oid_31, oid_86, example_35).
+right_of(oid_51, oid_86, example_35).
+in_front(oid_51, oid_86, example_35).
+left_of(oid_23, oid_86, example_35).
+in_front(oid_23, oid_86, example_35).
+right_of(oid_94, oid_86, example_35).
+in_front(oid_94, oid_86, example_35).
+left_of(oid_44, oid_86, example_35).
+in_front(oid_44, oid_86, example_35).
+left_of(oid_62, oid_86, example_35).
+in_front(oid_62, oid_86, example_35).
+
+contains(oid_19, example_36).
+contains(oid_76, example_36).
+contains(oid_54, example_36).
+contains(oid_6, example_36).
+contains(oid_23, example_36).
+contains(oid_70, example_36).
+contains(oid_10, example_36).
+contains(oid_35, example_36).
+contains(oid_76, example_36).
+contains(oid_46, example_36).
+left_of(oid_76, oid_19, example_36).
+in_front(oid_76, oid_19, example_36).
+left_of(oid_54, oid_19, example_36).
+in_front(oid_54, oid_19, example_36).
+right_of(oid_6, oid_19, example_36).
+in_front(oid_6, oid_19, example_36).
+left_of(oid_23, oid_19, example_36).
+in_front(oid_23, oid_19, example_36).
+right_of(oid_70, oid_19, example_36).
+in_front(oid_70, oid_19, example_36).
+right_of(oid_10, oid_19, example_36).
+in_front(oid_10, oid_19, example_36).
+left_of(oid_35, oid_19, example_36).
+in_front(oid_35, oid_19, example_36).
+right_of(oid_76, oid_19, example_36).
+in_front(oid_76, oid_19, example_36).
+left_of(oid_46, oid_19, example_36).
+in_front(oid_46, oid_19, example_36).
+right_of(oid_19, oid_76, example_36).
+behind(oid_19, oid_76, example_36).
+right_of(oid_54, oid_76, example_36).
+behind(oid_54, oid_76, example_36).
+right_of(oid_6, oid_76, example_36).
+in_front(oid_6, oid_76, example_36).
+right_of(oid_23, oid_76, example_36).
+in_front(oid_23, oid_76, example_36).
+right_of(oid_70, oid_76, example_36).
+in_front(oid_70, oid_76, example_36).
+right_of(oid_10, oid_76, example_36).
+behind(oid_10, oid_76, example_36).
+left_of(oid_35, oid_76, example_36).
+behind(oid_35, oid_76, example_36).
+right_of(oid_76, oid_76, example_36).
+behind(oid_76, oid_76, example_36).
+right_of(oid_46, oid_76, example_36).
+in_front(oid_46, oid_76, example_36).
+right_of(oid_19, oid_54, example_36).
+behind(oid_19, oid_54, example_36).
+left_of(oid_76, oid_54, example_36).
+in_front(oid_76, oid_54, example_36).
+right_of(oid_6, oid_54, example_36).
+in_front(oid_6, oid_54, example_36).
+right_of(oid_23, oid_54, example_36).
+in_front(oid_23, oid_54, example_36).
+right_of(oid_70, oid_54, example_36).
+in_front(oid_70, oid_54, example_36).
+right_of(oid_10, oid_54, example_36).
+in_front(oid_10, oid_54, example_36).
+left_of(oid_35, oid_54, example_36).
+in_front(oid_35, oid_54, example_36).
+right_of(oid_76, oid_54, example_36).
+in_front(oid_76, oid_54, example_36).
+right_of(oid_46, oid_54, example_36).
+in_front(oid_46, oid_54, example_36).
+left_of(oid_19, oid_6, example_36).
+behind(oid_19, oid_6, example_36).
+left_of(oid_76, oid_6, example_36).
+behind(oid_76, oid_6, example_36).
+left_of(oid_54, oid_6, example_36).
+behind(oid_54, oid_6, example_36).
+left_of(oid_23, oid_6, example_36).
+in_front(oid_23, oid_6, example_36).
+right_of(oid_70, oid_6, example_36).
+behind(oid_70, oid_6, example_36).
+right_of(oid_10, oid_6, example_36).
+behind(oid_10, oid_6, example_36).
+left_of(oid_35, oid_6, example_36).
+behind(oid_35, oid_6, example_36).
+right_of(oid_76, oid_6, example_36).
+behind(oid_76, oid_6, example_36).
+left_of(oid_46, oid_6, example_36).
+behind(oid_46, oid_6, example_36).
+right_of(oid_19, oid_23, example_36).
+behind(oid_19, oid_23, example_36).
+left_of(oid_76, oid_23, example_36).
+behind(oid_76, oid_23, example_36).
+left_of(oid_54, oid_23, example_36).
+behind(oid_54, oid_23, example_36).
+right_of(oid_6, oid_23, example_36).
+behind(oid_6, oid_23, example_36).
+right_of(oid_70, oid_23, example_36).
+behind(oid_70, oid_23, example_36).
+right_of(oid_10, oid_23, example_36).
+behind(oid_10, oid_23, example_36).
+left_of(oid_35, oid_23, example_36).
+behind(oid_35, oid_23, example_36).
+right_of(oid_76, oid_23, example_36).
+behind(oid_76, oid_23, example_36).
+left_of(oid_46, oid_23, example_36).
+behind(oid_46, oid_23, example_36).
+left_of(oid_19, oid_70, example_36).
+behind(oid_19, oid_70, example_36).
+left_of(oid_76, oid_70, example_36).
+behind(oid_76, oid_70, example_36).
+left_of(oid_54, oid_70, example_36).
+behind(oid_54, oid_70, example_36).
+left_of(oid_6, oid_70, example_36).
+in_front(oid_6, oid_70, example_36).
+left_of(oid_23, oid_70, example_36).
+in_front(oid_23, oid_70, example_36).
+right_of(oid_10, oid_70, example_36).
+behind(oid_10, oid_70, example_36).
+left_of(oid_35, oid_70, example_36).
+behind(oid_35, oid_70, example_36).
+right_of(oid_76, oid_70, example_36).
+behind(oid_76, oid_70, example_36).
+left_of(oid_46, oid_70, example_36).
+in_front(oid_46, oid_70, example_36).
+left_of(oid_19, oid_10, example_36).
+behind(oid_19, oid_10, example_36).
+left_of(oid_76, oid_10, example_36).
+in_front(oid_76, oid_10, example_36).
+left_of(oid_54, oid_10, example_36).
+behind(oid_54, oid_10, example_36).
+left_of(oid_6, oid_10, example_36).
+in_front(oid_6, oid_10, example_36).
+left_of(oid_23, oid_10, example_36).
+in_front(oid_23, oid_10, example_36).
+left_of(oid_70, oid_10, example_36).
+in_front(oid_70, oid_10, example_36).
+left_of(oid_35, oid_10, example_36).
+behind(oid_35, oid_10, example_36).
+left_of(oid_76, oid_10, example_36).
+behind(oid_76, oid_10, example_36).
+left_of(oid_46, oid_10, example_36).
+in_front(oid_46, oid_10, example_36).
+right_of(oid_19, oid_35, example_36).
+behind(oid_19, oid_35, example_36).
+right_of(oid_76, oid_35, example_36).
+in_front(oid_76, oid_35, example_36).
+right_of(oid_54, oid_35, example_36).
+behind(oid_54, oid_35, example_36).
+right_of(oid_6, oid_35, example_36).
+in_front(oid_6, oid_35, example_36).
+right_of(oid_23, oid_35, example_36).
+in_front(oid_23, oid_35, example_36).
+right_of(oid_70, oid_35, example_36).
+in_front(oid_70, oid_35, example_36).
+right_of(oid_10, oid_35, example_36).
+in_front(oid_10, oid_35, example_36).
+right_of(oid_76, oid_35, example_36).
+behind(oid_76, oid_35, example_36).
+right_of(oid_46, oid_35, example_36).
+in_front(oid_46, oid_35, example_36).
+left_of(oid_19, oid_76, example_36).
+behind(oid_19, oid_76, example_36).
+left_of(oid_76, oid_76, example_36).
+in_front(oid_76, oid_76, example_36).
+left_of(oid_54, oid_76, example_36).
+behind(oid_54, oid_76, example_36).
+left_of(oid_6, oid_76, example_36).
+in_front(oid_6, oid_76, example_36).
+left_of(oid_23, oid_76, example_36).
+in_front(oid_23, oid_76, example_36).
+left_of(oid_70, oid_76, example_36).
+in_front(oid_70, oid_76, example_36).
+right_of(oid_10, oid_76, example_36).
+in_front(oid_10, oid_76, example_36).
+left_of(oid_35, oid_76, example_36).
+in_front(oid_35, oid_76, example_36).
+left_of(oid_46, oid_76, example_36).
+in_front(oid_46, oid_76, example_36).
+right_of(oid_19, oid_46, example_36).
+behind(oid_19, oid_46, example_36).
+left_of(oid_76, oid_46, example_36).
+behind(oid_76, oid_46, example_36).
+left_of(oid_54, oid_46, example_36).
+behind(oid_54, oid_46, example_36).
+right_of(oid_6, oid_46, example_36).
+in_front(oid_6, oid_46, example_36).
+right_of(oid_23, oid_46, example_36).
+in_front(oid_23, oid_46, example_36).
+right_of(oid_70, oid_46, example_36).
+behind(oid_70, oid_46, example_36).
+right_of(oid_10, oid_46, example_36).
+behind(oid_10, oid_46, example_36).
+left_of(oid_35, oid_46, example_36).
+behind(oid_35, oid_46, example_36).
+right_of(oid_76, oid_46, example_36).
+behind(oid_76, oid_46, example_36).
+
+contains(oid_56, example_37).
+contains(oid_13, example_37).
+contains(oid_38, example_37).
+contains(oid_72, example_37).
+contains(oid_51, example_37).
+contains(oid_32, example_37).
+left_of(oid_13, oid_56, example_37).
+in_front(oid_13, oid_56, example_37).
+left_of(oid_38, oid_56, example_37).
+behind(oid_38, oid_56, example_37).
+left_of(oid_72, oid_56, example_37).
+in_front(oid_72, oid_56, example_37).
+right_of(oid_51, oid_56, example_37).
+behind(oid_51, oid_56, example_37).
+left_of(oid_32, oid_56, example_37).
+behind(oid_32, oid_56, example_37).
+right_of(oid_56, oid_13, example_37).
+behind(oid_56, oid_13, example_37).
+right_of(oid_38, oid_13, example_37).
+behind(oid_38, oid_13, example_37).
+right_of(oid_72, oid_13, example_37).
+in_front(oid_72, oid_13, example_37).
+right_of(oid_51, oid_13, example_37).
+behind(oid_51, oid_13, example_37).
+right_of(oid_32, oid_13, example_37).
+behind(oid_32, oid_13, example_37).
+right_of(oid_56, oid_38, example_37).
+in_front(oid_56, oid_38, example_37).
+left_of(oid_13, oid_38, example_37).
+in_front(oid_13, oid_38, example_37).
+left_of(oid_72, oid_38, example_37).
+in_front(oid_72, oid_38, example_37).
+right_of(oid_51, oid_38, example_37).
+in_front(oid_51, oid_38, example_37).
+left_of(oid_32, oid_38, example_37).
+behind(oid_32, oid_38, example_37).
+right_of(oid_56, oid_72, example_37).
+behind(oid_56, oid_72, example_37).
+left_of(oid_13, oid_72, example_37).
+behind(oid_13, oid_72, example_37).
+right_of(oid_38, oid_72, example_37).
+behind(oid_38, oid_72, example_37).
+right_of(oid_51, oid_72, example_37).
+behind(oid_51, oid_72, example_37).
+right_of(oid_32, oid_72, example_37).
+behind(oid_32, oid_72, example_37).
+left_of(oid_56, oid_51, example_37).
+in_front(oid_56, oid_51, example_37).
+left_of(oid_13, oid_51, example_37).
+in_front(oid_13, oid_51, example_37).
+left_of(oid_38, oid_51, example_37).
+behind(oid_38, oid_51, example_37).
+left_of(oid_72, oid_51, example_37).
+in_front(oid_72, oid_51, example_37).
+left_of(oid_32, oid_51, example_37).
+behind(oid_32, oid_51, example_37).
+right_of(oid_56, oid_32, example_37).
+in_front(oid_56, oid_32, example_37).
+left_of(oid_13, oid_32, example_37).
+in_front(oid_13, oid_32, example_37).
+right_of(oid_38, oid_32, example_37).
+in_front(oid_38, oid_32, example_37).
+left_of(oid_72, oid_32, example_37).
+in_front(oid_72, oid_32, example_37).
+right_of(oid_51, oid_32, example_37).
+in_front(oid_51, oid_32, example_37).
+
+contains(oid_6, example_38).
+contains(oid_38, example_38).
+contains(oid_5, example_38).
+contains(oid_23, example_38).
+contains(oid_63, example_38).
+right_of(oid_38, oid_6, example_38).
+behind(oid_38, oid_6, example_38).
+right_of(oid_5, oid_6, example_38).
+in_front(oid_5, oid_6, example_38).
+right_of(oid_23, oid_6, example_38).
+in_front(oid_23, oid_6, example_38).
+right_of(oid_63, oid_6, example_38).
+in_front(oid_63, oid_6, example_38).
+left_of(oid_6, oid_38, example_38).
+in_front(oid_6, oid_38, example_38).
+right_of(oid_5, oid_38, example_38).
+in_front(oid_5, oid_38, example_38).
+right_of(oid_23, oid_38, example_38).
+in_front(oid_23, oid_38, example_38).
+right_of(oid_63, oid_38, example_38).
+in_front(oid_63, oid_38, example_38).
+left_of(oid_6, oid_5, example_38).
+behind(oid_6, oid_5, example_38).
+left_of(oid_38, oid_5, example_38).
+behind(oid_38, oid_5, example_38).
+right_of(oid_23, oid_5, example_38).
+behind(oid_23, oid_5, example_38).
+left_of(oid_63, oid_5, example_38).
+in_front(oid_63, oid_5, example_38).
+left_of(oid_6, oid_23, example_38).
+behind(oid_6, oid_23, example_38).
+left_of(oid_38, oid_23, example_38).
+behind(oid_38, oid_23, example_38).
+left_of(oid_5, oid_23, example_38).
+in_front(oid_5, oid_23, example_38).
+left_of(oid_63, oid_23, example_38).
+in_front(oid_63, oid_23, example_38).
+left_of(oid_6, oid_63, example_38).
+behind(oid_6, oid_63, example_38).
+left_of(oid_38, oid_63, example_38).
+behind(oid_38, oid_63, example_38).
+right_of(oid_5, oid_63, example_38).
+behind(oid_5, oid_63, example_38).
+right_of(oid_23, oid_63, example_38).
+behind(oid_23, oid_63, example_38).
+
+contains(oid_6, example_39).
+contains(oid_87, example_39).
+contains(oid_54, example_39).
+contains(oid_35, example_39).
+contains(oid_88, example_39).
+contains(oid_91, example_39).
+contains(oid_47, example_39).
+left_of(oid_87, oid_6, example_39).
+in_front(oid_87, oid_6, example_39).
+right_of(oid_54, oid_6, example_39).
+in_front(oid_54, oid_6, example_39).
+right_of(oid_35, oid_6, example_39).
+in_front(oid_35, oid_6, example_39).
+right_of(oid_88, oid_6, example_39).
+in_front(oid_88, oid_6, example_39).
+left_of(oid_91, oid_6, example_39).
+in_front(oid_91, oid_6, example_39).
+right_of(oid_47, oid_6, example_39).
+behind(oid_47, oid_6, example_39).
+right_of(oid_6, oid_87, example_39).
+behind(oid_6, oid_87, example_39).
+right_of(oid_54, oid_87, example_39).
+behind(oid_54, oid_87, example_39).
+right_of(oid_35, oid_87, example_39).
+behind(oid_35, oid_87, example_39).
+right_of(oid_88, oid_87, example_39).
+in_front(oid_88, oid_87, example_39).
+left_of(oid_91, oid_87, example_39).
+in_front(oid_91, oid_87, example_39).
+right_of(oid_47, oid_87, example_39).
+behind(oid_47, oid_87, example_39).
+left_of(oid_6, oid_54, example_39).
+behind(oid_6, oid_54, example_39).
+left_of(oid_87, oid_54, example_39).
+in_front(oid_87, oid_54, example_39).
+left_of(oid_35, oid_54, example_39).
+behind(oid_35, oid_54, example_39).
+left_of(oid_88, oid_54, example_39).
+in_front(oid_88, oid_54, example_39).
+left_of(oid_91, oid_54, example_39).
+in_front(oid_91, oid_54, example_39).
+left_of(oid_47, oid_54, example_39).
+behind(oid_47, oid_54, example_39).
+left_of(oid_6, oid_35, example_39).
+behind(oid_6, oid_35, example_39).
+left_of(oid_87, oid_35, example_39).
+in_front(oid_87, oid_35, example_39).
+right_of(oid_54, oid_35, example_39).
+in_front(oid_54, oid_35, example_39).
+right_of(oid_88, oid_35, example_39).
+in_front(oid_88, oid_35, example_39).
+left_of(oid_91, oid_35, example_39).
+in_front(oid_91, oid_35, example_39).
+left_of(oid_47, oid_35, example_39).
+behind(oid_47, oid_35, example_39).
+left_of(oid_6, oid_88, example_39).
+behind(oid_6, oid_88, example_39).
+left_of(oid_87, oid_88, example_39).
+behind(oid_87, oid_88, example_39).
+right_of(oid_54, oid_88, example_39).
+behind(oid_54, oid_88, example_39).
+left_of(oid_35, oid_88, example_39).
+behind(oid_35, oid_88, example_39).
+left_of(oid_91, oid_88, example_39).
+in_front(oid_91, oid_88, example_39).
+left_of(oid_47, oid_88, example_39).
+behind(oid_47, oid_88, example_39).
+right_of(oid_6, oid_91, example_39).
+behind(oid_6, oid_91, example_39).
+right_of(oid_87, oid_91, example_39).
+behind(oid_87, oid_91, example_39).
+right_of(oid_54, oid_91, example_39).
+behind(oid_54, oid_91, example_39).
+right_of(oid_35, oid_91, example_39).
+behind(oid_35, oid_91, example_39).
+right_of(oid_88, oid_91, example_39).
+behind(oid_88, oid_91, example_39).
+right_of(oid_47, oid_91, example_39).
+behind(oid_47, oid_91, example_39).
+left_of(oid_6, oid_47, example_39).
+in_front(oid_6, oid_47, example_39).
+left_of(oid_87, oid_47, example_39).
+in_front(oid_87, oid_47, example_39).
+right_of(oid_54, oid_47, example_39).
+in_front(oid_54, oid_47, example_39).
+right_of(oid_35, oid_47, example_39).
+in_front(oid_35, oid_47, example_39).
+right_of(oid_88, oid_47, example_39).
+in_front(oid_88, oid_47, example_39).
+left_of(oid_91, oid_47, example_39).
+in_front(oid_91, oid_47, example_39).
+
+contains(oid_38, example_40).
+contains(oid_1, example_40).
+contains(oid_63, example_40).
+contains(oid_84, example_40).
+contains(oid_35, example_40).
+left_of(oid_1, oid_38, example_40).
+behind(oid_1, oid_38, example_40).
+right_of(oid_63, oid_38, example_40).
+in_front(oid_63, oid_38, example_40).
+left_of(oid_84, oid_38, example_40).
+in_front(oid_84, oid_38, example_40).
+left_of(oid_35, oid_38, example_40).
+in_front(oid_35, oid_38, example_40).
+right_of(oid_38, oid_1, example_40).
+in_front(oid_38, oid_1, example_40).
+right_of(oid_63, oid_1, example_40).
+in_front(oid_63, oid_1, example_40).
+left_of(oid_84, oid_1, example_40).
+in_front(oid_84, oid_1, example_40).
+right_of(oid_35, oid_1, example_40).
+in_front(oid_35, oid_1, example_40).
+left_of(oid_38, oid_63, example_40).
+behind(oid_38, oid_63, example_40).
+left_of(oid_1, oid_63, example_40).
+behind(oid_1, oid_63, example_40).
+left_of(oid_84, oid_63, example_40).
+behind(oid_84, oid_63, example_40).
+left_of(oid_35, oid_63, example_40).
+in_front(oid_35, oid_63, example_40).
+right_of(oid_38, oid_84, example_40).
+behind(oid_38, oid_84, example_40).
+right_of(oid_1, oid_84, example_40).
+behind(oid_1, oid_84, example_40).
+right_of(oid_63, oid_84, example_40).
+in_front(oid_63, oid_84, example_40).
+right_of(oid_35, oid_84, example_40).
+in_front(oid_35, oid_84, example_40).
+right_of(oid_38, oid_35, example_40).
+behind(oid_38, oid_35, example_40).
+left_of(oid_1, oid_35, example_40).
+behind(oid_1, oid_35, example_40).
+right_of(oid_63, oid_35, example_40).
+behind(oid_63, oid_35, example_40).
+left_of(oid_84, oid_35, example_40).
+behind(oid_84, oid_35, example_40).
+
+contains(oid_35, example_41).
+contains(oid_54, example_41).
+contains(oid_44, example_41).
+contains(oid_29, example_41).
+contains(oid_33, example_41).
+left_of(oid_54, oid_35, example_41).
+behind(oid_54, oid_35, example_41).
+left_of(oid_44, oid_35, example_41).
+behind(oid_44, oid_35, example_41).
+left_of(oid_29, oid_35, example_41).
+in_front(oid_29, oid_35, example_41).
+left_of(oid_33, oid_35, example_41).
+in_front(oid_33, oid_35, example_41).
+right_of(oid_35, oid_54, example_41).
+in_front(oid_35, oid_54, example_41).
+right_of(oid_44, oid_54, example_41).
+behind(oid_44, oid_54, example_41).
+right_of(oid_29, oid_54, example_41).
+in_front(oid_29, oid_54, example_41).
+right_of(oid_33, oid_54, example_41).
+in_front(oid_33, oid_54, example_41).
+right_of(oid_35, oid_44, example_41).
+in_front(oid_35, oid_44, example_41).
+left_of(oid_54, oid_44, example_41).
+in_front(oid_54, oid_44, example_41).
+left_of(oid_29, oid_44, example_41).
+in_front(oid_29, oid_44, example_41).
+left_of(oid_33, oid_44, example_41).
+in_front(oid_33, oid_44, example_41).
+right_of(oid_35, oid_29, example_41).
+behind(oid_35, oid_29, example_41).
+left_of(oid_54, oid_29, example_41).
+behind(oid_54, oid_29, example_41).
+right_of(oid_44, oid_29, example_41).
+behind(oid_44, oid_29, example_41).
+right_of(oid_33, oid_29, example_41).
+behind(oid_33, oid_29, example_41).
+right_of(oid_35, oid_33, example_41).
+behind(oid_35, oid_33, example_41).
+left_of(oid_54, oid_33, example_41).
+behind(oid_54, oid_33, example_41).
+right_of(oid_44, oid_33, example_41).
+behind(oid_44, oid_33, example_41).
+left_of(oid_29, oid_33, example_41).
+in_front(oid_29, oid_33, example_41).
+
+contains(oid_78, example_42).
+contains(oid_89, example_42).
+contains(oid_52, example_42).
+contains(oid_88, example_42).
+contains(oid_33, example_42).
+left_of(oid_89, oid_78, example_42).
+behind(oid_89, oid_78, example_42).
+left_of(oid_52, oid_78, example_42).
+behind(oid_52, oid_78, example_42).
+left_of(oid_88, oid_78, example_42).
+behind(oid_88, oid_78, example_42).
+left_of(oid_33, oid_78, example_42).
+behind(oid_33, oid_78, example_42).
+right_of(oid_78, oid_89, example_42).
+in_front(oid_78, oid_89, example_42).
+right_of(oid_52, oid_89, example_42).
+in_front(oid_52, oid_89, example_42).
+right_of(oid_88, oid_89, example_42).
+in_front(oid_88, oid_89, example_42).
+right_of(oid_33, oid_89, example_42).
+behind(oid_33, oid_89, example_42).
+right_of(oid_78, oid_52, example_42).
+in_front(oid_78, oid_52, example_42).
+left_of(oid_89, oid_52, example_42).
+behind(oid_89, oid_52, example_42).
+right_of(oid_88, oid_52, example_42).
+in_front(oid_88, oid_52, example_42).
+right_of(oid_33, oid_52, example_42).
+behind(oid_33, oid_52, example_42).
+right_of(oid_78, oid_88, example_42).
+in_front(oid_78, oid_88, example_42).
+left_of(oid_89, oid_88, example_42).
+behind(oid_89, oid_88, example_42).
+left_of(oid_52, oid_88, example_42).
+behind(oid_52, oid_88, example_42).
+right_of(oid_33, oid_88, example_42).
+behind(oid_33, oid_88, example_42).
+right_of(oid_78, oid_33, example_42).
+in_front(oid_78, oid_33, example_42).
+left_of(oid_89, oid_33, example_42).
+in_front(oid_89, oid_33, example_42).
+left_of(oid_52, oid_33, example_42).
+in_front(oid_52, oid_33, example_42).
+left_of(oid_88, oid_33, example_42).
+in_front(oid_88, oid_33, example_42).
+
+contains(oid_54, example_43).
+contains(oid_51, example_43).
+contains(oid_45, example_43).
+contains(oid_32, example_43).
+contains(oid_76, example_43).
+contains(oid_85, example_43).
+contains(oid_40, example_43).
+left_of(oid_51, oid_54, example_43).
+behind(oid_51, oid_54, example_43).
+left_of(oid_45, oid_54, example_43).
+in_front(oid_45, oid_54, example_43).
+left_of(oid_32, oid_54, example_43).
+behind(oid_32, oid_54, example_43).
+left_of(oid_76, oid_54, example_43).
+in_front(oid_76, oid_54, example_43).
+left_of(oid_85, oid_54, example_43).
+in_front(oid_85, oid_54, example_43).
+left_of(oid_40, oid_54, example_43).
+in_front(oid_40, oid_54, example_43).
+right_of(oid_54, oid_51, example_43).
+in_front(oid_54, oid_51, example_43).
+left_of(oid_45, oid_51, example_43).
+in_front(oid_45, oid_51, example_43).
+left_of(oid_32, oid_51, example_43).
+in_front(oid_32, oid_51, example_43).
+left_of(oid_76, oid_51, example_43).
+in_front(oid_76, oid_51, example_43).
+right_of(oid_85, oid_51, example_43).
+in_front(oid_85, oid_51, example_43).
+left_of(oid_40, oid_51, example_43).
+in_front(oid_40, oid_51, example_43).
+right_of(oid_54, oid_45, example_43).
+behind(oid_54, oid_45, example_43).
+right_of(oid_51, oid_45, example_43).
+behind(oid_51, oid_45, example_43).
+right_of(oid_32, oid_45, example_43).
+behind(oid_32, oid_45, example_43).
+right_of(oid_76, oid_45, example_43).
+in_front(oid_76, oid_45, example_43).
+right_of(oid_85, oid_45, example_43).
+in_front(oid_85, oid_45, example_43).
+right_of(oid_40, oid_45, example_43).
+in_front(oid_40, oid_45, example_43).
+right_of(oid_54, oid_32, example_43).
+in_front(oid_54, oid_32, example_43).
+right_of(oid_51, oid_32, example_43).
+behind(oid_51, oid_32, example_43).
+left_of(oid_45, oid_32, example_43).
+in_front(oid_45, oid_32, example_43).
+right_of(oid_76, oid_32, example_43).
+in_front(oid_76, oid_32, example_43).
+right_of(oid_85, oid_32, example_43).
+in_front(oid_85, oid_32, example_43).
+right_of(oid_40, oid_32, example_43).
+in_front(oid_40, oid_32, example_43).
+right_of(oid_54, oid_76, example_43).
+behind(oid_54, oid_76, example_43).
+right_of(oid_51, oid_76, example_43).
+behind(oid_51, oid_76, example_43).
+left_of(oid_45, oid_76, example_43).
+behind(oid_45, oid_76, example_43).
+left_of(oid_32, oid_76, example_43).
+behind(oid_32, oid_76, example_43).
+right_of(oid_85, oid_76, example_43).
+behind(oid_85, oid_76, example_43).
+right_of(oid_40, oid_76, example_43).
+in_front(oid_40, oid_76, example_43).
+right_of(oid_54, oid_85, example_43).
+behind(oid_54, oid_85, example_43).
+left_of(oid_51, oid_85, example_43).
+behind(oid_51, oid_85, example_43).
+left_of(oid_45, oid_85, example_43).
+behind(oid_45, oid_85, example_43).
+left_of(oid_32, oid_85, example_43).
+behind(oid_32, oid_85, example_43).
+left_of(oid_76, oid_85, example_43).
+in_front(oid_76, oid_85, example_43).
+left_of(oid_40, oid_85, example_43).
+in_front(oid_40, oid_85, example_43).
+right_of(oid_54, oid_40, example_43).
+behind(oid_54, oid_40, example_43).
+right_of(oid_51, oid_40, example_43).
+behind(oid_51, oid_40, example_43).
+left_of(oid_45, oid_40, example_43).
+behind(oid_45, oid_40, example_43).
+left_of(oid_32, oid_40, example_43).
+behind(oid_32, oid_40, example_43).
+left_of(oid_76, oid_40, example_43).
+behind(oid_76, oid_40, example_43).
+right_of(oid_85, oid_40, example_43).
+behind(oid_85, oid_40, example_43).
+
+contains(oid_39, example_44).
+contains(oid_67, example_44).
+contains(oid_37, example_44).
+contains(oid_54, example_44).
+contains(oid_71, example_44).
+contains(oid_89, example_44).
+contains(oid_51, example_44).
+left_of(oid_67, oid_39, example_44).
+behind(oid_67, oid_39, example_44).
+right_of(oid_37, oid_39, example_44).
+behind(oid_37, oid_39, example_44).
+left_of(oid_54, oid_39, example_44).
+behind(oid_54, oid_39, example_44).
+left_of(oid_71, oid_39, example_44).
+behind(oid_71, oid_39, example_44).
+left_of(oid_89, oid_39, example_44).
+in_front(oid_89, oid_39, example_44).
+left_of(oid_51, oid_39, example_44).
+behind(oid_51, oid_39, example_44).
+right_of(oid_39, oid_67, example_44).
+in_front(oid_39, oid_67, example_44).
+right_of(oid_37, oid_67, example_44).
+behind(oid_37, oid_67, example_44).
+right_of(oid_54, oid_67, example_44).
+behind(oid_54, oid_67, example_44).
+right_of(oid_71, oid_67, example_44).
+behind(oid_71, oid_67, example_44).
+right_of(oid_89, oid_67, example_44).
+in_front(oid_89, oid_67, example_44).
+right_of(oid_51, oid_67, example_44).
+behind(oid_51, oid_67, example_44).
+left_of(oid_39, oid_37, example_44).
+in_front(oid_39, oid_37, example_44).
+left_of(oid_67, oid_37, example_44).
+in_front(oid_67, oid_37, example_44).
+left_of(oid_54, oid_37, example_44).
+behind(oid_54, oid_37, example_44).
+left_of(oid_71, oid_37, example_44).
+behind(oid_71, oid_37, example_44).
+left_of(oid_89, oid_37, example_44).
+in_front(oid_89, oid_37, example_44).
+left_of(oid_51, oid_37, example_44).
+behind(oid_51, oid_37, example_44).
+right_of(oid_39, oid_54, example_44).
+in_front(oid_39, oid_54, example_44).
+left_of(oid_67, oid_54, example_44).
+in_front(oid_67, oid_54, example_44).
+right_of(oid_37, oid_54, example_44).
+in_front(oid_37, oid_54, example_44).
+right_of(oid_71, oid_54, example_44).
+in_front(oid_71, oid_54, example_44).
+right_of(oid_89, oid_54, example_44).
+in_front(oid_89, oid_54, example_44).
+left_of(oid_51, oid_54, example_44).
+in_front(oid_51, oid_54, example_44).
+right_of(oid_39, oid_71, example_44).
+in_front(oid_39, oid_71, example_44).
+left_of(oid_67, oid_71, example_44).
+in_front(oid_67, oid_71, example_44).
+right_of(oid_37, oid_71, example_44).
+in_front(oid_37, oid_71, example_44).
+left_of(oid_54, oid_71, example_44).
+behind(oid_54, oid_71, example_44).
+left_of(oid_89, oid_71, example_44).
+in_front(oid_89, oid_71, example_44).
+left_of(oid_51, oid_71, example_44).
+behind(oid_51, oid_71, example_44).
+right_of(oid_39, oid_89, example_44).
+behind(oid_39, oid_89, example_44).
+left_of(oid_67, oid_89, example_44).
+behind(oid_67, oid_89, example_44).
+right_of(oid_37, oid_89, example_44).
+behind(oid_37, oid_89, example_44).
+left_of(oid_54, oid_89, example_44).
+behind(oid_54, oid_89, example_44).
+right_of(oid_71, oid_89, example_44).
+behind(oid_71, oid_89, example_44).
+left_of(oid_51, oid_89, example_44).
+behind(oid_51, oid_89, example_44).
+right_of(oid_39, oid_51, example_44).
+in_front(oid_39, oid_51, example_44).
+left_of(oid_67, oid_51, example_44).
+in_front(oid_67, oid_51, example_44).
+right_of(oid_37, oid_51, example_44).
+in_front(oid_37, oid_51, example_44).
+right_of(oid_54, oid_51, example_44).
+behind(oid_54, oid_51, example_44).
+right_of(oid_71, oid_51, example_44).
+in_front(oid_71, oid_51, example_44).
+right_of(oid_89, oid_51, example_44).
+in_front(oid_89, oid_51, example_44).
+
+contains(oid_38, example_45).
+contains(oid_35, example_45).
+contains(oid_60, example_45).
+left_of(oid_35, oid_38, example_45).
+behind(oid_35, oid_38, example_45).
+left_of(oid_60, oid_38, example_45).
+behind(oid_60, oid_38, example_45).
+right_of(oid_38, oid_35, example_45).
+in_front(oid_38, oid_35, example_45).
+left_of(oid_60, oid_35, example_45).
+in_front(oid_60, oid_35, example_45).
+right_of(oid_38, oid_60, example_45).
+in_front(oid_38, oid_60, example_45).
+right_of(oid_35, oid_60, example_45).
+behind(oid_35, oid_60, example_45).
+
+contains(oid_54, example_46).
+contains(oid_94, example_46).
+contains(oid_59, example_46).
+contains(oid_48, example_46).
+contains(oid_35, example_46).
+right_of(oid_94, oid_54, example_46).
+behind(oid_94, oid_54, example_46).
+right_of(oid_59, oid_54, example_46).
+in_front(oid_59, oid_54, example_46).
+right_of(oid_48, oid_54, example_46).
+behind(oid_48, oid_54, example_46).
+right_of(oid_35, oid_54, example_46).
+behind(oid_35, oid_54, example_46).
+left_of(oid_54, oid_94, example_46).
+in_front(oid_54, oid_94, example_46).
+left_of(oid_59, oid_94, example_46).
+in_front(oid_59, oid_94, example_46).
+left_of(oid_48, oid_94, example_46).
+in_front(oid_48, oid_94, example_46).
+left_of(oid_35, oid_94, example_46).
+in_front(oid_35, oid_94, example_46).
+left_of(oid_54, oid_59, example_46).
+behind(oid_54, oid_59, example_46).
+right_of(oid_94, oid_59, example_46).
+behind(oid_94, oid_59, example_46).
+right_of(oid_48, oid_59, example_46).
+behind(oid_48, oid_59, example_46).
+right_of(oid_35, oid_59, example_46).
+behind(oid_35, oid_59, example_46).
+left_of(oid_54, oid_48, example_46).
+in_front(oid_54, oid_48, example_46).
+right_of(oid_94, oid_48, example_46).
+behind(oid_94, oid_48, example_46).
+left_of(oid_59, oid_48, example_46).
+in_front(oid_59, oid_48, example_46).
+left_of(oid_35, oid_48, example_46).
+behind(oid_35, oid_48, example_46).
+left_of(oid_54, oid_35, example_46).
+in_front(oid_54, oid_35, example_46).
+right_of(oid_94, oid_35, example_46).
+behind(oid_94, oid_35, example_46).
+left_of(oid_59, oid_35, example_46).
+in_front(oid_59, oid_35, example_46).
+right_of(oid_48, oid_35, example_46).
+in_front(oid_48, oid_35, example_46).
