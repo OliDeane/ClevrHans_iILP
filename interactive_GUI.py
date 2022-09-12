@@ -20,6 +20,7 @@ win = Tk()
 title = 'ILP CLEVR-HANS'
 win.title(title)
 win.geometry("1050x500")
+
 model = load_model(os.getcwd(), config = InferenceConfig(), model_path = "./trained_model/mask_rcnn_clevr_0030_allclasses.h5")
         
 def run_induce():
