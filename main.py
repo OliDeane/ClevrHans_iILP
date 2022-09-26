@@ -186,9 +186,10 @@ def write_img_object_preds(oblist):
         
         bk_file.write(f"contains({object_id}, {example_id}).\n")
 
-def inference(IMAGE_DIR, model, class_names):
-
-    file_names = sorted(next(os.walk(IMAGE_DIR))[2])
+def inference(IMAGE_DIR, model, class_names, file_names = None):
+    
+    if not file_names:
+        file_names = sorted(next(os.walk(IMAGE_DIR))[2])
 
     if '.DS_Store' in file_names:
         file_names.remove(".DS_Store")
