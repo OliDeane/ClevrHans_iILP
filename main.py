@@ -252,9 +252,9 @@ def get_relation_preds(centroidsX, centroidsY, full_oblist, eg_num, img_objects)
 
     return rel_preds
 
-def write_ground_truths(ilp_classes, f_file, n_file):
+def write_ground_truths(ilp_classes, f_file, n_file, pos_class_id = '0'):
     for id in range(0,len(ilp_classes)):
-        if ilp_classes[id] == 'c2':
+        if ilp_classes[id] == f'c{pos_class_id}':
             f_file.write(f"true_class(example_{id}).\n")
         else:
             n_file.write(f"true_class(example_{id}).\n")
